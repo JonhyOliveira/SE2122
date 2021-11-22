@@ -2,3 +2,8 @@ Joao Oliveira 21/11/2021 12h:
 1. Nada a acrescentar
 2. Nada a acrescentar
 3. Não sei se isto seria um code smell, já que o unico propósito da classe é guardar dados e a lista de parametros do construtor longa não introduz nenhuma complicação adicional.
+
+João Padrão 22/11/2021 10h30
+1. Concordo
+2. Concordo
+3. Acho o teu Refactor proposal um pouco confuso
