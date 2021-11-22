@@ -1,2 +1,6 @@
 João Oliveira 21/11/2021 12h15:
 Parece-me bem, mas devias de ir à procura de patterns noutro lado, já que temos todos de encontrar 3 design patterns :)
+
+Rafael Patronilo 22/11/2021 15:56
+Concordo, vou tentar reorganizar as tarefas para encontrarmos mais patterns
+

@@ -1,0 +1,10 @@
+Rafael Patronilo 22/11/2021 15:10
+1. Concordo
+2. Concordo
+3. Concordo
+
+Bruno Cabrita 22/11/2021 16:34
+1. Possible solution, though it can arise a data class code smell
+2. Ok
+3. Instead of more comments, just make one to explain the whole algorithm
+Breaking into smaller methods can also be a possible solution.
