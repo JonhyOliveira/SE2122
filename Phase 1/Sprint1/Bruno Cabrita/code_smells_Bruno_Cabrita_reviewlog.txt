@@ -7,3 +7,8 @@ João Padrão 22/11/2021 10h30
 1. Concordo
 2. Concordo
 3. Acho o teu Refactor proposal um pouco confuso
+
+Rafael Patronilo 22/11/2021 15:18
+1. Acho que um switch com a string seria ainda melhor que um equalsIgnoreCase
+2. Concordo
+3. Concordo

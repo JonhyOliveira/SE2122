@@ -6,3 +6,6 @@ Rafael Patronilo 22/11/2021 15:06
 1. Concordo
 2. Concordo
 3. Concordo
+
+Bruno Cabrita 22/11/2021 16:30
+Everything looks ok in all identified code smells and refactor proposals.
