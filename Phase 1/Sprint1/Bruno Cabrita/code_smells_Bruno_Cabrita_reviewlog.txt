@@ -12,3 +12,8 @@ Rafael Patronilo 22/11/2021 15:18
 1. Acho que um switch com a string seria ainda melhor que um equalsIgnoreCase
 2. Concordo
 3. Concordo
+
+Bruno Braga 22/11/2021 17:44
+1. Concordo, tendo em conta que para solucionar o problema será necessário a criação de constantes/funções. Penso que tambem está presente o Primitive code smell.
+2. De acordo. 
+3. Penso que o teu Refactor proposal um pouco confuso e/ou não resolveria por completo o problema descrito.

@@ -9,3 +9,6 @@ Rafael Patronilo 22/11/2021 15:06
 
 Bruno Cabrita 22/11/2021 16:30
 Everything looks ok in all identified code smells and refactor proposals.
+
+Bruno Braga 22/11/2021 17:46
+Concordo com os code smells indicados.

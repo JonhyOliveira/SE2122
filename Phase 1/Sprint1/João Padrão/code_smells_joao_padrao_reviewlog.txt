@@ -8,3 +8,8 @@ Bruno Cabrita 22/11/2021 16:34
 2. Ok
 3. Instead of more comments, just make one to explain the whole algorithm
 Breaking into smaller methods can also be a possible solution.
+
+Bruno Braga 22/11/2021 17:53
+1. Concordo com a proposta de solução apresentada.
+2. Não tenho a certeza se é classificado como um code smell mas é preciso ter atenção com essas situações.
+3. Concordo, tendo em atenção de não saturar a função com comentarios.
