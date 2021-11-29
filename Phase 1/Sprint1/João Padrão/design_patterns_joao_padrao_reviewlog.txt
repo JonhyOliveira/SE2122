@@ -1,0 +1,5 @@
+Joao Oliveira 26/11/2021 15:50
+1. Parece-me um bom exemplo de um padrão builder
+2. Não me parece muito um singleton porque, apenas com o contexto
+do snippet, pode existir instancias de JabRefPreferences que diferem, já que, a instancia que guarda as preferencias (prefs) não é static.
+

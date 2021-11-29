@@ -13,3 +13,8 @@ Bruno Braga 22/11/2021 17:53
 1. Concordo com a proposta de solução apresentada.
 2. Não tenho a certeza se é classificado como um code smell mas é preciso ter atenção com essas situações.
 3. Concordo, tendo em atenção de não saturar a função com comentarios.
+
+Joao Oliveira 26/11/2021 15:45
+1. Ótima solução 
+2. Concordo, variaveis com nomes semelhantes podem confundir o programador
+3. Concordo, devia de estar melhor comentado.
