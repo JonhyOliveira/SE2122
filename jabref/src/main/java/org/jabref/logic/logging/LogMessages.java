@@ -13,7 +13,8 @@ public class LogMessages {
 
     private static LogMessages instance = new LogMessages();
 
-    private final ObservableList<LogEvent> messages = FXCollections.observableArrayList();
+    private final ObservableList<LogEvent>
+            messages = FXCollections.observableArrayList();
 
     private LogMessages() {
     }
