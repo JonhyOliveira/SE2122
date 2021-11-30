@@ -2,3 +2,7 @@ João Padrão 30/11/2021 12h20
 1. Não acho que este problema seja um Shot Gun surgery visto que este code smell implica que faças alterações em várias classes para suportar a alteração. Este deve ser apenas um code smell por falta de uso de constantes
 2. OK
 3. Concordo que todos os metodos da classe chamam metodos de outras classes porém acho que a tua solucao não resolve o problema e a meu ver esta é uma classe que faz de ponte entre várias classes de dois packages logo não dá para fugir a este problema
+
+João Oliveira 30/11/2021 16h40
+1. Parece-me uma boa identificação desse code smell
+2. Acho que essa solução não resolveria o problema e apenas o passaria para outro sitio.

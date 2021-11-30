@@ -1,3 +1,6 @@
 Bruno Braga 21:25
 Indicado corretamente os design patterns, podendo explicar melhor a secção de factory pattern.
 Contudo bom trabalho.
+
+João Oliveira 16h50
+Parece-me bem, nada a adicionar
