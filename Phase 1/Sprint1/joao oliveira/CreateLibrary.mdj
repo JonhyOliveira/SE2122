@@ -254,7 +254,7 @@
 											"top": 311,
 											"width": 167,
 											"height": 13,
-											"text": "Menu"
+											"text": "Jabref"
 										},
 										{
 											"_type": "LabelView",
@@ -833,7 +833,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF9a/1noGrFBZE="
 					},
-					"name": "Menu"
+					"name": "Jabref"
 				},
 				{
 					"_type": "UMLUseCase",
