@@ -1,0 +1,1681 @@
+Dependency metrics,quinta, 2 dez 2021 12:06:03 WET
+Class,Cyclic,Dcy,Dcy*,Dpt,Dpt*,PDcy,PDpt
+"org.jabref.cli.ArgumentProcessor",784,59,1 333,2,1 121,25,2
+"org.jabref.cli.ArgumentProcessor.Mode",0,0,0,3,1 122,0,3
+"org.jabref.cli.AuxCommandLine",784,6,1 333,2,1 121,4,1
+"org.jabref.cli.CrossrefFetcherEvaluator",0,11,1 334,0,0,9,0
+"org.jabref.cli.GenerateCharacterTable",0,1,1,0,0,1,0
+"org.jabref.cli.JabRefCLI",784,5,1 333,3,1 121,5,2
+"org.jabref.cli.SystemOutputPrinter",0,1,1,1,1 122,1,1
+"org.jabref.gui.AbstractViewModel",0,0,0,21,1 123,0,19
+"org.jabref.gui.BasePanelMode",0,0,0,1,1 122,0,1
+"org.jabref.gui.ClipBoardManager",784,20,1 333,21,1 121,10,11
+"org.jabref.gui.DefaultInjector",784,13,1 333,2,1 121,8,1
+"org.jabref.gui.DragAndDropDataFormats",784,1,1 333,8,1 121,1,7
+"org.jabref.gui.DragAndDropHelper",784,1,1 333,1,1 121,1,1
+"org.jabref.gui.EntryTypeView",784,24,1 333,3,1 121,9,2
+"org.jabref.gui.EntryTypeViewModel",784,24,1 333,2,1 121,13,1
+"org.jabref.gui.EntryTypeViewModel.FetcherWorker",784,4,1 333,1,1 121,3,1
+"org.jabref.gui.FXDialog",784,4,1 333,2,1 121,3,2
+"org.jabref.gui.FallbackExceptionHandler",784,4,1 333,2,1 121,2,1
+"org.jabref.gui.Globals",784,20,1 333,104,1 121,14,56
+"org.jabref.gui.JabRefDialogService",784,12,1 333,3,1 121,5,2
+"org.jabref.gui.JabRefExecutorService",784,2,1 333,13,1 121,1,10
+"org.jabref.gui.JabRefExecutorService.NamedRunnable",0,0,0,1,1 122,0,1
+"org.jabref.gui.JabRefFrame",784,115,1 333,69,1 121,52,29
+"org.jabref.gui.JabRefFrame.CloseAction",784,2,1 333,1,1 121,2,1
+"org.jabref.gui.JabRefFrame.CloseAllDatabaseAction",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.JabRefFrame.CloseDatabaseAction",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.JabRefFrame.CloseOthersDatabaseAction",784,4,1 333,1,1 121,2,1
+"org.jabref.gui.JabRefFrame.OpenDatabaseFolder",784,4,1 333,1,1 121,4,1
+"org.jabref.gui.JabRefFrame.UndoRedoEventManager",784,5,1 333,1,1 121,2,1
+"org.jabref.gui.JabRefGUI",784,23,1 333,14,1 121,16,10
+"org.jabref.gui.JabRefLauncher",0,1,1 339,0,0,1,0
+"org.jabref.gui.JabRefMain",0,26,1 338,2,2,16,2
+"org.jabref.gui.LibraryTab",784,55,1 333,70,1 121,29,28
+"org.jabref.gui.LibraryTab.EntriesRemovedListener",784,3,1 333,1,1 121,3,1
+"org.jabref.gui.LibraryTab.Factory",784,9,1 333,1,1 121,6,1
+"org.jabref.gui.LibraryTab.GroupTreeListener",784,8,1 333,1,1 121,6,1
+"org.jabref.gui.LibraryTab.IndexUpdateListener",784,13,1 333,1,1 121,8,1
+"org.jabref.gui.LibraryTab.SearchListener",784,7,1 333,1,1 121,5,1
+"org.jabref.gui.OpenConsoleAction",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.SendAsEMailAction",784,17,1 333,2,1 121,12,2
+"org.jabref.gui.StateManager",784,8,1 333,125,1 121,6,43
+"org.jabref.gui.UpdateTimestampListener",784,7,1 333,2,1 121,5,1
+"org.jabref.gui.WaitForSaveFinishedDialog",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.actions.ActionFactory",784,7,1 333,25,1 121,4,22
+"org.jabref.gui.actions.ActionHelper",784,9,1 333,49,1 121,8,30
+"org.jabref.gui.actions.JabRefAction",784,7,1 333,1,1 121,4,1
+"org.jabref.gui.actions.SimpleCommand",0,1,5,81,1 122,1,41
+"org.jabref.gui.actions.Sources",0,0,0,2,1 122,0,1
+"org.jabref.gui.actions.StandardActions",0,6,16,37,1 127,4,25
+"org.jabref.gui.autocompleter.AppendPersonNamesStrategy",0,1,3,3,1 123,1,3
+"org.jabref.gui.autocompleter.AppendWordsStrategy",0,2,2,2,1 124,1,2
+"org.jabref.gui.autocompleter.AutoCompleteFirstNameMode",0,0,0,7,1 125,0,4
+"org.jabref.gui.autocompleter.AutoCompletePreferences",0,5,20,11,1 124,3,6
+"org.jabref.gui.autocompleter.AutoCompletePreferences.NameFormat",0,0,0,6,1 125,0,3
+"org.jabref.gui.autocompleter.AutoCompletionInput",0,0,0,4,1 127,0,1
+"org.jabref.gui.autocompleter.AutoCompletionTextInputBinding",784,4,1 333,4,1 121,2,2
+"org.jabref.gui.autocompleter.BibEntrySuggestionProvider",784,6,1 333,3,1 121,6,1
+"org.jabref.gui.autocompleter.ContentSelectorSuggestionProvider",0,2,5,3,1 122,1,2
+"org.jabref.gui.autocompleter.EmptySuggestionProvider",0,1,1,4,1 122,1,2
+"org.jabref.gui.autocompleter.FieldValueSuggestionProvider",784,4,1 333,2,1 121,4,1
+"org.jabref.gui.autocompleter.JournalsSuggestionProvider",784,4,1 333,2,1 121,4,1
+"org.jabref.gui.autocompleter.PersonNameStringConverter",0,5,26,3,1 123,2,3
+"org.jabref.gui.autocompleter.PersonNameSuggestionProvider",784,7,1 333,4,1 121,5,2
+"org.jabref.gui.autocompleter.ReplaceStrategy",0,2,2,1,1 122,1,1
+"org.jabref.gui.autocompleter.StringSuggestionProvider",0,2,4,3,1 123,2,1
+"org.jabref.gui.autocompleter.SuggestionProvider",0,0,0,45,1 125,0,3
+"org.jabref.gui.autocompleter.SuggestionProviders",784,12,1 333,12,1 121,4,4
+"org.jabref.gui.autocompleter.WordSuggestionProvider",784,4,1 333,4,1 121,4,1
+"org.jabref.gui.auximport.AuxParserResultViewModel",784,3,1 333,2,1 121,3,2
+"org.jabref.gui.auximport.FromAuxDialog",784,15,1 333,1,1 121,8,1
+"org.jabref.gui.auximport.NewSubLibraryAction",784,6,1 333,1,1 121,3,1
+"org.jabref.gui.bibtexextractor.BibtexExtractor",784,4,1 333,1,1 121,3,1
+"org.jabref.gui.bibtexextractor.BibtexExtractorViewModel",784,17,1 333,1,1 121,13,1
+"org.jabref.gui.bibtexextractor.ExtractBibtexAction",784,7,1 333,1,1 121,5,1
+"org.jabref.gui.bibtexextractor.ExtractBibtexDialog",784,9,1 333,1,1 121,7,1
+"org.jabref.gui.citationkeypattern.CitationKeyPatternAction",784,6,1 333,1,1 121,3,1
+"org.jabref.gui.citationkeypattern.CitationKeyPatternDialog",784,9,1 333,1,1 121,8,1
+"org.jabref.gui.citationkeypattern.CitationKeyPatternPanel",784,14,1 333,1,1 121,10,1
+"org.jabref.gui.citationkeypattern.GenerateCitationKeyAction",784,19,1 333,2,1 121,10,2
+"org.jabref.gui.citationkeypattern.GenerateCitationKeySingleAction",784,10,1 333,2,1 121,9,2
+"org.jabref.gui.cleanup.CleanupAction",784,20,1 333,1,1 121,12,1
+"org.jabref.gui.cleanup.CleanupDialog",784,6,1 333,1,1 121,6,1
+"org.jabref.gui.cleanup.CleanupPresetPanel",784,8,1 333,1,1 121,6,1
+"org.jabref.gui.collab.ChangeDisplayDialog",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.collab.ChangeScanner",784,26,1 333,1,1 121,8,1
+"org.jabref.gui.collab.DatabaseChangeMonitor",784,10,1 333,2,1 121,6,2
+"org.jabref.gui.collab.DatabaseChangePane",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.collab.DatabaseChangeViewModel",784,2,1 333,15,1 121,2,1
+"org.jabref.gui.collab.EntryAddChangeViewModel",784,13,1 333,1,1 121,8,1
+"org.jabref.gui.collab.EntryChangeViewModel",784,9,1 333,2,1 121,6,1
+"org.jabref.gui.collab.EntryDeleteChangeViewModel",784,11,1 333,1,1 121,7,1
+"org.jabref.gui.collab.GroupChangeViewModel",784,11,1 333,1,1 121,10,1
+"org.jabref.gui.collab.MetaDataChangeViewModel",784,6,1 333,1,1 121,6,1
+"org.jabref.gui.collab.PreambleChangeViewModel",784,8,1 333,1,1 121,6,1
+"org.jabref.gui.collab.StringAddChangeViewModel",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.collab.StringChangeViewModel",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.collab.StringNameChangeViewModel",784,7,1 333,1,1 121,5,1
+"org.jabref.gui.collab.StringRemoveChangeViewModel",784,7,1 333,1,1 121,5,1
+"org.jabref.gui.commonfxcontrols.CitationKeyPatternPanel",784,11,1 333,1,1 121,8,1
+"org.jabref.gui.commonfxcontrols.CitationKeyPatternPanel.HighlightTableRow",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.commonfxcontrols.CitationKeyPatternPanelItemModel",0,1,1,4,1 122,1,2
+"org.jabref.gui.commonfxcontrols.CitationKeyPatternPanelViewModel",784,6,1 333,3,1 121,5,1
+"org.jabref.gui.commonfxcontrols.CitationKeyPatternPanelViewModel.DefaultEntryType",784,3,1 333,2,1 121,3,2
+"org.jabref.gui.commonfxcontrols.FieldFormatterCleanupsPanel",784,11,1 333,2,1 121,6,2
+"org.jabref.gui.commonfxcontrols.FieldFormatterCleanupsPanelViewModel",784,10,1 333,1,1 121,5,1
+"org.jabref.gui.commonfxcontrols.SaveOrderConfigPanel",784,9,1 333,2,1 121,5,2
+"org.jabref.gui.commonfxcontrols.SaveOrderConfigPanelViewModel",0,3,7,2,1 123,3,1
+"org.jabref.gui.commonfxcontrols.SortCriterionViewModel",0,2,6,5,1 124,2,3
+"org.jabref.gui.contentselector.ContentSelectorDialogView",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.contentselector.ContentSelectorDialogViewModel",784,11,1 333,2,1 121,5,1
+"org.jabref.gui.contentselector.ManageContentSelectorAction",784,7,1 333,1,1 121,3,1
+"org.jabref.gui.copyfiles.CopyFilesAction",784,17,1 333,2,1 121,8,2
+"org.jabref.gui.copyfiles.CopyFilesDialogView",784,9,1 333,1,1 121,4,1
+"org.jabref.gui.copyfiles.CopyFilesDialogViewModel",0,3,9,1,1 122,2,1
+"org.jabref.gui.copyfiles.CopyFilesResultItemViewModel",0,3,6,5,1 124,1,1
+"org.jabref.gui.copyfiles.CopyFilesResultListDependency",0,1,7,3,1 123,1,1
+"org.jabref.gui.copyfiles.CopyFilesTask",784,10,1 333,1,1 121,8,1
+"org.jabref.gui.copyfiles.CopySingleFileAction",784,10,1 333,1,1 121,9,1
+"org.jabref.gui.customentrytypes.CustomEntryTypeDialogViewModel",784,16,1 333,1,1 121,7,1
+"org.jabref.gui.customentrytypes.CustomEntryTypeDialogViewModel.FieldType",0,1,6,3,1 125,1,1
+"org.jabref.gui.customentrytypes.CustomEntryTypeViewModel",0,2,30,2,1 122,2,1
+"org.jabref.gui.customentrytypes.CustomizeEntryAction",784,7,1 333,1,1 121,5,1
+"org.jabref.gui.customentrytypes.CustomizeEntryTypeDialogView",784,24,1 333,1,1 121,10,1
+"org.jabref.gui.customentrytypes.EntryTypeViewModel",0,3,29,3,1 123,3,1
+"org.jabref.gui.customentrytypes.FieldViewModel",0,3,12,3,1 124,2,1
+"org.jabref.gui.desktop.JabRefDesktop",784,25,1 333,22,1 121,12,14
+"org.jabref.gui.desktop.os.DefaultDesktop",0,1,1,1,1 122,1,1
+"org.jabref.gui.desktop.os.Linux",784,6,1 333,1,1 121,4,1
+"org.jabref.gui.desktop.os.OSX",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.desktop.os.Windows",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.dialogs.AutosaveUiManager",784,5,1 333,3,1 121,3,2
+"org.jabref.gui.dialogs.BackupUIManager",784,4,1 333,2,1 121,4,2
+"org.jabref.gui.documentviewer.DocumentPageViewModel",0,0,0,5,1 126,0,1
+"org.jabref.gui.documentviewer.DocumentViewModel",0,1,1,4,1 124,1,1
+"org.jabref.gui.documentviewer.DocumentViewerControl",784,5,1 333,2,1 121,2,1
+"org.jabref.gui.documentviewer.DocumentViewerControl.DocumentViewerPage",784,5,1 333,1,1 121,2,1
+"org.jabref.gui.documentviewer.DocumentViewerView",784,11,1 333,2,1 121,6,2
+"org.jabref.gui.documentviewer.DocumentViewerViewModel",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.documentviewer.PageDimension",2,2,2,4,1 124,1,1
+"org.jabref.gui.documentviewer.PageDimension.FixedHeightPageDimension",2,1,2,1,1 124,1,1
+"org.jabref.gui.documentviewer.PageDimension.FixedWidthPageDimension",2,1,2,1,1 124,1,1
+"org.jabref.gui.documentviewer.PdfDocumentPageViewModel",0,1,1,1,1 124,1,1
+"org.jabref.gui.documentviewer.PdfDocumentViewModel",0,3,3,2,1 123,1,1
+"org.jabref.gui.documentviewer.ShowDocumentViewerAction",784,6,1 333,1,1 121,4,1
+"org.jabref.gui.duplicationFinder.DuplicateResolverDialog",784,11,1 333,3,1 121,9,3
+"org.jabref.gui.duplicationFinder.DuplicateResolverDialog.DuplicateResolverResult",0,0,0,4,1 122,0,3
+"org.jabref.gui.duplicationFinder.DuplicateResolverDialog.DuplicateResolverType",0,0,0,4,1 122,0,3
+"org.jabref.gui.duplicationFinder.DuplicateSearch",784,24,1 333,1,1 121,9,1
+"org.jabref.gui.duplicationFinder.DuplicateSearch.DuplicateSearchResult",784,1,1 333,1,1 121,1,1
+"org.jabref.gui.edit.CopyDoiUrlAction",784,8,1 333,1,1 121,4,1
+"org.jabref.gui.edit.CopyMoreAction",784,18,1 333,3,1 121,10,3
+"org.jabref.gui.edit.EditAction",784,6,1 333,3,1 121,2,2
+"org.jabref.gui.edit.ManageKeywordsAction",784,7,1 333,1,1 121,5,1
+"org.jabref.gui.edit.ManageKeywordsDialog",784,10,1 333,1,1 121,6,1
+"org.jabref.gui.edit.ManageKeywordsDisplayType",0,0,0,2,1 122,0,1
+"org.jabref.gui.edit.ManageKeywordsViewModel",784,9,1 333,2,1 121,6,1
+"org.jabref.gui.edit.MassSetFieldsAction",784,6,1 333,1,1 121,4,1
+"org.jabref.gui.edit.MassSetFieldsDialog",784,12,1 333,1,1 121,8,1
+"org.jabref.gui.edit.OpenBrowserAction",784,2,1 333,1,1 121,2,1
+"org.jabref.gui.edit.ReplaceStringAction",784,6,1 333,1,1 121,3,1
+"org.jabref.gui.edit.ReplaceStringView",784,6,1 333,1,1 121,4,1
+"org.jabref.gui.edit.ReplaceStringViewModel",784,9,1 333,2,1 121,6,1
+"org.jabref.gui.entryeditor.DeprecatedFieldsTab",784,16,1 333,1,1 121,12,1
+"org.jabref.gui.entryeditor.EntryEditor",784,45,1 333,4,1 121,23,3
+"org.jabref.gui.entryeditor.EntryEditorPreferences",0,1,5,11,1 122,1,7
+"org.jabref.gui.entryeditor.EntryEditorTab",784,2,1 333,10,1 121,2,2
+"org.jabref.gui.entryeditor.FieldsEditorTab",784,17,1 333,6,1 121,12,1
+"org.jabref.gui.entryeditor.LatexCitationsTab",784,12,1 333,1,1 121,9,1
+"org.jabref.gui.entryeditor.LatexCitationsTabViewModel",784,17,1 333,1,1 121,11,1
+"org.jabref.gui.entryeditor.LatexCitationsTabViewModel.Status",0,0,0,2,1 122,0,1
+"org.jabref.gui.entryeditor.MathSciNetTab",784,5,1 333,1,1 121,5,1
+"org.jabref.gui.entryeditor.OpenEntryEditorAction",784,5,1 333,1,1 121,2,1
+"org.jabref.gui.entryeditor.OptionalFields2Tab",784,11,1 333,1,1 121,10,1
+"org.jabref.gui.entryeditor.OptionalFieldsTab",784,11,1 333,1,1 121,10,1
+"org.jabref.gui.entryeditor.OptionalFieldsTabBase",784,16,1 333,2,1 121,12,1
+"org.jabref.gui.entryeditor.OtherFieldsTab",784,18,1 333,1,1 121,12,1
+"org.jabref.gui.entryeditor.PreviewSwitchAction",784,7,1 333,1,1 121,3,1
+"org.jabref.gui.entryeditor.PreviewSwitchAction.Direction",0,0,0,2,1 122,0,2
+"org.jabref.gui.entryeditor.PreviewTab",784,12,1 333,1,1 121,9,1
+"org.jabref.gui.entryeditor.RelatedArticlesTab",784,17,1 333,1,1 121,12,1
+"org.jabref.gui.entryeditor.RequiredFieldsTab",784,18,1 333,1,1 121,12,1
+"org.jabref.gui.entryeditor.SourceTab",784,34,1 333,3,1 121,18,1
+"org.jabref.gui.entryeditor.SourceTab.EditAction",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.entryeditor.SourceTab.InputMethodRequestsObject",0,0,0,1,1 122,0,1
+"org.jabref.gui.entryeditor.UserDefinedFieldsTab",784,14,1 333,1,1 121,11,1
+"org.jabref.gui.entryeditor.fileannotationtab.FileAnnotationTab",784,6,1 333,1,1 121,6,1
+"org.jabref.gui.entryeditor.fileannotationtab.FileAnnotationTabView",784,7,1 333,1,1 121,6,1
+"org.jabref.gui.entryeditor.fileannotationtab.FileAnnotationTabViewModel",784,12,1 333,1,1 121,9,1
+"org.jabref.gui.entryeditor.fileannotationtab.FileAnnotationViewModel",0,5,11,3,1 123,3,1
+"org.jabref.gui.entryeditor.fileannotationtab.FulltextSearchResultsTab",784,21,1 333,1,1 121,13,1
+"org.jabref.gui.errorconsole.ErrorConsoleView",784,13,1 333,1,1 121,7,1
+"org.jabref.gui.errorconsole.ErrorConsoleViewModel",784,9,1 333,1,1 121,6,1
+"org.jabref.gui.errorconsole.LogEventViewModel",0,4,7,2,1 122,2,1
+"org.jabref.gui.exporter.CreateModifyExporterDialogView",784,7,1 333,1,1 121,6,1
+"org.jabref.gui.exporter.CreateModifyExporterDialogViewModel",784,13,1 333,1,1 121,9,1
+"org.jabref.gui.exporter.ExportCommand",784,25,1 333,1,1 121,12,1
+"org.jabref.gui.exporter.ExportToClipboardAction",784,20,1 333,3,1 121,11,3
+"org.jabref.gui.exporter.ExportToClipboardAction.ExportResult",0,1,1,1,1 122,1,1
+"org.jabref.gui.exporter.ExporterViewModel",784,3,1 333,4,1 121,2,2
+"org.jabref.gui.exporter.SaveAction",784,8,1 333,1,1 121,4,1
+"org.jabref.gui.exporter.SaveAction.SaveMethod",0,0,0,2,1 122,0,2
+"org.jabref.gui.exporter.SaveAllAction",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.exporter.SaveDatabaseAction",784,31,1 333,6,1 121,17,4
+"org.jabref.gui.exporter.SaveDatabaseAction.SaveDatabaseMode",0,0,0,3,1 122,0,2
+"org.jabref.gui.exporter.WriteMetadataToPdfAction",784,22,1 333,2,1 121,13,2
+"org.jabref.gui.exporter.WriteMetadataToPdfAction.OptionsDialog",784,3,1 333,1,1 121,3,1
+"org.jabref.gui.externalfiles.AutoLinkFilesAction",784,14,1 333,1,1 121,10,1
+"org.jabref.gui.externalfiles.AutoSetFileLinksUtil",784,18,1 333,4,1 121,11,3
+"org.jabref.gui.externalfiles.AutoSetFileLinksUtil.LinkFilesResult",784,1,1 333,2,1 121,1,1
+"org.jabref.gui.externalfiles.DateRange",0,1,6,4,1 125,1,1
+"org.jabref.gui.externalfiles.DownloadFullTextAction",784,14,1 333,1,1 121,10,1
+"org.jabref.gui.externalfiles.ExternalFileSorter",0,1,6,4,1 125,1,1
+"org.jabref.gui.externalfiles.ExternalFilesEntryLinker",784,10,1 333,4,1 121,6,4
+"org.jabref.gui.externalfiles.FileDownloadTask",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.externalfiles.FileExtensionViewModel",784,6,1 333,2,1 121,5,1
+"org.jabref.gui.externalfiles.FileFilterUtils",0,2,8,3,1 124,1,1
+"org.jabref.gui.externalfiles.FindUnlinkedFilesAction",784,5,1 333,1,1 121,3,1
+"org.jabref.gui.externalfiles.ImportFilesResultItemViewModel",0,3,6,3,1 122,1,1
+"org.jabref.gui.externalfiles.ImportHandler",784,26,1 333,4,1 121,19,4
+"org.jabref.gui.externalfiles.UnlinkedFilesCrawler",784,8,1 333,1,1 121,4,1
+"org.jabref.gui.externalfiles.UnlinkedFilesDialogView",784,23,1 333,2,1 121,9,1
+"org.jabref.gui.externalfiles.UnlinkedFilesDialogView.SearchContextAction",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.externalfiles.UnlinkedFilesDialogViewModel",784,21,1 333,1,1 121,9,1
+"org.jabref.gui.externalfiles.UnlinkedPDFFileFilter",784,3,1 333,1,1 121,3,1
+"org.jabref.gui.externalfiletype.CustomExternalFileType",784,6,1 333,4,1 121,2,1
+"org.jabref.gui.externalfiletype.CustomizeExternalFileTypesDialog",784,9,1 333,1,1 121,4,1
+"org.jabref.gui.externalfiletype.CustomizeExternalFileTypesViewModel",784,8,1 333,1,1 121,4,1
+"org.jabref.gui.externalfiletype.EditExternalFileTypeEntryDialog",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.externalfiletype.EditExternalFileTypeViewModel",784,2,1 333,1,1 121,2,1
+"org.jabref.gui.externalfiletype.EditExternalFileTypesAction",784,3,1 333,1,1 121,3,1
+"org.jabref.gui.externalfiletype.ExternalFileTypes",784,12,1 333,51,1 121,8,18
+"org.jabref.gui.externalfiletype.StandardExternalFileType",0,5,29,3,1 122,3,2
+"org.jabref.gui.externalfiletype.UnknownExternalFileType",0,4,24,5,1 122,2,4
+"org.jabref.gui.fieldeditors.AbstractEditorViewModel",784,11,1 333,21,1 121,8,1
+"org.jabref.gui.fieldeditors.CitationKeyEditor",784,14,1 333,1,1 121,9,1
+"org.jabref.gui.fieldeditors.CitationKeyEditorViewModel",784,8,1 333,1,1 121,8,1
+"org.jabref.gui.fieldeditors.DateEditor",784,8,1 333,1,1 121,6,1
+"org.jabref.gui.fieldeditors.DateEditorViewModel",784,6,1 333,1,1 121,6,1
+"org.jabref.gui.fieldeditors.EditorTextArea",784,6,1 333,5,1 121,3,1
+"org.jabref.gui.fieldeditors.EditorTextField",784,5,1 333,4,1 121,3,1
+"org.jabref.gui.fieldeditors.EditorTypeEditorViewModel",784,5,1 333,1,1 121,5,1
+"org.jabref.gui.fieldeditors.EditorValidator",784,3,1 333,7,1 121,3,1
+"org.jabref.gui.fieldeditors.FieldEditors",784,42,1 333,1,1 121,15,1
+"org.jabref.gui.fieldeditors.FieldNameLabel",0,6,18,1,1 122,3,1
+"org.jabref.gui.fieldeditors.GenderEditorViewModel",784,5,1 333,1,1 121,5,1
+"org.jabref.gui.fieldeditors.IdentifierEditor",784,16,1 333,1,1 121,10,1
+"org.jabref.gui.fieldeditors.IdentifierEditorViewModel",784,21,1 333,2,1 121,15,1
+"org.jabref.gui.fieldeditors.JournalEditor",784,13,1 333,1,1 121,8,1
+"org.jabref.gui.fieldeditors.JournalEditorViewModel",784,6,1 333,1,1 121,6,1
+"org.jabref.gui.fieldeditors.KeywordsEditor",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.fieldeditors.LinkedEntriesEditor",784,10,1 333,1,1 121,7,1
+"org.jabref.gui.fieldeditors.LinkedEntriesEditorViewModel",784,8,1 333,1,1 121,7,1
+"org.jabref.gui.fieldeditors.LinkedFileViewModel",784,45,1 333,9,1 121,22,5
+"org.jabref.gui.fieldeditors.LinkedFilesEditor",784,27,1 333,2,1 121,16,1
+"org.jabref.gui.fieldeditors.LinkedFilesEditor.ContextAction",784,9,1 333,1,1 121,5,1
+"org.jabref.gui.fieldeditors.LinkedFilesEditorViewModel",784,25,1 333,5,1 121,17,2
+"org.jabref.gui.fieldeditors.MapBasedEditorViewModel",784,4,1 333,6,1 121,4,1
+"org.jabref.gui.fieldeditors.MonthEditorViewModel",784,7,1 333,1,1 121,7,1
+"org.jabref.gui.fieldeditors.OptionEditor",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.fieldeditors.OptionEditorViewModel",784,4,1 333,3,1 121,4,1
+"org.jabref.gui.fieldeditors.OwnerEditor",784,11,1 333,1,1 121,7,1
+"org.jabref.gui.fieldeditors.OwnerEditorViewModel",784,6,1 333,1,1 121,6,1
+"org.jabref.gui.fieldeditors.PaginationEditorViewModel",784,5,1 333,1,1 121,5,1
+"org.jabref.gui.fieldeditors.PatentTypeEditorViewModel",784,5,1 333,1,1 121,5,1
+"org.jabref.gui.fieldeditors.PersonsEditor",784,15,1 333,1,1 121,8,1
+"org.jabref.gui.fieldeditors.PersonsEditorViewModel",784,9,1 333,1,1 121,5,1
+"org.jabref.gui.fieldeditors.SimpleEditor",784,15,1 333,2,1 121,7,1
+"org.jabref.gui.fieldeditors.SimpleEditorViewModel",784,6,1 333,1,1 121,4,1
+"org.jabref.gui.fieldeditors.TextInputControlBehavior",0,0,0,4,1 122,0,2
+"org.jabref.gui.fieldeditors.TypeEditorViewModel",784,5,1 333,1,1 121,5,1
+"org.jabref.gui.fieldeditors.URLUtil",784,1,1 333,3,1 121,1,2
+"org.jabref.gui.fieldeditors.UrlEditor",784,15,1 333,1,1 121,9,1
+"org.jabref.gui.fieldeditors.UrlEditorViewModel",784,9,1 333,1,1 121,8,1
+"org.jabref.gui.fieldeditors.YesNoEditorViewModel",784,4,1 333,1,1 121,4,1
+"org.jabref.gui.fieldeditors.contextmenu.DefaultMenu",784,4,1 333,4,1 121,4,2
+"org.jabref.gui.fieldeditors.contextmenu.EditorContextAction",784,6,1 333,4,1 121,4,2
+"org.jabref.gui.fieldeditors.contextmenu.EditorMenus",784,8,1 333,4,1 121,6,1
+"org.jabref.gui.fieldeditors.contextmenu.ProtectedTermsMenu",784,14,1 333,4,1 121,8,1
+"org.jabref.gui.fieldeditors.contextmenu.ProtectedTermsMenu.AddToProtectedTermsAction",784,3,1 333,1,1 121,3,1
+"org.jabref.gui.fieldeditors.contextmenu.ProtectedTermsMenu.FormatFieldAction",784,3,1 333,1,1 121,3,1
+"org.jabref.gui.fieldeditors.contextmenu.ProtectedTermsMenu.ProtectSelectionAction",784,2,1 333,1,1 121,2,1
+"org.jabref.gui.groups.GroupDescriptions",784,7,1 333,1,1 121,3,1
+"org.jabref.gui.groups.GroupDialogHeader",0,0,0,5,1 122,0,1
+"org.jabref.gui.groups.GroupDialogView",784,17,1 333,2,1 121,9,1
+"org.jabref.gui.groups.GroupDialogView.IkonliCell",784,1,1 333,1,1 121,1,1
+"org.jabref.gui.groups.GroupDialogViewModel",784,36,1 333,2,1 121,19,1
+"org.jabref.gui.groups.GroupModeViewModel",0,3,13,1,1 122,3,1
+"org.jabref.gui.groups.GroupNodeViewModel",784,25,1 333,5,1 121,12,1
+"org.jabref.gui.groups.GroupSidePane",784,16,1 333,1,1 121,8,1
+"org.jabref.gui.groups.GroupTreeNodeViewModel",784,14,1 333,5,1 121,5,2
+"org.jabref.gui.groups.GroupTreeView",784,18,1 333,1,1 121,7,1
+"org.jabref.gui.groups.GroupTreeView.DragExpansionHandler",784,1,1 333,1,1 121,1,1
+"org.jabref.gui.groups.GroupTreeViewModel",784,17,1 333,2,1 121,10,1
+"org.jabref.gui.groups.GroupViewMode",0,0,0,7,1 124,0,4
+"org.jabref.gui.groups.GroupsPreferences",0,1,1,4,1 122,1,3
+"org.jabref.gui.groups.MoveGroupChange",0,1,1 334,1,1,1,1
+"org.jabref.gui.groups.UndoableAddOrRemoveGroup",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.groups.UndoableChangeEntriesOfGroup",784,5,1 333,1,1 121,4,1
+"org.jabref.gui.groups.UndoableModifySubtree",784,4,1 333,1,1 121,4,1
+"org.jabref.gui.groups.UndoableMoveGroup",0,6,1 335,0,0,5,0
+"org.jabref.gui.help.AboutAction",784,3,1 333,1,1 121,3,1
+"org.jabref.gui.help.AboutDialogView",784,7,1 333,1,1 121,5,1
+"org.jabref.gui.help.AboutDialogViewModel",784,8,1 333,1,1 121,4,1
+"org.jabref.gui.help.ErrorConsoleAction",784,3,1 333,1,1 121,3,1
+"org.jabref.gui.help.HelpAction",784,3,1 333,17,1 121,3,17
+"org.jabref.gui.help.NewVersionDialog",784,7,1 333,1,1 121,6,1
+"org.jabref.gui.help.SearchForUpdateAction",784,6,1 333,1,1 121,6,1
+"org.jabref.gui.help.VersionWorker",784,6,1 333,2,1 121,5,2
+"org.jabref.gui.icon.IconTheme",1,2,3,77,1 143,1,38
+"org.jabref.gui.icon.IconTheme.JabRefIcons",0,3,5,73,1 141,1,38
+"org.jabref.gui.icon.InternalMaterialDesignIcon",1,3,3,2,1 143,2,1
+"org.jabref.gui.icon.JabRefIconView",0,2,6,1,1 122,1,1
+"org.jabref.gui.icon.JabRefIkonHandler",0,1,1,0,0,1,0
+"org.jabref.gui.icon.JabRefMaterialDesignIcon",0,0,0,3,1 144,0,1
+"org.jabref.gui.icon.JabrefIconProvider",0,1,1,1,1 122,1,1
+"org.jabref.gui.importer.GenerateEntryFromIdAction",784,18,1 333,1,1 121,12,1
+"org.jabref.gui.importer.GenerateEntryFromIdDialog",784,9,1 333,1,1 121,6,1
+"org.jabref.gui.importer.GrobidOptInDialogHelper",784,3,1 333,4,1 121,3,4
+"org.jabref.gui.importer.ImportAction",784,24,1 333,2,1 121,12,1
+"org.jabref.gui.importer.ImportCommand",784,15,1 333,1,1 121,7,1
+"org.jabref.gui.importer.ImportCustomEntryTypesDialog",784,7,1 333,1,1 121,7,1
+"org.jabref.gui.importer.ImportCustomEntryTypesDialogViewModel",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.importer.ImportEntriesDialog",784,24,1 333,4,1 121,12,4
+"org.jabref.gui.importer.ImportEntriesViewModel",784,27,1 333,1,1 121,14,1
+"org.jabref.gui.importer.ImporterViewModel",784,1,1 333,2,1 121,1,1
+"org.jabref.gui.importer.NewDatabaseAction",784,5,1 333,1,1 121,4,1
+"org.jabref.gui.importer.NewEntryAction",784,11,1 333,4,1 121,5,2
+"org.jabref.gui.importer.ParserResultWarningDialog",784,4,1 333,1,1 121,3,1
+"org.jabref.gui.importer.actions.CheckForNewEntryTypesAction",784,12,1 333,1,1 121,8,1
+"org.jabref.gui.importer.actions.MergeReviewIntoCommentAction",784,7,1 333,1,1 121,5,1
+"org.jabref.gui.importer.actions.MergeReviewIntoCommentConfirmationDialog",784,3,1 333,1,1 121,3,1
+"org.jabref.gui.importer.actions.OpenDatabaseAction",784,24,1 333,5,1 121,13,3
+"org.jabref.gui.importer.fetcher.LookupIdentifierAction",784,20,1 333,1,1 121,11,1
+"org.jabref.gui.importer.fetcher.WebSearchPane",784,19,1 333,1,1 121,11,1
+"org.jabref.gui.importer.fetcher.WebSearchPaneViewModel",784,14,1 333,2,1 121,8,1
+"org.jabref.gui.integrity.IntegrityCheckAction",784,16,1 333,1,1 121,10,1
+"org.jabref.gui.integrity.IntegrityCheckDialog",784,7,1 333,1,1 121,7,1
+"org.jabref.gui.integrity.IntegrityCheckDialogViewModel",784,2,1 333,1,1 121,2,1
+"org.jabref.gui.journals.AbbreviateAction",784,20,1 333,1,1 121,9,1
+"org.jabref.gui.journals.AbbreviationType",0,0,0,2,1 122,0,1
+"org.jabref.gui.journals.UndoableAbbreviator",784,7,1 333,1,1 121,6,1
+"org.jabref.gui.journals.UndoableUnabbreviator",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.keyboard.CodeAreaKeyBindings",0,4,22,1,1 122,3,1
+"org.jabref.gui.keyboard.KeyBinding",0,2,8,25,1 135,2,14
+"org.jabref.gui.keyboard.KeyBindingCategory",0,2,7,4,1 136,2,2
+"org.jabref.gui.keyboard.KeyBindingRepository",0,2,10,27,1 124,2,14
+"org.jabref.gui.keyboard.TextInputKeyBindings",784,5,1 333,1,1 121,4,1
+"org.jabref.gui.libraryproperties.LibraryPropertiesAction",784,6,1 333,1,1 121,3,1
+"org.jabref.gui.libraryproperties.LibraryPropertiesDialogView",784,10,1 333,1,1 121,7,1
+"org.jabref.gui.libraryproperties.LibraryPropertiesDialogViewModel",784,19,1 333,1,1 121,10,1
+"org.jabref.gui.linkedfile.AttachFileAction",784,18,1 333,1,1 121,12,1
+"org.jabref.gui.linkedfile.LinkedFileEditDialogView",784,8,1 333,2,1 121,6,2
+"org.jabref.gui.linkedfile.LinkedFilesEditDialogViewModel",784,12,1 333,1,1 121,8,1
+"org.jabref.gui.logging.ApplicationInsightsAppender",1,3,1 336,1,1,2,1
+"org.jabref.gui.logging.ApplicationInsightsAppender.Builder",1,1,1 336,1,1,1,1
+"org.jabref.gui.logging.ApplicationInsightsLogEvent",0,0,0,1,2,0,1
+"org.jabref.gui.logging.GuiAppender",1,3,1 335,1,1,3,1
+"org.jabref.gui.logging.GuiAppender.Builder",1,1,1 335,1,1,1,1
+"org.jabref.gui.maintable.BibEntryTableViewModel",784,15,1 333,14,1 121,9,4
+"org.jabref.gui.maintable.CellFactory",784,11,1 333,2,1 121,5,2
+"org.jabref.gui.maintable.ColumnPreferences",784,1,1 333,13,1 121,1,6
+"org.jabref.gui.maintable.MainTable",784,38,1 333,4,1 121,16,4
+"org.jabref.gui.maintable.MainTableColumnFactory",784,26,1 333,5,1 121,14,3
+"org.jabref.gui.maintable.MainTableColumnModel",784,5,1 333,16,1 121,3,6
+"org.jabref.gui.maintable.MainTableColumnModel.Type",784,2,1 333,5,1 121,2,3
+"org.jabref.gui.maintable.MainTableDataModel",784,15,1 333,3,1 121,11,3
+"org.jabref.gui.maintable.MainTableFieldValueFormatter",784,11,1 333,3,1 121,5,2
+"org.jabref.gui.maintable.MainTableNameFormatPreferences",0,2,2,4,1 122,1,3
+"org.jabref.gui.maintable.MainTableNameFormatPreferences.AbbreviationStyle",0,0,0,4,1 123,0,3
+"org.jabref.gui.maintable.MainTableNameFormatPreferences.DisplayStyle",0,0,0,4,1 123,0,3
+"org.jabref.gui.maintable.MainTablePreferences",784,1,1 333,5,1 121,1,4
+"org.jabref.gui.maintable.OpenExternalFileAction",784,12,1 333,2,1 121,8,2
+"org.jabref.gui.maintable.OpenFolderAction",784,11,1 333,2,1 121,7,2
+"org.jabref.gui.maintable.OpenUrlAction",784,12,1 333,2,1 121,9,2
+"org.jabref.gui.maintable.PersistenceVisualStateTable",784,6,1 333,1,1 121,3,1
+"org.jabref.gui.maintable.RightClickMenu",784,30,1 333,1,1 121,15,1
+"org.jabref.gui.maintable.SearchShortScienceAction",784,11,1 333,1,1 121,9,1
+"org.jabref.gui.maintable.SmartConstrainedResizePolicy",0,0,0,2,1 122,0,2
+"org.jabref.gui.maintable.columns.FieldColumn",784,9,1 333,1,1 121,5,1
+"org.jabref.gui.maintable.columns.FileColumn",784,18,1 333,1,1 121,11,1
+"org.jabref.gui.maintable.columns.LinkedIdentifierColumn",784,19,1 333,1,1 121,10,1
+"org.jabref.gui.maintable.columns.MainTableColumn",784,3,1 333,8,1 121,2,3
+"org.jabref.gui.maintable.columns.SpecialFieldColumn",784,18,1 333,2,1 121,9,2
+"org.jabref.gui.menus.ChangeEntryTypeMenu",784,16,1 333,2,1 121,8,2
+"org.jabref.gui.menus.FileHistoryMenu",784,5,1 333,3,1 121,5,3
+"org.jabref.gui.mergeentries.DiffHighlighting",0,0,0,3,1 124,0,1
+"org.jabref.gui.mergeentries.DiffHighlightingEllipsingTextFlow",0,2,8,2,1 122,1,1
+"org.jabref.gui.mergeentries.FetchAndMergeEntry",784,24,1 333,3,1 121,11,3
+"org.jabref.gui.mergeentries.MergeEntries",784,13,1 333,5,1 121,10,4
+"org.jabref.gui.mergeentries.MergeEntries.DefaultRadioButtonSelectionMode",0,0,0,2,1 122,0,2
+"org.jabref.gui.mergeentries.MergeEntries.DiffMode",0,1,6,4,1 123,1,2
+"org.jabref.gui.mergeentries.MergeEntriesAction",784,18,1 333,2,1 121,9,2
+"org.jabref.gui.mergeentries.MergeEntriesDialog",784,4,1 333,3,1 121,4,2
+"org.jabref.gui.mergeentries.MergeWithFetchedEntryAction",784,11,1 333,1,1 121,6,1
+"org.jabref.gui.mergeentries.MultiMergeEntriesView",784,16,1 333,3,1 121,7,2
+"org.jabref.gui.mergeentries.MultiMergeEntriesView.Cell",784,13,1 333,1,1 121,8,1
+"org.jabref.gui.mergeentries.MultiMergeEntriesView.FieldRow",784,6,1 333,2,1 121,4,1
+"org.jabref.gui.mergeentries.MultiMergeEntriesViewModel",784,4,1 333,3,1 121,4,1
+"org.jabref.gui.mergeentries.MultiMergeEntriesViewModel.EntrySource",784,3,1 333,2,1 121,2,1
+"org.jabref.gui.metadata.BibtexStringEditorAction",784,6,1 333,1,1 121,4,1
+"org.jabref.gui.metadata.BibtexStringEditorDialogView",784,10,1 333,1,1 121,6,1
+"org.jabref.gui.metadata.BibtexStringEditorDialogViewModel",784,7,1 333,1,1 121,7,1
+"org.jabref.gui.metadata.BibtexStringEditorItemModel",0,1,6,2,1 122,1,1
+"org.jabref.gui.metadata.PreambleEditor",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.openoffice.AdvancedCiteDialogView",784,3,1 333,1,1 121,3,1
+"org.jabref.gui.openoffice.AdvancedCiteDialogViewModel",0,0,0,2,1 122,0,1
+"org.jabref.gui.openoffice.BibEntryNotFoundException",0,0,0,2,1 122,0,1
+"org.jabref.gui.openoffice.Bootstrap",0,1,1,1,1 122,0,1
+"org.jabref.gui.openoffice.CitationEntryViewModel",0,1,1,2,1 122,1,1
+"org.jabref.gui.openoffice.ConnectionLostException",0,0,0,2,1 122,0,1
+"org.jabref.gui.openoffice.DetectOpenOfficeInstallation",784,11,1 333,1,1 121,10,1
+"org.jabref.gui.openoffice.ManageCitationsDialogView",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.openoffice.ManageCitationsDialogViewModel",784,5,1 333,1,1 121,4,1
+"org.jabref.gui.openoffice.OOBibBase",784,22,1 333,4,1 121,11,1
+"org.jabref.gui.openoffice.OOBibBase.ComparableMark",0,0,0,1,1 122,0,1
+"org.jabref.gui.openoffice.OOBibBase.DocumentTitleViewModel",784,1,1 333,1,1 121,1,1
+"org.jabref.gui.openoffice.OpenOfficePanel",784,42,1 333,1,1 121,18,1
+"org.jabref.gui.openoffice.OpenOfficeSidePanel",784,14,1 333,1,1 121,8,1
+"org.jabref.gui.openoffice.StyleSelectDialogView",784,18,1 333,1,1 121,12,1
+"org.jabref.gui.openoffice.StyleSelectDialogViewModel",784,14,1 333,1,1 121,11,1
+"org.jabref.gui.openoffice.StyleSelectItemViewModel",784,3,1 333,2,1 121,2,1
+"org.jabref.gui.openoffice.UndefinedCharacterFormatException",0,0,0,2,1 122,0,1
+"org.jabref.gui.preferences.AbstractPreferenceTabView",784,5,1 333,22,1 121,4,21
+"org.jabref.gui.preferences.PreferencesDialogView",784,15,1 333,1,1 121,6,1
+"org.jabref.gui.preferences.PreferencesDialogViewModel",784,46,1 333,1,1 121,33,1
+"org.jabref.gui.preferences.PreferencesFilterDialog",784,5,1 333,1,1 121,3,1
+"org.jabref.gui.preferences.PreferencesSearchHandler",0,1,1,1,1 122,1,1
+"org.jabref.gui.preferences.ShowPreferencesAction",784,5,1 333,1,1 121,4,1
+"org.jabref.gui.preferences.appearance.AppearanceTab",784,5,1 333,1,1 121,4,1
+"org.jabref.gui.preferences.appearance.AppearanceTabViewModel",784,11,1 333,1,1 121,7,1
+"org.jabref.gui.preferences.citationkeypattern.CitationKeyPatternTab",784,13,1 333,1,1 121,10,1
+"org.jabref.gui.preferences.citationkeypattern.CitationKeyPatternTabViewModel",784,10,1 333,1,1 121,6,1
+"org.jabref.gui.preferences.customexporter.CustomExporterTab",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.preferences.customexporter.CustomExporterTabViewModel",784,7,1 333,1,1 121,6,1
+"org.jabref.gui.preferences.customimporter.CustomImporterTab",784,7,1 333,1,1 121,6,1
+"org.jabref.gui.preferences.customimporter.CustomImporterTabViewModel",784,12,1 333,1,1 121,10,1
+"org.jabref.gui.preferences.entryeditor.EntryEditorTab",784,4,1 333,1,1 121,3,1
+"org.jabref.gui.preferences.entryeditor.EntryEditorTabViewModel",784,8,1 333,1,1 121,6,1
+"org.jabref.gui.preferences.entryeditortabs.CustomEditorFieldsTab",784,9,1 333,1,1 121,7,1
+"org.jabref.gui.preferences.entryeditortabs.CustomEditorFieldsTabViewModel",784,9,1 333,1,1 121,7,1
+"org.jabref.gui.preferences.external.ExternalTab",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.preferences.external.ExternalTabViewModel",784,14,1 333,1,1 121,8,1
+"org.jabref.gui.preferences.file.FileTab",784,9,1 333,1,1 121,7,1
+"org.jabref.gui.preferences.file.FileTabViewModel",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.preferences.general.GeneralTab",784,14,1 333,1,1 121,10,1
+"org.jabref.gui.preferences.general.GeneralTabViewModel",784,11,1 333,1,1 121,6,1
+"org.jabref.gui.preferences.groups.GroupsTab",784,4,1 333,1,1 121,3,1
+"org.jabref.gui.preferences.groups.GroupsTabViewModel",784,5,1 333,1,1 121,4,1
+"org.jabref.gui.preferences.importexport.ImportExportTab",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.preferences.importexport.ImportExportTabViewModel",784,9,1 333,1,1 121,7,1
+"org.jabref.gui.preferences.journals.AbbreviationViewModel",0,1,1,5,1 124,1,1
+"org.jabref.gui.preferences.journals.AbbreviationsFileViewModel",0,4,8,3,1 122,2,1
+"org.jabref.gui.preferences.journals.JournalAbbreviationsTab",784,12,1 333,1,1 121,6,1
+"org.jabref.gui.preferences.journals.JournalAbbreviationsTabViewModel",784,16,1 333,2,1 121,8,1
+"org.jabref.gui.preferences.keybindings.KeyBindingViewModel",0,6,17,4,1 122,2,2
+"org.jabref.gui.preferences.keybindings.KeyBindingsTab",784,10,1 333,1,1 121,7,1
+"org.jabref.gui.preferences.keybindings.KeyBindingsTabViewModel",784,12,1 333,3,1 121,8,2
+"org.jabref.gui.preferences.keybindings.presets.BashKeyBindingPreset",0,2,10,1,1 122,2,1
+"org.jabref.gui.preferences.keybindings.presets.NewEntryBindingPreset",0,3,10,1,1 122,3,1
+"org.jabref.gui.preferences.linkedfiles.LinkedFilesTab",784,10,1 333,1,1 121,8,1
+"org.jabref.gui.preferences.linkedfiles.LinkedFilesTabViewModel",784,9,1 333,1,1 121,6,1
+"org.jabref.gui.preferences.nameformatter.NameFormatterItemModel",0,1,14,2,1 122,1,1
+"org.jabref.gui.preferences.nameformatter.NameFormatterTab",784,13,1 333,1,1 121,9,1
+"org.jabref.gui.preferences.nameformatter.NameFormatterTabViewModel",784,6,1 333,1,1 121,6,1
+"org.jabref.gui.preferences.network.NetworkTab",784,14,1 333,1,1 121,10,1
+"org.jabref.gui.preferences.network.NetworkTabViewModel",784,13,1 333,1,1 121,9,1
+"org.jabref.gui.preferences.preview.PreviewTab",784,18,1 333,2,1 121,12,2
+"org.jabref.gui.preferences.preview.PreviewTab.EditAction",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.preferences.preview.PreviewTabViewModel",784,19,1 333,1,1 121,8,1
+"org.jabref.gui.preferences.protectedterms.NewProtectedTermsFileDialog",784,9,1 333,1,1 121,7,1
+"org.jabref.gui.preferences.protectedterms.ProtectedTermsListItemModel",0,1,2,4,1 122,1,1
+"org.jabref.gui.preferences.protectedterms.ProtectedTermsTab",784,16,1 333,1,1 121,8,1
+"org.jabref.gui.preferences.protectedterms.ProtectedTermsTab.ContextAction",784,7,1 333,1,1 121,5,1
+"org.jabref.gui.preferences.protectedterms.ProtectedTermsTabViewModel",784,17,1 333,2,1 121,12,1
+"org.jabref.gui.preferences.table.TableTab",784,15,1 333,1,1 121,10,1
+"org.jabref.gui.preferences.table.TableTabViewModel",784,19,1 333,1,1 121,9,1
+"org.jabref.gui.preferences.xmp.XmpPrivacyTab",784,12,1 333,1,1 121,6,1
+"org.jabref.gui.preferences.xmp.XmpPrivacyTabViewModel",784,7,1 333,1,1 121,6,1
+"org.jabref.gui.preview.CopyCitationAction",784,20,1 333,3,1 121,11,3
+"org.jabref.gui.preview.PreviewPanel",784,16,1 333,2,1 121,11,1
+"org.jabref.gui.preview.PreviewViewer",784,13,1 333,6,1 121,8,5
+"org.jabref.gui.push.AbstractPushToApplication",784,11,1 333,7,1 121,7,1
+"org.jabref.gui.push.PushToApplicationAction",784,15,1 333,2,1 121,10,2
+"org.jabref.gui.push.PushToApplicationSettings",784,10,1 333,9,1 121,6,2
+"org.jabref.gui.push.PushToApplicationsManager",784,14,1 333,4,1 121,4,3
+"org.jabref.gui.push.PushToEmacs",784,17,1 333,3,1 121,9,3
+"org.jabref.gui.push.PushToEmacsSettings",784,6,1 333,1,1 121,4,1
+"org.jabref.gui.push.PushToLyx",784,15,1 333,1,1 121,8,1
+"org.jabref.gui.push.PushToLyxSettings",784,6,1 333,1,1 121,4,1
+"org.jabref.gui.push.PushToTeXstudio",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.push.PushToTexmaker",784,7,1 333,1,1 121,4,1
+"org.jabref.gui.push.PushToVim",784,15,1 333,1,1 121,8,1
+"org.jabref.gui.push.PushToVimSettings",784,6,1 333,1,1 121,4,1
+"org.jabref.gui.push.PushToWinEdt",784,8,1 333,1,1 121,5,1
+"org.jabref.gui.remote.JabRefMessageHandler",784,7,1 333,2,1 121,5,2
+"org.jabref.gui.search.GlobalSearchBar",784,36,1 333,4,1 121,16,2
+"org.jabref.gui.search.GlobalSearchBar.SearchPopupSkin",0,0,0,1,1 122,0,1
+"org.jabref.gui.search.GlobalSearchResultDialog",784,17,1 333,1,1 121,11,1
+"org.jabref.gui.search.GlobalSearchResultDialogViewModel",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.search.RebuildFulltextSearchIndexAction",784,13,1 333,1,1 121,8,1
+"org.jabref.gui.search.SearchDisplayMode",0,1,6,2,1 123,1,1
+"org.jabref.gui.search.SearchResultsTable",784,15,1 333,1,1 121,7,1
+"org.jabref.gui.search.SearchResultsTableDataModel",784,8,1 333,2,1 121,6,1
+"org.jabref.gui.search.SearchTextField",0,3,12,2,1 122,2,2
+"org.jabref.gui.search.rules.describer.ContainsAndRegexBasedSearchRuleDescriber",784,8,1 333,3,1 121,4,2
+"org.jabref.gui.search.rules.describer.GrammarBasedSearchRuleDescriber",784,7,1 333,3,1 121,4,2
+"org.jabref.gui.search.rules.describer.GrammarBasedSearchRuleDescriber.DescriptionSearchBaseVisitor",784,11,1 333,1,1 121,5,1
+"org.jabref.gui.search.rules.describer.SearchDescribers",784,7,1 333,1,1 121,3,1
+"org.jabref.gui.shared.ConnectToSharedDatabaseCommand",784,4,1 333,1,1 121,3,1
+"org.jabref.gui.shared.PullChangesFromSharedAction",784,5,1 333,1,1 121,4,1
+"org.jabref.gui.shared.SharedDatabaseLoginDialogView",784,8,1 333,2,1 121,5,1
+"org.jabref.gui.shared.SharedDatabaseLoginDialogViewModel",784,24,1 333,1,1 121,13,1
+"org.jabref.gui.shared.SharedDatabaseUIManager",784,29,1 333,3,1 121,14,3
+"org.jabref.gui.sidepane.SidePane",784,11,1 333,6,1 121,7,5
+"org.jabref.gui.sidepane.SidePane.PreferredIndexSort",784,4,1 333,1,1 121,2,1
+"org.jabref.gui.sidepane.SidePaneComponent",784,8,1 333,7,1 121,4,5
+"org.jabref.gui.sidepane.SidePaneComponent.ToggleCommand",784,3,1 333,1,1 121,2,1
+"org.jabref.gui.sidepane.SidePaneType",0,0,0,9,1 123,0,6
+"org.jabref.gui.slr.ExistingStudySearchAction",784,20,1 333,2,1 121,14,2
+"org.jabref.gui.slr.ManageStudyDefinitionView",784,14,1 333,1,1 121,7,1
+"org.jabref.gui.slr.ManageStudyDefinitionViewModel",784,8,1 333,1,1 121,3,1
+"org.jabref.gui.slr.SlrStudyAndDirectory",0,1,3,3,1 122,1,1
+"org.jabref.gui.slr.StartNewStudyAction",784,11,1 333,1,1 121,7,1
+"org.jabref.gui.slr.StudyDatabaseItem",0,0,0,2,1 122,0,1
+"org.jabref.gui.specialfields.SpecialFieldAction",784,17,1 333,1,1 121,10,1
+"org.jabref.gui.specialfields.SpecialFieldDatabaseChangeListener",784,1,1 333,1,1 121,1,1
+"org.jabref.gui.specialfields.SpecialFieldMenuItemFactory",784,9,1 333,2,1 121,5,2
+"org.jabref.gui.specialfields.SpecialFieldValueViewModel",0,5,21,9,1 126,4,4
+"org.jabref.gui.specialfields.SpecialFieldViewModel",784,15,1 333,5,1 121,10,4
+"org.jabref.gui.specialfields.SpecialFieldsPreferences",0,0,0,6,1 122,0,5
+"org.jabref.gui.texparser.CitationsDisplay",0,5,17,2,1 122,4,2
+"org.jabref.gui.texparser.ParseLatexAction",784,6,1 333,1,1 121,4,1
+"org.jabref.gui.texparser.ParseLatexDialogView",784,13,1 333,1,1 121,7,1
+"org.jabref.gui.texparser.ParseLatexDialogViewModel",784,17,1 333,1,1 121,11,1
+"org.jabref.gui.texparser.ParseLatexResultView",784,9,1 333,1,1 121,5,1
+"org.jabref.gui.texparser.ParseLatexResultViewModel",784,11,1 333,1,1 121,9,1
+"org.jabref.gui.texparser.ReferenceViewModel",0,1,1,2,1 122,1,1
+"org.jabref.gui.undo.AbstractUndoableJabRefEdit",0,1,6,12,1 123,1,2
+"org.jabref.gui.undo.CountingUndoManager",0,3,9,21,1 122,2,15
+"org.jabref.gui.undo.NamedCompound",0,1,6,31,1 122,1,16
+"org.jabref.gui.undo.UndoRedoAction",784,9,1 333,1,1 121,4,1
+"org.jabref.gui.undo.UndoableChangeType",784,7,1 333,3,1 121,6,3
+"org.jabref.gui.undo.UndoableFieldChange",784,6,1 333,16,1 121,6,12
+"org.jabref.gui.undo.UndoableInsertEntries",784,5,1 333,6,1 121,5,5
+"org.jabref.gui.undo.UndoableInsertString",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.undo.UndoableKeyChange",784,5,1 333,3,1 121,5,2
+"org.jabref.gui.undo.UndoablePreambleChange",784,3,1 333,2,1 121,3,2
+"org.jabref.gui.undo.UndoableRemoveEntries",784,6,1 333,5,1 121,6,5
+"org.jabref.gui.undo.UndoableRemoveString",784,6,1 333,1,1 121,5,1
+"org.jabref.gui.undo.UndoableStringChange",0,4,12,2,1 122,4,1
+"org.jabref.gui.util.BackgroundTask",784,5,1 333,51,1 121,3,29
+"org.jabref.gui.util.BackgroundTask.BackgroundProgress",0,0,0,2,1 122,0,1
+"org.jabref.gui.util.BaseDialog",784,7,1 333,44,1 121,5,32
+"org.jabref.gui.util.BindingsHelper",0,4,4,25,1 126,1,18
+"org.jabref.gui.util.BindingsHelper.BidirectionalBinding",0,0,0,1,1 127,0,1
+"org.jabref.gui.util.BindingsHelper.BidirectionalListBinding",0,0,0,1,1 127,0,1
+"org.jabref.gui.util.BindingsHelper.BidirectionalMapBinding",0,0,0,1,1 127,0,1
+"org.jabref.gui.util.ColorUtil",0,0,0,3,1 145,0,3
+"org.jabref.gui.util.ControlHelper",0,2,2,15,1 122,1,13
+"org.jabref.gui.util.ControlHelper.EllipsisPosition",0,0,0,3,1 123,0,3
+"org.jabref.gui.util.CurrentThreadTaskExecutor",0,4,1 335,6,6,2,4
+"org.jabref.gui.util.CurrentThreadTaskExecutor.FailedFuture",0,0,0,1,7,0,1
+"org.jabref.gui.util.CustomLocalDragboard",784,3,1 333,9,1 121,3,5
+"org.jabref.gui.util.CustomTitledPaneSkin",1,2,2,1,1,1,1
+"org.jabref.gui.util.CustomTitledPaneSkin.ArrowSide",0,0,0,2,2,0,1
+"org.jabref.gui.util.CustomTitledPaneSkin.StyleableProperties",1,2,2,1,1,1,1
+"org.jabref.gui.util.DefaultFileUpdateMonitor",0,4,4,3,1 122,2,3
+"org.jabref.gui.util.DefaultTaskExecutor",784,6,1 333,23,1 121,3,17
+"org.jabref.gui.util.DialogWindowState",0,0,0,2,1 122,0,2
+"org.jabref.gui.util.DirectoryDialogConfiguration",0,0,0,14,1 123,0,10
+"org.jabref.gui.util.DirectoryDialogConfiguration.Builder",0,1,1,11,1 122,1,8
+"org.jabref.gui.util.DroppingMouseLocation",0,0,0,4,1 123,0,3
+"org.jabref.gui.util.FieldsUtil",784,9,1 333,4,1 121,4,3
+"org.jabref.gui.util.FileDialogConfiguration",0,0,0,27,1 122,0,20
+"org.jabref.gui.util.FileDialogConfiguration.Builder",784,3,1 333,23,1 121,2,19
+"org.jabref.gui.util.FileFilterConverter",784,6,1 333,5,1 121,6,5
+"org.jabref.gui.util.FileNodeViewModel",0,1,6,5,1 122,1,2
+"org.jabref.gui.util.IconValidationDecorator",0,2,6,17,1 122,1,16
+"org.jabref.gui.util.JabRefResourceLocator",0,1,6,0,0,1,0
+"org.jabref.gui.util.NoSelectionModel",0,0,0,4,1 122,0,4
+"org.jabref.gui.util.OnlyIntegerFormatter",0,1,1,1,1 122,1,1
+"org.jabref.gui.util.OnlyIntegerFormatter.IntegerFilter",0,0,0,1,1 123,0,1
+"org.jabref.gui.util.OpenHyperlinksInExternalBrowser",0,1,1 334,0,0,1,0
+"org.jabref.gui.util.OptionalObjectProperty",0,0,0,6,1 122,0,6
+"org.jabref.gui.util.OptionalValueTableCellFactory",0,1,4,1,1 122,1,1
+"org.jabref.gui.util.RadioButtonCell",0,0,0,1,1 122,0,1
+"org.jabref.gui.util.RecursiveTreeItem",0,0,0,5,1 123,0,5
+"org.jabref.gui.util.StreamGobbler",0,0,0,1,1 122,0,1
+"org.jabref.gui.util.TextFlowLimited",0,1,6,1,1 122,1,1
+"org.jabref.gui.util.Theme",784,10,1 333,10,1 121,5,6
+"org.jabref.gui.util.Theme.Type",0,0,0,3,1 122,0,2
+"org.jabref.gui.util.TooltipTextUtil",0,3,3,8,1 123,1,4
+"org.jabref.gui.util.TooltipTextUtil.TextReplacement",0,1,1,4,1 124,1,2
+"org.jabref.gui.util.TooltipTextUtil.TextType",0,0,0,8,1 125,0,3
+"org.jabref.gui.util.UiThreadList",0,0,0,1,1 127,0,1
+"org.jabref.gui.util.ValueTableCellFactory",0,1,3,23,1 123,1,18
+"org.jabref.gui.util.ViewModelListCellFactory",0,3,9,25,1 123,3,20
+"org.jabref.gui.util.ViewModelTableRowFactory",0,1,3,5,1 122,1,5
+"org.jabref.gui.util.ViewModelTextFieldTableCellVisualizationFactory",0,1,5,1,1 122,1,1
+"org.jabref.gui.util.ViewModelTreeCellFactory",0,1,1,2,1 122,1,2
+"org.jabref.gui.util.ViewModelTreeTableCellFactory",0,2,4,2,1 122,2,2
+"org.jabref.gui.util.ZipFileChooser",784,2,1 333,1,1 121,2,1
+"org.jabref.gui.util.comparator.NumericFieldComparator",0,1,3,2,1 123,1,2
+"org.jabref.gui.util.comparator.RankingFieldComparator",0,1,22,2,1 123,1,2
+"org.jabref.gui.util.comparator.SpecialFieldComparator",0,1,22,2,1 123,1,2
+"org.jabref.gui.util.component.DiffHighlightingTextPane",0,0,0,1,1 122,0,1
+"org.jabref.gui.util.component.Tag",0,0,0,1,1,0,1
+"org.jabref.gui.util.component.TagBar",0,3,5,0,0,3,0
+"org.jabref.gui.util.component.TemporalAccessorPicker",784,5,1 333,2,1 121,5,2
+"org.jabref.gui.util.component.TemporalAccessorPicker.InternalConverter",784,1,1 333,1,1 121,1,1
+"org.jabref.gui.util.uithreadaware.UiThreadBinding",0,2,3,1,1 122,1,1
+"org.jabref.gui.util.uithreadaware.UiThreadChangeListener",0,1,1,2,1 124,1,1
+"org.jabref.gui.util.uithreadaware.UiThreadHelper",0,0,0,3,1 128,0,1
+"org.jabref.gui.util.uithreadaware.UiThreadInvalidationListener",0,1,1,3,1 125,1,1
+"org.jabref.gui.util.uithreadaware.UiThreadListChangeListener",0,1,1,1,1 123,1,1
+"org.jabref.gui.util.uithreadaware.UiThreadObservableList",0,2,3,1,1 122,1,1
+"org.jabref.gui.util.uithreadaware.UiThreadStringProperty",0,2,3,1,1 122,1,1
+"org.jabref.logic.JabRefException",0,0,0,13,1 127,0,10
+"org.jabref.logic.TypedBibEntry",784,7,1 333,4,1 121,3,4
+"org.jabref.logic.WatchServiceUnavailableException",0,1,1,1,1 123,1,1
+"org.jabref.logic.autosaveandbackup.AutosaveManager",784,5,1 333,3,1 121,3,2
+"org.jabref.logic.autosaveandbackup.BackupManager",784,16,1 333,7,1 121,9,5
+"org.jabref.logic.auxparser.AuxParserResult",784,2,1 333,7,1 121,2,4
+"org.jabref.logic.auxparser.DefaultAuxParser",784,5,1 333,8,1 121,4,7
+"org.jabref.logic.bibtex.BibEntryWriter",784,13,1 333,6,1 121,8,4
+"org.jabref.logic.bibtex.FieldContentFormatter",0,5,8,3,1 125,4,2
+"org.jabref.logic.bibtex.FieldContentFormatterPreferences",0,1,5,28,1 128,1,11
+"org.jabref.logic.bibtex.FieldWriter",0,8,12,9,1 123,4,5
+"org.jabref.logic.bibtex.FieldWriterPreferences",0,2,6,15,1 125,2,7
+"org.jabref.logic.bibtex.FileFieldWriter",784,1,1 333,10,1 121,1,6
+"org.jabref.logic.bibtex.InvalidFieldValueException",0,0,0,6,1 124,0,4
+"org.jabref.logic.bibtex.comparator.BibDatabaseDiff",784,10,1 333,2,1 121,5,2
+"org.jabref.logic.bibtex.comparator.BibEntryDiff",784,1,1 333,3,1 121,1,2
+"org.jabref.logic.bibtex.comparator.BibStringDiff",784,2,1 333,3,1 121,2,2
+"org.jabref.logic.bibtex.comparator.BibtexStringComparator",0,1,3,3,1 123,1,3
+"org.jabref.logic.bibtex.comparator.CrossRefEntryComparator",784,2,1 333,2,1 121,2,2
+"org.jabref.logic.bibtex.comparator.EntryComparator",784,5,1 333,4,1 121,2,3
+"org.jabref.logic.bibtex.comparator.FieldComparator",784,12,1 333,6,1 121,6,4
+"org.jabref.logic.bibtex.comparator.FieldComparator.FieldType",0,0,0,1,1 122,0,1
+"org.jabref.logic.bibtex.comparator.FieldComparatorStack",0,0,0,5,1 122,0,3
+"org.jabref.logic.bibtex.comparator.GroupDiff",784,2,1 333,4,1 121,2,2
+"org.jabref.logic.bibtex.comparator.IdComparator",784,1,1 333,1,1 121,1,1
+"org.jabref.logic.bibtex.comparator.MetaDataDiff",784,4,1 333,4,1 121,4,2
+"org.jabref.logic.bibtex.comparator.PreambleDiff",784,2,1 333,4,1 121,1,2
+"org.jabref.logic.bst.BibtexCaseChanger",0,2,2,4,16,1,1
+"org.jabref.logic.bst.BibtexCaseChanger.FORMAT_MODE",0,0,0,3,17,0,1
+"org.jabref.logic.bst.BibtexNameFormatter",0,5,10,3,1 126,2,2
+"org.jabref.logic.bst.BibtexPurify",0,3,4,2,12,1,1
+"org.jabref.logic.bst.BibtexTextPrefix",0,2,2,2,12,1,1
+"org.jabref.logic.bst.BibtexWidth",0,2,3,2,12,1,1
+"org.jabref.logic.bst.BstPreviewLayout",0,10,1 350,1,1,8,1
+"org.jabref.logic.bst.ChangeCaseFunction",7,6,1 349,1,10,1,1
+"org.jabref.logic.bst.FormatNameFunction",7,7,1 349,1,10,2,1
+"org.jabref.logic.bst.PurifyFunction",7,5,1 349,1,10,1,1
+"org.jabref.logic.bst.TextPrefixFunction",7,5,1 349,1,10,1,1
+"org.jabref.logic.bst.VM",7,23,1 349,9,10,6,1
+"org.jabref.logic.bst.VM.BstEntry",0,1,1 334,10,12,1,1
+"org.jabref.logic.bst.VM.Identifier",0,0,0,2,11,0,1
+"org.jabref.logic.bst.VM.MacroFunction",7,3,1 349,1,10,1,1
+"org.jabref.logic.bst.VM.StackFunction",7,5,1 349,2,10,1,1
+"org.jabref.logic.bst.VM.Variable",0,0,0,0,0,0,0
+"org.jabref.logic.bst.VMException",0,0,0,9,1 127,0,1
+"org.jabref.logic.bst.WidthFunction",7,5,1 349,1,10,1,1
+"org.jabref.logic.citationkeypattern.AbstractCitationKeyPattern",0,1,1,16,1 126,1,10
+"org.jabref.logic.citationkeypattern.BracketedPattern",784,18,1 333,5,1 121,9,2
+"org.jabref.logic.citationkeypattern.BracketedPattern.Institution",0,1,6,1,1 122,1,1
+"org.jabref.logic.citationkeypattern.CitationKeyGenerator",784,12,1 333,20,1 121,7,12
+"org.jabref.logic.citationkeypattern.CitationKeyPatternPreferences",0,2,4,20,1 123,1,11
+"org.jabref.logic.citationkeypattern.CitationKeyPatternPreferences.KeySuffix",0,0,0,9,1 124,0,5
+"org.jabref.logic.citationkeypattern.DatabaseCitationKeyPattern",0,3,3,5,1 122,2,5
+"org.jabref.logic.citationkeypattern.GlobalCitationKeyPattern",0,2,2,23,1 125,2,11
+"org.jabref.logic.citationstyle.CSLAdapter",784,4,1 333,2,1 121,2,1
+"org.jabref.logic.citationstyle.CSLAdapter.JabRefItemDataProvider",784,8,1 333,1,1 121,6,1
+"org.jabref.logic.citationstyle.CitationStyle",0,1,5,6,1 122,1,3
+"org.jabref.logic.citationstyle.CitationStyleCache",784,5,1 333,3,1 121,4,2
+"org.jabref.logic.citationstyle.CitationStyleCache.BibDatabaseEntryListener",784,5,1 333,1,1 121,4,1
+"org.jabref.logic.citationstyle.CitationStyleGenerator",784,5,1 333,4,1 121,3,2
+"org.jabref.logic.citationstyle.CitationStyleOutputFormat",0,1,1,7,1 122,1,4
+"org.jabref.logic.citationstyle.CitationStylePreviewLayout",784,6,1 333,4,1 121,4,4
+"org.jabref.logic.citationstyle.JabRefLocaleProvider",0,0,0,1,1 122,0,1
+"org.jabref.logic.cleanup.CleanupPreferences",0,2,9,5,1 122,2,2
+"org.jabref.logic.cleanup.CleanupPreset",784,3,1 333,8,1 121,1,3
+"org.jabref.logic.cleanup.CleanupPreset.CleanupStep",0,0,0,6,1 122,0,3
+"org.jabref.logic.cleanup.CleanupWorker",784,22,1 333,3,1 121,6,2
+"org.jabref.logic.cleanup.Cleanups",784,18,1 333,5,1 121,6,5
+"org.jabref.logic.cleanup.ConvertToBiblatexCleanup",784,8,1 333,4,1 121,5,2
+"org.jabref.logic.cleanup.ConvertToBibtexCleanup",784,9,1 333,5,1 121,5,3
+"org.jabref.logic.cleanup.DoiCleanup",784,9,1 333,5,1 121,6,2
+"org.jabref.logic.cleanup.EprintCleanup",784,6,1 333,3,1 121,5,2
+"org.jabref.logic.cleanup.FieldFormatterCleanup",784,9,1 333,26,1 121,5,7
+"org.jabref.logic.cleanup.FieldFormatterCleanups",784,5,1 333,17,1 121,4,10
+"org.jabref.logic.cleanup.FileLinksCleanup",784,6,1 333,1,1 121,5,1
+"org.jabref.logic.cleanup.Formatter",0,0,0,52,1 208,0,12
+"org.jabref.logic.cleanup.ISSNCleanup",784,5,1 333,1,1 121,5,1
+"org.jabref.logic.cleanup.MoveFieldCleanup",784,5,1 333,3,1 121,5,1
+"org.jabref.logic.cleanup.MoveFilesCleanup",784,8,1 333,3,1 121,7,2
+"org.jabref.logic.cleanup.NormalizeNewlinesFormatter",0,3,8,2,1 122,3,2
+"org.jabref.logic.cleanup.RelativePathsCleanup",784,7,1 333,1,1 121,6,1
+"org.jabref.logic.cleanup.RenamePdfCleanup",784,8,1 333,3,1 121,7,2
+"org.jabref.logic.cleanup.TimeStampToCreationDate",784,9,1 333,2,1 121,6,1
+"org.jabref.logic.cleanup.TimeStampToModificationDate",784,9,1 333,2,1 121,6,1
+"org.jabref.logic.cleanup.UpgradePdfPsToFileCleanup",784,7,1 333,1,1 121,5,1
+"org.jabref.logic.crawler.Crawler",784,12,1 333,2,1 121,8,2
+"org.jabref.logic.crawler.StudyDatabaseToFetcherConverter",784,5,1 333,3,1 121,2,1
+"org.jabref.logic.crawler.StudyFetcher",784,9,1 333,1,1 121,5,1
+"org.jabref.logic.crawler.StudyRepository",784,30,1 333,3,1 121,13,1
+"org.jabref.logic.crawler.StudyYamlParser",0,1,3,3,1 122,1,2
+"org.jabref.logic.database.DatabaseMerger",784,14,1 333,5,1 121,5,3
+"org.jabref.logic.database.DuplicateCheck",784,18,1 333,7,1 121,7,5
+"org.jabref.logic.exporter.AtomicFileOutputStream",784,1,1 333,1,1 121,1,1
+"org.jabref.logic.exporter.AtomicFileWriter",784,1,1 333,5,1 121,1,4
+"org.jabref.logic.exporter.BibDatabaseWriter",784,31,1 333,9,1 121,12,7
+"org.jabref.logic.exporter.BibTeXMLExporter",784,10,1 333,2,1 121,6,1
+"org.jabref.logic.exporter.BibWriter",0,1,3,13,1 122,1,9
+"org.jabref.logic.exporter.BibtexDatabaseWriter",784,16,1 333,7,1 121,8,7
+"org.jabref.logic.exporter.BlankLineBehaviour",0,0,0,2,1 122,0,1
+"org.jabref.logic.exporter.EmbeddedBibFilePdfExporter",784,12,1 333,5,1 121,6,4
+"org.jabref.logic.exporter.Exporter",784,6,1 333,29,1 121,4,6
+"org.jabref.logic.exporter.ExporterFactory",784,18,1 333,18,1 121,7,7
+"org.jabref.logic.exporter.GroupSerializer",784,18,1 333,2,1 121,7,1
+"org.jabref.logic.exporter.MSBibExporter",784,7,1 333,3,1 121,5,1
+"org.jabref.logic.exporter.MetaDataSerializer",784,14,1 333,4,1 121,11,2
+"org.jabref.logic.exporter.ModsExporter",784,9,1 333,3,1 121,6,1
+"org.jabref.logic.exporter.OOCalcDatabase",784,13,1 333,1,1 121,6,1
+"org.jabref.logic.exporter.OpenDocumentRepresentation",784,12,1 333,1,1 121,6,1
+"org.jabref.logic.exporter.OpenDocumentSpreadsheetCreator",784,7,1 333,1,1 121,5,1
+"org.jabref.logic.exporter.OpenOfficeDocumentCreator",784,6,1 333,1,1 121,4,1
+"org.jabref.logic.exporter.SaveException",784,2,1 333,9,1 121,2,3
+"org.jabref.logic.exporter.SavePreferences",0,4,28,32,1 122,4,10
+"org.jabref.logic.exporter.SavePreferences.DatabaseSaveType",0,0,0,5,1 123,0,3
+"org.jabref.logic.exporter.TemplateExporter",784,15,1 333,17,1 121,6,6
+"org.jabref.logic.exporter.XmpExporter",784,7,1 333,2,1 121,6,1
+"org.jabref.logic.exporter.XmpPdfExporter",784,7,1 333,3,1 121,6,2
+"org.jabref.logic.externalfiles.ExternalFilesContentImporter",784,7,1 333,1,1 121,4,1
+"org.jabref.logic.externalfiles.LinkedFileHandler",784,6,1 333,3,1 121,5,2
+"org.jabref.logic.formatter.Formatters",784,27,1 333,4,1 121,5,4
+"org.jabref.logic.formatter.IdentityFormatter",0,2,7,4,1 123,2,3
+"org.jabref.logic.formatter.bibtexfields.AddBracesFormatter",0,2,7,1,1,2,1
+"org.jabref.logic.formatter.bibtexfields.CleanupUrlFormatter",0,2,7,4,1 123,2,4
+"org.jabref.logic.formatter.bibtexfields.ClearFormatter",0,2,7,10,1 123,2,4
+"org.jabref.logic.formatter.bibtexfields.EscapeAmpersandsFormatter",0,2,7,2,1 123,2,2
+"org.jabref.logic.formatter.bibtexfields.EscapeUnderscoresFormatter",0,2,7,2,1 123,2,2
+"org.jabref.logic.formatter.bibtexfields.HtmlToLatexFormatter",0,4,9,6,1 123,4,5
+"org.jabref.logic.formatter.bibtexfields.HtmlToUnicodeFormatter",0,3,8,5,1 123,3,4
+"org.jabref.logic.formatter.bibtexfields.LatexCleanupFormatter",0,2,7,3,1 123,2,3
+"org.jabref.logic.formatter.bibtexfields.NormalizeDateFormatter",0,3,11,5,1 123,3,4
+"org.jabref.logic.formatter.bibtexfields.NormalizeEnDashesFormatter",0,2,7,1,1,2,1
+"org.jabref.logic.formatter.bibtexfields.NormalizeMonthFormatter",0,3,10,6,1 123,3,4
+"org.jabref.logic.formatter.bibtexfields.NormalizeNamesFormatter",0,3,14,6,1 123,3,4
+"org.jabref.logic.formatter.bibtexfields.NormalizePagesFormatter",0,3,8,7,1 123,3,5
+"org.jabref.logic.formatter.bibtexfields.OrdinalsToSuperscriptFormatter",0,2,7,3,1 123,2,3
+"org.jabref.logic.formatter.bibtexfields.RegexFormatter",0,2,7,2,1 123,2,2
+"org.jabref.logic.formatter.bibtexfields.RemoveBracesFormatter",0,2,7,6,1 123,2,3
+"org.jabref.logic.formatter.bibtexfields.RemoveDigitsFormatter",0,2,7,2,1 123,2,2
+"org.jabref.logic.formatter.bibtexfields.RemoveHyphenatedNewlinesFormatter",0,2,7,2,1 125,2,2
+"org.jabref.logic.formatter.bibtexfields.RemoveNewlinesFormatter",0,2,7,6,1 125,2,5
+"org.jabref.logic.formatter.bibtexfields.RemoveRedundantSpacesFormatter",0,2,7,2,1 123,2,2
+"org.jabref.logic.formatter.bibtexfields.ReplaceTabsBySpaceFormater",0,2,7,2,1 123,2,2
+"org.jabref.logic.formatter.bibtexfields.ShortenDOIFormatter",784,5,1 333,2,1 121,4,2
+"org.jabref.logic.formatter.bibtexfields.TrimWhitespaceFormatter",0,2,7,3,1 123,2,3
+"org.jabref.logic.formatter.bibtexfields.UnicodeToLatexFormatter",0,4,9,6,1 124,4,4
+"org.jabref.logic.formatter.bibtexfields.UnitsToLatexFormatter",0,3,8,3,1 123,3,3
+"org.jabref.logic.formatter.casechanger.CapitalizeFormatter",0,4,10,3,1 126,3,3
+"org.jabref.logic.formatter.casechanger.LowerCaseFormatter",0,4,10,9,1 128,3,6
+"org.jabref.logic.formatter.casechanger.ProtectTermsFormatter",0,4,13,4,1 123,4,4
+"org.jabref.logic.formatter.casechanger.SentenceCaseFormatter",0,6,13,2,1 123,4,2
+"org.jabref.logic.formatter.casechanger.Title",0,2,3,5,1 135,1,1
+"org.jabref.logic.formatter.casechanger.TitleCaseFormatter",0,5,12,5,1 123,4,5
+"org.jabref.logic.formatter.casechanger.TitleParser",0,2,2,1,1 136,1,1
+"org.jabref.logic.formatter.casechanger.UnprotectTermsFormatter",0,2,7,3,1 125,2,3
+"org.jabref.logic.formatter.casechanger.UpperCaseFormatter",0,4,10,5,1 126,3,5
+"org.jabref.logic.formatter.casechanger.Word",0,1,1,8,1 137,0,2
+"org.jabref.logic.formatter.minifier.MinifyNameListFormatter",0,3,7,2,1 123,2,2
+"org.jabref.logic.formatter.minifier.TruncateFormatter",0,2,7,3,1 123,2,2
+"org.jabref.logic.git.GitHandler",784,1,1 333,4,1 121,1,2
+"org.jabref.logic.git.SlrGitHandler",784,1,1 333,7,1 121,1,3
+"org.jabref.logic.groups.DefaultGroupsFactory",784,3,1 333,5,1 121,2,4
+"org.jabref.logic.help.HelpFile",0,0,0,37,1 122,0,19
+"org.jabref.logic.importer.AuthorListParser",1,3,7,2,1 177,2,2
+"org.jabref.logic.importer.AuthorListParser.Token",0,0,0,1,1 178,0,1
+"org.jabref.logic.importer.CompositeIdFetcher",784,11,1 333,2,1 121,4,2
+"org.jabref.logic.importer.FetcherException",0,1,1,77,1 122,1,9
+"org.jabref.logic.importer.FetcherResult",0,1,1,1,1 122,1,1
+"org.jabref.logic.importer.FulltextFetchers",784,12,1 333,3,1 121,7,3
+"org.jabref.logic.importer.ImportCleanup",784,4,1 333,9,1 121,3,7
+"org.jabref.logic.importer.ImportException",0,1,1,5,1 122,1,4
+"org.jabref.logic.importer.ImportFormatPreferences",784,5,1 333,119,1 121,5,19
+"org.jabref.logic.importer.ImportFormatReader",784,39,1 333,10,1 121,9,5
+"org.jabref.logic.importer.ImportFormatReader.UnknownFormatImport",784,1,1 333,5,1 121,1,4
+"org.jabref.logic.importer.Importer",784,4,1 333,50,1 121,4,8
+"org.jabref.logic.importer.ImporterPreferences",0,0,0,22,1 122,0,11
+"org.jabref.logic.importer.OpenDatabase",784,9,1 333,9,1 121,5,8
+"org.jabref.logic.importer.ParseException",0,0,0,39,1 124,0,10
+"org.jabref.logic.importer.ParserResult",784,6,1 333,106,1 121,3,25
+"org.jabref.logic.importer.QueryParser",0,1,5,1,1,1,1
+"org.jabref.logic.importer.WebFetchers",784,45,1 333,13,1 121,7,10
+"org.jabref.logic.importer.fetcher.ACMPortalFetcher",784,7,1 333,2,1 121,4,2
+"org.jabref.logic.importer.fetcher.ACS",784,5,1 333,2,1 121,5,2
+"org.jabref.logic.importer.fetcher.AbstractIsbnFetcher",784,9,1 333,4,1 121,6,2
+"org.jabref.logic.importer.fetcher.ApsFetcher",784,6,1 333,2,1 121,5,2
+"org.jabref.logic.importer.fetcher.ArXiv",784,22,1 333,5,1 121,13,3
+"org.jabref.logic.importer.fetcher.ArXiv.ArXivEntry",784,6,1 333,1,1 121,5,1
+"org.jabref.logic.importer.fetcher.AstrophysicsDataSystem",784,27,1 333,3,1 121,13,2
+"org.jabref.logic.importer.fetcher.BibsonomyScraper",0,6,1 334,0,0,5,0
+"org.jabref.logic.importer.fetcher.CiteSeer",784,15,1 333,3,1 121,10,2
+"org.jabref.logic.importer.fetcher.CollectionOfComputerScienceBibliographiesFetcher",784,18,1 333,2,1 121,7,2
+"org.jabref.logic.importer.fetcher.CollectionOfComputerScienceBibliographiesParser",784,8,1 333,2,1 121,6,1
+"org.jabref.logic.importer.fetcher.ComplexSearchQuery",1,1,4,4,1 125,1,2
+"org.jabref.logic.importer.fetcher.ComplexSearchQuery.ComplexSearchQueryBuilder",1,3,4,2,1 125,2,2
+"org.jabref.logic.importer.fetcher.CompositeSearchBasedFetcher",784,5,1 333,2,1 121,3,2
+"org.jabref.logic.importer.fetcher.CrossRef",784,22,1 333,4,1 121,11,3
+"org.jabref.logic.importer.fetcher.DBLPFetcher",784,17,1 333,3,1 121,11,2
+"org.jabref.logic.importer.fetcher.DOAJFetcher",784,13,1 333,3,1 121,8,2
+"org.jabref.logic.importer.fetcher.DiVA",784,7,1 333,2,1 121,4,2
+"org.jabref.logic.importer.fetcher.DoiFetcher",784,22,1 333,9,1 121,14,6
+"org.jabref.logic.importer.fetcher.DoiResolution",784,7,1 333,2,1 121,7,2
+"org.jabref.logic.importer.fetcher.GoogleScholar",0,18,1 335,3,3,12,2
+"org.jabref.logic.importer.fetcher.GrobidCitationFetcher",784,7,1 333,3,1 121,3,3
+"org.jabref.logic.importer.fetcher.GvkFetcher",784,7,1 333,3,1 121,4,2
+"org.jabref.logic.importer.fetcher.IEEE",784,19,1 333,3,1 121,10,2
+"org.jabref.logic.importer.fetcher.INSPIREFetcher",784,18,1 333,3,1 121,12,2
+"org.jabref.logic.importer.fetcher.IacrEprintFetcher",784,11,1 333,3,1 121,8,2
+"org.jabref.logic.importer.fetcher.IsbnFetcher",784,12,1 333,4,1 121,7,3
+"org.jabref.logic.importer.fetcher.IsbnViaEbookDeFetcher",784,8,1 333,3,1 121,6,2
+"org.jabref.logic.importer.fetcher.IsbnViaOttoBibFetcher",784,10,1 333,3,1 121,7,2
+"org.jabref.logic.importer.fetcher.JstorFetcher",0,15,1 335,2,2,8,2
+"org.jabref.logic.importer.fetcher.LibraryOfCongress",784,5,1 333,2,1 121,2,2
+"org.jabref.logic.importer.fetcher.MathSciNet",784,18,1 333,3,1 121,9,2
+"org.jabref.logic.importer.fetcher.MedlineFetcher",784,18,1 333,2,1 121,10,2
+"org.jabref.logic.importer.fetcher.Medra",784,14,1 333,3,1 121,7,2
+"org.jabref.logic.importer.fetcher.MrDLibFetcher",784,12,1 333,3,1 121,9,3
+"org.jabref.logic.importer.fetcher.OpenAccessDoi",784,5,1 333,2,1 121,5,2
+"org.jabref.logic.importer.fetcher.RfcFetcher",784,7,1 333,2,1 121,4,2
+"org.jabref.logic.importer.fetcher.ScienceDirect",784,7,1 333,2,1 121,7,2
+"org.jabref.logic.importer.fetcher.SpringerFetcher",784,16,1 333,3,1 121,8,2
+"org.jabref.logic.importer.fetcher.SpringerLink",784,6,1 333,2,1 121,6,2
+"org.jabref.logic.importer.fetcher.TitleFetcher",784,11,1 333,2,1 121,7,2
+"org.jabref.logic.importer.fetcher.TrustLevel",0,0,0,19,1 123,0,2
+"org.jabref.logic.importer.fetcher.ZbMATH",784,18,1 333,3,1 121,8,2
+"org.jabref.logic.importer.fetcher.transformers.AbstractQueryTransformer",0,2,3,44,1 148,1,4
+"org.jabref.logic.importer.fetcher.transformers.ArXivQueryTransformer",0,2,5,2,1 123,1,2
+"org.jabref.logic.importer.fetcher.transformers.CollectionOfComputerScienceBibliographiesQueryTransformer",0,2,4,2,1 123,2,2
+"org.jabref.logic.importer.fetcher.transformers.DBLPQueryTransformer",0,2,6,2,1 123,2,2
+"org.jabref.logic.importer.fetcher.transformers.DefaultLuceneQueryTransformer",0,1,4,2,1 122,1,1
+"org.jabref.logic.importer.fetcher.transformers.DefaultQueryTransformer",0,2,6,7,1 123,2,2
+"org.jabref.logic.importer.fetcher.transformers.GVKQueryTransformer",0,2,5,2,1 123,1,2
+"org.jabref.logic.importer.fetcher.transformers.IEEEQueryTransformer",0,3,5,2,1 123,2,2
+"org.jabref.logic.importer.fetcher.transformers.JstorQueryTransformer",0,1,4,2,4,1,2
+"org.jabref.logic.importer.fetcher.transformers.ScholarQueryTransformer",0,2,6,2,5,1,2
+"org.jabref.logic.importer.fetcher.transformers.SpringerQueryTransformer",0,1,4,2,1 123,1,2
+"org.jabref.logic.importer.fetcher.transformers.YearAndYearRangeByFilteringQueryTransformer",0,2,5,4,1 129,1,1
+"org.jabref.logic.importer.fetcher.transformers.YearRangeByFilteringQueryTransformer",0,1,4,11,1 137,1,2
+"org.jabref.logic.importer.fetcher.transformers.ZbMathQueryTransformer",0,1,4,2,1 123,1,2
+"org.jabref.logic.importer.fileformat.ACMPortalParser",784,7,1 333,3,1 121,5,2
+"org.jabref.logic.importer.fileformat.BibTeXMLImporter",784,9,1 333,6,1 121,5,2
+"org.jabref.logic.importer.fileformat.BiblioscapeImporter",784,8,1 333,5,1 121,5,2
+"org.jabref.logic.importer.fileformat.BibtexImporter",784,7,1 333,9,1 121,5,3
+"org.jabref.logic.importer.fileformat.BibtexParser",784,23,1 333,34,1 121,12,14
+"org.jabref.logic.importer.fileformat.CffImporter",784,14,1 333,2,1 121,6,2
+"org.jabref.logic.importer.fileformat.CffImporter.CffAuthor",0,0,0,2,1 123,0,1
+"org.jabref.logic.importer.fileformat.CffImporter.CffFormat",0,2,2,1,1 122,1,1
+"org.jabref.logic.importer.fileformat.CffImporter.CffIdentifier",0,0,0,2,1 123,0,1
+"org.jabref.logic.importer.fileformat.CoinsParser",784,7,1 333,1,1 121,5,1
+"org.jabref.logic.importer.fileformat.CopacImporter",784,9,1 333,5,1 121,5,2
+"org.jabref.logic.importer.fileformat.CustomImporter",784,3,1 333,7,1 121,2,5
+"org.jabref.logic.importer.fileformat.EndnoteImporter",784,12,1 333,3,1 121,6,2
+"org.jabref.logic.importer.fileformat.EndnoteXmlImporter",784,15,1 333,2,1 121,8,2
+"org.jabref.logic.importer.fileformat.GvkParser",784,7,1 333,2,1 121,4,1
+"org.jabref.logic.importer.fileformat.InspecImporter",784,10,1 333,3,1 121,5,2
+"org.jabref.logic.importer.fileformat.IsiImporter",784,13,1 333,3,1 121,6,2
+"org.jabref.logic.importer.fileformat.MedlineImporter",784,14,1 333,5,1 121,7,3
+"org.jabref.logic.importer.fileformat.MedlinePlainImporter",784,12,1 333,3,1 121,5,2
+"org.jabref.logic.importer.fileformat.ModsImporter",784,13,1 333,5,1 121,6,4
+"org.jabref.logic.importer.fileformat.MrDLibImporter",784,7,1 333,2,1 121,6,2
+"org.jabref.logic.importer.fileformat.MrDLibImporter.RankedBibEntry",784,1,1 333,1,1 121,1,1
+"org.jabref.logic.importer.fileformat.MsBibImporter",784,4,1 333,4,1 121,3,2
+"org.jabref.logic.importer.fileformat.OvidImporter",784,13,1 333,4,1 121,5,2
+"org.jabref.logic.importer.fileformat.PdfContentImporter",784,15,1 333,6,1 121,8,3
+"org.jabref.logic.importer.fileformat.PdfEmbeddedBibFileImporter",784,12,1 333,5,1 121,8,4
+"org.jabref.logic.importer.fileformat.PdfGrobidImporter",784,9,1 333,5,1 121,5,4
+"org.jabref.logic.importer.fileformat.PdfMergeMetadataImporter",784,20,1 333,5,1 121,9,4
+"org.jabref.logic.importer.fileformat.PdfMergeMetadataImporter.EntryBasedFetcherWrapper",784,12,1 333,2,1 121,6,2
+"org.jabref.logic.importer.fileformat.PdfVerbatimBibTextImporter",784,12,1 333,4,1 121,7,3
+"org.jabref.logic.importer.fileformat.PdfXmpImporter",784,7,1 333,6,1 121,4,4
+"org.jabref.logic.importer.fileformat.RepecNepImporter",784,9,1 333,3,1 121,5,2
+"org.jabref.logic.importer.fileformat.RisImporter",784,15,1 333,4,1 121,6,2
+"org.jabref.logic.importer.fileformat.SilverPlatterImporter",784,10,1 333,3,1 121,5,2
+"org.jabref.logic.importer.util.FileFieldParser",784,1,1 333,9,1 121,1,8
+"org.jabref.logic.importer.util.GrobidService",784,9,1 333,4,1 121,5,3
+"org.jabref.logic.importer.util.GrobidService.ConsolidateCitations",0,0,0,3,1 122,0,2
+"org.jabref.logic.importer.util.GroupsParser",784,26,1 333,2,1 121,14,1
+"org.jabref.logic.importer.util.INSPIREBibtexFilterReader",0,0,0,0,0,0,0
+"org.jabref.logic.importer.util.IdentifierParser",0,8,11,2,1 122,3,2
+"org.jabref.logic.importer.util.JsonReader",0,1,1,4,1 123,1,2
+"org.jabref.logic.importer.util.MediaTypes",0,0,0,4,1 122,0,2
+"org.jabref.logic.importer.util.MetaDataParser",784,12,1 333,2,1 121,9,2
+"org.jabref.logic.importer.util.ShortDOIService",784,4,1 333,2,1 121,3,2
+"org.jabref.logic.importer.util.ShortDOIServiceException",0,1,1,3,1 122,1,2
+"org.jabref.logic.integrity.ASCIICharacterChecker",784,5,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.AbbreviationChecker",0,4,11,2,1 123,4,1
+"org.jabref.logic.integrity.BibStringChecker",784,6,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.BibTeXEntryTypeChecker",784,7,1 333,1,1 121,5,1
+"org.jabref.logic.integrity.BooktitleChecker",0,3,9,2,1 123,3,1
+"org.jabref.logic.integrity.BracesCorrector",0,0,0,1,1,0,1
+"org.jabref.logic.integrity.BracketChecker",0,3,9,2,1 123,3,1
+"org.jabref.logic.integrity.CitationKeyChecker",784,7,1 333,2,1 121,5,1
+"org.jabref.logic.integrity.CitationKeyDeviationChecker",784,8,1 333,2,1 121,6,1
+"org.jabref.logic.integrity.CitationKeyDuplicationChecker",784,6,1 333,2,1 121,5,1
+"org.jabref.logic.integrity.DateChecker",0,4,11,2,1 123,4,1
+"org.jabref.logic.integrity.DoiDuplicationChecker",784,7,1 333,2,1 121,6,1
+"org.jabref.logic.integrity.DoiValidityChecker",0,4,14,2,1 123,4,1
+"org.jabref.logic.integrity.EditionChecker",784,4,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.EntryLinkChecker",784,7,1 333,2,1 121,5,1
+"org.jabref.logic.integrity.FieldChecker",784,6,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.FieldCheckers",784,27,1 333,34,1 121,5,2
+"org.jabref.logic.integrity.FileChecker",784,7,1 333,1,1 121,7,1
+"org.jabref.logic.integrity.HTMLCharacterChecker",784,6,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.HowPublishedChecker",784,4,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.ISBNChecker",0,4,14,2,1 123,4,1
+"org.jabref.logic.integrity.ISSNChecker",0,4,10,2,1 123,4,1
+"org.jabref.logic.integrity.IntegrityCheck",784,24,1 333,2,1 121,7,2
+"org.jabref.logic.integrity.IntegrityMessage",784,2,1 333,33,1 121,2,2
+"org.jabref.logic.integrity.JournalInAbbreviationListChecker",784,6,1 333,2,1 121,5,1
+"org.jabref.logic.integrity.MonthChecker",784,4,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.NoBibtexFieldChecker",784,10,1 333,2,1 121,5,1
+"org.jabref.logic.integrity.NoteChecker",784,4,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.PagesChecker",784,4,1 333,3,1 121,4,1
+"org.jabref.logic.integrity.PersonNamesChecker",784,7,1 333,2,1 121,6,1
+"org.jabref.logic.integrity.TitleChecker",784,4,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.TypeChecker",784,6,1 333,2,1 121,5,1
+"org.jabref.logic.integrity.UTF8Checker",784,5,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.UrlChecker",0,3,9,2,1 123,3,1
+"org.jabref.logic.integrity.ValidCitationKeyChecker",784,4,1 333,2,1 121,4,1
+"org.jabref.logic.integrity.YearChecker",0,3,9,2,1 123,3,1
+"org.jabref.logic.journals.Abbreviation",0,0,0,15,1 137,0,4
+"org.jabref.logic.journals.AbbreviationFormat",0,0,0,2,1 129,0,1
+"org.jabref.logic.journals.AbbreviationParser",0,3,3,1,1 127,1,1
+"org.jabref.logic.journals.AbbreviationWriter",0,2,2,1,1 123,1,1
+"org.jabref.logic.journals.JournalAbbreviationLoader",0,4,5,9,1 126,1,4
+"org.jabref.logic.journals.JournalAbbreviationPreferences",0,0,0,6,1 130,0,4
+"org.jabref.logic.journals.JournalAbbreviationRepository",0,1,1,40,1 132,1,13
+"org.jabref.logic.l10n.Encodings",0,0,0,4,1 123,0,4
+"org.jabref.logic.l10n.Language",0,1,1,8,1 279,0,3
+"org.jabref.logic.l10n.Localization",0,4,5,392,1 277,1,103
+"org.jabref.logic.l10n.Localization.LocalizationBundle",0,0,0,1,1 278,0,1
+"org.jabref.logic.l10n.LocalizationKey",0,0,0,4,1 283,0,1
+"org.jabref.logic.l10n.LocalizationKeyParams",0,1,1,2,1 279,1,1
+"org.jabref.logic.l10n.LocalizationLocator",0,1,6,0,0,1,0
+"org.jabref.logic.layout.AbstractParamLayoutFormatter",0,1,2,5,1 130,1,1
+"org.jabref.logic.layout.Layout",784,8,1 333,13,1 121,3,7
+"org.jabref.logic.layout.LayoutEntry",784,86,1 333,2,1 121,9,1
+"org.jabref.logic.layout.LayoutFormatterBasedFormatter",0,2,2,1,1 122,2,1
+"org.jabref.logic.layout.LayoutFormatterPreferences",0,3,4,33,1 123,2,10
+"org.jabref.logic.layout.LayoutHelper",784,3,1 333,10,1 121,1,5
+"org.jabref.logic.layout.StringInt",0,0,0,4,1 124,0,2
+"org.jabref.logic.layout.TextBasedPreviewLayout",784,7,1 333,4,1 121,5,3
+"org.jabref.logic.layout.format.AuthorAbbreviator",0,2,9,3,1 125,2,2
+"org.jabref.logic.layout.format.AuthorAndToSemicolonReplacer",0,1,1,2,1 123,1,2
+"org.jabref.logic.layout.format.AuthorAndsCommaReplacer",0,2,2,2,1 123,1,2
+"org.jabref.logic.layout.format.AuthorAndsReplacer",0,2,2,2,1 123,1,2
+"org.jabref.logic.layout.format.AuthorFirstAbbrLastCommas",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorFirstAbbrLastOxfordCommas",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorFirstFirst",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorFirstFirstCommas",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorFirstLastCommas",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorFirstLastOxfordCommas",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorLF_FF",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorLF_FFAbbr",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorLastFirst",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorLastFirstAbbrCommas",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorLastFirstAbbrOxfordCommas",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorLastFirstAbbreviator",0,2,10,3,1 124,2,2
+"org.jabref.logic.layout.format.AuthorLastFirstCommas",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorLastFirstOxfordCommas",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorNatBib",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.AuthorOrgSci",0,3,9,3,1 124,2,2
+"org.jabref.logic.layout.format.Authors",0,3,11,2,1 123,2,2
+"org.jabref.logic.layout.format.CSLType",0,2,3,1,1 122,2,1
+"org.jabref.logic.layout.format.CompositeFormat",0,1,1,3,1 124,1,2
+"org.jabref.logic.layout.format.CreateBibORDFAuthors",0,2,2,1,1 122,1,1
+"org.jabref.logic.layout.format.CreateDocBook4Authors",0,5,23,1,1 122,4,1
+"org.jabref.logic.layout.format.CreateDocBook4Editors",0,5,23,1,1 122,4,1
+"org.jabref.logic.layout.format.CreateDocBook5Authors",0,5,23,1,1 122,4,1
+"org.jabref.logic.layout.format.CreateDocBook5Editors",0,5,23,1,1 122,4,1
+"org.jabref.logic.layout.format.CurrentDate",0,1,1,1,1 122,1,1
+"org.jabref.logic.layout.format.DOICheck",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.DOIStrip",0,2,9,2,1 123,2,2
+"org.jabref.logic.layout.format.DateFormatter",0,1,2,2,1 123,1,2
+"org.jabref.logic.layout.format.Default",0,1,2,2,1 123,1,2
+"org.jabref.logic.layout.format.DocBookAuthorFormatter",0,4,19,4,1 126,2,1
+"org.jabref.logic.layout.format.DocBookVersion",0,0,0,5,1 127,0,1
+"org.jabref.logic.layout.format.EntryTypeFormatter",0,3,31,2,1 123,2,2
+"org.jabref.logic.layout.format.FileLink",784,4,1 333,2,1 121,4,2
+"org.jabref.logic.layout.format.FileLinkPreferences",0,0,0,8,1 124,0,3
+"org.jabref.logic.layout.format.FirstPage",0,2,2,2,1 123,1,2
+"org.jabref.logic.layout.format.FormatPagesForHTML",0,1,1,1,1 122,1,1
+"org.jabref.logic.layout.format.FormatPagesForXML",0,1,1,1,1 122,1,1
+"org.jabref.logic.layout.format.GetOpenOfficeType",0,1,1,3,1 122,1,2
+"org.jabref.logic.layout.format.HTMLChars",0,3,5,3,1 123,3,3
+"org.jabref.logic.layout.format.HTMLParagraphs",0,1,1,2,1 123,1,2
+"org.jabref.logic.layout.format.IfPlural",0,1,3,2,1 123,1,2
+"org.jabref.logic.layout.format.Iso690FormatDate",0,3,4,1,1 122,2,1
+"org.jabref.logic.layout.format.Iso690NamesAuthors",0,3,4,1,1 122,2,1
+"org.jabref.logic.layout.format.JournalAbbreviator",0,2,3,1,1 122,2,1
+"org.jabref.logic.layout.format.LastPage",0,2,2,2,1 123,1,2
+"org.jabref.logic.layout.format.LatexToUnicodeFormatter",0,4,9,9,1 129,4,8
+"org.jabref.logic.layout.format.MarkdownFormatter",0,1,1,2,1 123,1,2
+"org.jabref.logic.layout.format.NameFormatter",0,5,13,3,1 124,4,3
+"org.jabref.logic.layout.format.NameFormatterPreferences",0,0,0,6,1 127,0,4
+"org.jabref.logic.layout.format.NoSpaceBetweenAbbreviations",0,1,1,4,1 125,1,2
+"org.jabref.logic.layout.format.NotFoundFormatter",0,2,7,1,1 122,2,1
+"org.jabref.logic.layout.format.Number",784,2,1 333,1,1 121,2,1
+"org.jabref.logic.layout.format.Ordinal",0,1,1,2,1 123,1,2
+"org.jabref.logic.layout.format.RTFChars",0,4,6,2,1 123,3,2
+"org.jabref.logic.layout.format.RemoveBrackets",0,1,1,5,1 123,1,4
+"org.jabref.logic.layout.format.RemoveBracketsAddComma",0,1,1,2,1 123,1,2
+"org.jabref.logic.layout.format.RemoveLatexCommandsFormatter",0,2,4,5,1 123,2,5
+"org.jabref.logic.layout.format.RemoveTilde",0,2,2,3,1 123,1,3
+"org.jabref.logic.layout.format.RemoveWhitespace",0,1,1,4,1 123,1,3
+"org.jabref.logic.layout.format.Replace",0,1,3,2,1 123,1,2
+"org.jabref.logic.layout.format.ReplaceUnicodeLigaturesFormatter",0,4,9,2,1 123,4,2
+"org.jabref.logic.layout.format.RisAuthors",0,4,11,1,1 122,3,1
+"org.jabref.logic.layout.format.RisKeywords",0,4,9,2,1 123,3,2
+"org.jabref.logic.layout.format.RisMonth",0,2,5,2,1 123,2,2
+"org.jabref.logic.layout.format.ShortMonthFormatter",0,2,5,2,1 123,2,2
+"org.jabref.logic.layout.format.ToLowerCase",0,1,1,2,1 123,1,2
+"org.jabref.logic.layout.format.ToUpperCase",0,1,1,2,1 123,1,2
+"org.jabref.logic.layout.format.WrapContent",0,1,3,2,1 123,1,2
+"org.jabref.logic.layout.format.WrapFileLinks",784,6,1 333,3,1 121,5,2
+"org.jabref.logic.layout.format.WrapFileLinks.FormatEntry",784,1,1 333,1,1 121,1,1
+"org.jabref.logic.layout.format.XMLChars",0,3,11,2,1 127,3,2
+"org.jabref.logic.logging.JabRefLogger",0,0,0,1,1 122,0,1
+"org.jabref.logic.logging.LogMessages",0,0,0,2,1 122,0,2
+"org.jabref.logic.msbib.BibTeXConverter",784,10,1 333,1,1 121,4,1
+"org.jabref.logic.msbib.MSBibConverter",784,14,1 333,1,1 121,4,1
+"org.jabref.logic.msbib.MSBibDatabase",784,5,1 333,3,1 121,3,3
+"org.jabref.logic.msbib.MSBibEntry",784,8,1 333,3,1 121,3,1
+"org.jabref.logic.msbib.MSBibEntryType",0,0,0,1,1 123,0,1
+"org.jabref.logic.msbib.MSBibMapping",0,8,12,2,1 122,3,1
+"org.jabref.logic.msbib.MsBibAuthor",0,2,5,4,1 123,1,1
+"org.jabref.logic.msbib.PageNumbers",0,0,0,3,1 122,0,1
+"org.jabref.logic.net.ProgressInputStream",0,0,0,2,1 122,0,2
+"org.jabref.logic.net.ProxyAuthenticator",0,0,0,1,3,0,1
+"org.jabref.logic.net.ProxyPreferences",0,0,0,5,1 123,0,4
+"org.jabref.logic.net.ProxyRegisterer",0,1,1,2,1 122,1,2
+"org.jabref.logic.net.URLDownload",784,3,1 333,30,1 121,3,11
+"org.jabref.logic.openoffice.OOUtil",784,7,1 333,1,1 121,5,1
+"org.jabref.logic.openoffice.OOUtil.Formatting",0,0,0,1,1 122,0,1
+"org.jabref.logic.openoffice.OpenOfficeFileSearch",784,3,1 333,1,1 121,3,1
+"org.jabref.logic.openoffice.OpenOfficePreferences",0,0,0,9,1 122,0,4
+"org.jabref.logic.openoffice.UndefinedBibtexEntry",784,3,1 333,1,1 121,3,1
+"org.jabref.logic.openoffice.UndefinedParagraphFormatException",0,0,0,3,1 122,0,2
+"org.jabref.logic.openoffice.action.EditInsert",0,16,1 393,0,0,9,0
+"org.jabref.logic.openoffice.action.EditMerge",0,15,1 395,0,0,8,0
+"org.jabref.logic.openoffice.action.EditMerge.JoinableGroupData",0,1,1 344,1,1,1,1
+"org.jabref.logic.openoffice.action.EditMerge.ScanState",0,1,1 344,1,1,1,1
+"org.jabref.logic.openoffice.action.EditSeparate",0,12,1 397,0,0,6,0
+"org.jabref.logic.openoffice.action.ExportCited",0,10,1 393,0,0,7,0
+"org.jabref.logic.openoffice.action.ExportCited.GenerateDatabaseResult",0,1,1 334,1,1,1,1
+"org.jabref.logic.openoffice.action.ManageCitations",0,3,1 392,0,0,3,0
+"org.jabref.logic.openoffice.action.Update",0,12,1 398,0,0,7,0
+"org.jabref.logic.openoffice.action.Update.SyncOptions",0,1,1 334,1,1,1,1
+"org.jabref.logic.openoffice.backend.Backend52",0,19,1 363,2,9,7,2
+"org.jabref.logic.openoffice.backend.Codec52",0,2,2,1,10,2,1
+"org.jabref.logic.openoffice.backend.Codec52.ParsedMarkName",0,1,1,2,11,1,1
+"org.jabref.logic.openoffice.backend.GetContext",0,0,0,1,10,0,1
+"org.jabref.logic.openoffice.backend.NamedRangeManagerReferenceMark",0,6,12,1,10,3,1
+"org.jabref.logic.openoffice.backend.NamedRangeReferenceMark",0,5,10,1,11,2,1
+"org.jabref.logic.openoffice.frontend.OOFrontend",1,28,1 391,8,8,10,2
+"org.jabref.logic.openoffice.frontend.RangeForOverlapCheck",0,1,1,1,9,1,1
+"org.jabref.logic.openoffice.frontend.UpdateBibliography",1,10,1 391,2,8,5,2
+"org.jabref.logic.openoffice.frontend.UpdateCitationMarkers",0,10,1 392,4,4,5,1
+"org.jabref.logic.openoffice.style.OOBibStyle",784,27,1 333,23,1 121,9,5
+"org.jabref.logic.openoffice.style.OOBibStyle.BibStyleMode",0,0,0,1,1 122,0,1
+"org.jabref.logic.openoffice.style.OOBibStyleGetCitationMarker",784,18,1 333,1,1 121,8,1
+"org.jabref.logic.openoffice.style.OOBibStyleGetCitationMarker.AuthorYearMarkerPurpose",0,0,0,1,1 122,0,1
+"org.jabref.logic.openoffice.style.OOBibStyleGetCitationMarker.CitationMarkerNormEntryWrap",784,4,1 333,1,1 121,2,1
+"org.jabref.logic.openoffice.style.OOBibStyleGetCitationMarker.FieldAndContent",0,1,5,1,1 122,1,1
+"org.jabref.logic.openoffice.style.OOBibStyleGetNumCitationMarker",784,6,1 333,1,1 121,4,1
+"org.jabref.logic.openoffice.style.OOFormatBibliography",0,17,1 348,1,9,8,1
+"org.jabref.logic.openoffice.style.OOPreFormatter",0,3,5,6,1 123,3,3
+"org.jabref.logic.openoffice.style.OOProcess",3,10,1 351,5,5,6,2
+"org.jabref.logic.openoffice.style.OOProcessAuthorYearMarkers",3,12,1 351,1,5,4,1
+"org.jabref.logic.openoffice.style.OOProcessCitationKeyMarkers",3,7,1 351,1,5,4,1
+"org.jabref.logic.openoffice.style.OOProcessNumericMarkers",3,8,1 351,1,5,4,1
+"org.jabref.logic.openoffice.style.StyleLoader",784,3,1 333,6,1 121,3,3
+"org.jabref.logic.pdf.EntryAnnotationImporter",784,7,1 333,2,1 121,5,1
+"org.jabref.logic.pdf.FileAnnotationCache",784,5,1 333,4,1 121,5,2
+"org.jabref.logic.pdf.PdfAnnotationImporter",0,4,4,2,1 123,2,1
+"org.jabref.logic.pdf.TextExtractor",0,0,0,1,1 124,0,1
+"org.jabref.logic.pdf.search.indexing.DocumentReader",784,7,1 333,2,1 121,6,1
+"org.jabref.logic.pdf.search.indexing.IndexingTaskManager",784,8,1 333,3,1 121,5,2
+"org.jabref.logic.pdf.search.indexing.PdfIndexer",784,10,1 333,5,1 121,7,4
+"org.jabref.logic.pdf.search.retrieval.PdfSearcher",784,7,1 333,4,1 121,4,2
+"org.jabref.logic.preferences.DOIPreferences",0,0,0,9,1 122,0,7
+"org.jabref.logic.preferences.OwnerPreferences",0,0,0,6,1 122,0,4
+"org.jabref.logic.preferences.TimestampPreferences",0,1,5,17,1 122,1,7
+"org.jabref.logic.protectedterms.ProtectedTermsList",0,1,1,11,1 129,1,3
+"org.jabref.logic.protectedterms.ProtectedTermsLoader",1,4,10,13,1 126,2,8
+"org.jabref.logic.protectedterms.ProtectedTermsParser",1,3,10,1,1 126,2,1
+"org.jabref.logic.protectedterms.ProtectedTermsPreferences",0,0,0,8,1 127,0,6
+"org.jabref.logic.remote.RemotePreferences",0,0,0,7,1 124,0,6
+"org.jabref.logic.remote.RemoteUtil",0,0,0,2,1 123,0,2
+"org.jabref.logic.remote.client.RemoteClient",0,4,9,3,5,3,2
+"org.jabref.logic.remote.server.RemoteListenerServer",784,5,1 333,1,1 121,4,1
+"org.jabref.logic.remote.server.RemoteListenerServerLifecycle",784,4,1 333,5,1 121,3,3
+"org.jabref.logic.remote.server.RemoteListenerServerThread",784,3,1 333,1,1 121,2,1
+"org.jabref.logic.remote.shared.Protocol",0,2,2,2,1 123,1,2
+"org.jabref.logic.remote.shared.RemoteMessage",0,0,0,3,1 124,0,3
+"org.jabref.logic.search.DatabaseSearcher",784,4,1 333,2,1 121,3,2
+"org.jabref.logic.search.SearchQuery",784,10,1 333,15,1 121,5,10
+"org.jabref.logic.search.SearchQuery.EscapeMode",0,0,0,1,1 122,0,1
+"org.jabref.logic.shared.DBMSConnection",0,5,13,7,1 125,3,2
+"org.jabref.logic.shared.DBMSConnectionProperties",0,4,4,7,1 128,3,2
+"org.jabref.logic.shared.DBMSConnectionPropertiesBuilder",0,2,5,4,1 125,1,2
+"org.jabref.logic.shared.DBMSProcessor",784,15,1 333,7,1 121,6,2
+"org.jabref.logic.shared.DBMSSynchronizer",784,29,1 333,8,1 121,15,3
+"org.jabref.logic.shared.DBMSType",0,0,0,16,1 133,0,3
+"org.jabref.logic.shared.DatabaseLocation",0,0,0,8,1 122,0,6
+"org.jabref.logic.shared.DatabaseNotSupportedException",0,0,0,4,1 122,0,2
+"org.jabref.logic.shared.MySQLProcessor",784,2,1 333,1,1 121,1,1
+"org.jabref.logic.shared.OracleProcessor",784,8,1 333,1,1 121,5,1
+"org.jabref.logic.shared.PostgreSQLProcessor",784,8,1 333,1,1 121,5,1
+"org.jabref.logic.shared.event.ConnectionLostEvent",784,1,1 333,2,1 121,1,2
+"org.jabref.logic.shared.event.SharedEntriesNotPresentEvent",784,1,1 333,4,1 121,1,2
+"org.jabref.logic.shared.event.UpdateRefusedEvent",784,2,1 333,3,1 121,2,2
+"org.jabref.logic.shared.exception.InvalidDBMSConnectionPropertiesException",0,0,0,3,1 126,0,2
+"org.jabref.logic.shared.exception.NotASharedDatabaseException",0,0,0,1,1 122,0,1
+"org.jabref.logic.shared.exception.OfflineLockException",784,1,1 333,3,1 121,1,1
+"org.jabref.logic.shared.exception.SharedEntryNotPresentException",0,1,1 334,0,0,1,0
+"org.jabref.logic.shared.listener.OracleNotificationListener",784,1,1 333,1,1 121,1,1
+"org.jabref.logic.shared.listener.PostgresSQLNotificationListener",784,2,1 333,1,1 121,1,1
+"org.jabref.logic.shared.prefs.SharedDatabasePreferences",0,3,3,6,1 129,2,5
+"org.jabref.logic.shared.security.Password",0,0,0,4,1 131,0,4
+"org.jabref.logic.texparser.DefaultLatexParser",784,2,1 333,5,1 121,2,3
+"org.jabref.logic.texparser.TexBibEntriesResolver",784,11,1 333,3,1 121,7,2
+"org.jabref.logic.undo.AddUndoableActionEvent",0,1,1,2,1 123,1,2
+"org.jabref.logic.undo.UndoChangeEvent",0,0,0,3,1 125,0,2
+"org.jabref.logic.undo.UndoRedoEvent",0,1,1,2,1 123,1,2
+"org.jabref.logic.util.BuildInfo",2,1,2,17,1 128,1,7
+"org.jabref.logic.util.CoarseChangeFilter",784,8,1 333,3,1 121,6,2
+"org.jabref.logic.util.DelayTaskThrottler",784,1,1 333,5,1 121,1,2
+"org.jabref.logic.util.ExternalLinkCreator",784,2,1 333,2,1 121,2,2
+"org.jabref.logic.util.MetadataSerializationConfiguration",0,0,0,2,1 122,0,2
+"org.jabref.logic.util.OS",0,0,0,57,1 143,0,32
+"org.jabref.logic.util.StandardFileType",0,3,4,79,1 123,2,19
+"org.jabref.logic.util.TestEntry",784,3,1 333,4,1 121,3,3
+"org.jabref.logic.util.UnknownFileType",0,2,2,1,1 124,1,1
+"org.jabref.logic.util.UpdateField",784,6,1 333,6,1 121,4,5
+"org.jabref.logic.util.Version",2,2,2,13,1 128,1,5
+"org.jabref.logic.util.Version.DevelopmentStage",2,1,2,2,1 128,1,1
+"org.jabref.logic.util.io.AutoLinkPreferences",0,1,1,7,1 122,1,5
+"org.jabref.logic.util.io.AutoLinkPreferences.CitationKeyDependency",0,0,0,5,1 123,0,4
+"org.jabref.logic.util.io.CitationKeyBasedFileFinder",784,6,1 333,2,1 121,5,1
+"org.jabref.logic.util.io.DatabaseFileLookup",784,5,1 333,1,1 121,3,1
+"org.jabref.logic.util.io.FileFinders",784,5,1 333,1,1 121,1,1
+"org.jabref.logic.util.io.FileHistory",0,0,0,4,1 123,0,3
+"org.jabref.logic.util.io.FileNameCleaner",0,0,0,3,1 123,0,1
+"org.jabref.logic.util.io.FileNameUniqueness",784,3,1 333,2,1 121,3,2
+"org.jabref.logic.util.io.FileUtil",784,8,1 333,38,1 121,6,24
+"org.jabref.logic.util.io.RegExpBasedFileFinder",784,6,1 333,2,1 121,4,1
+"org.jabref.logic.util.io.XMLUtil",0,1,1,2,1 122,1,1
+"org.jabref.logic.util.io.XMLUtil.NodeListWrapper",0,0,0,1,1 123,0,1
+"org.jabref.logic.util.strings.HTMLUnicodeConversionMaps",0,0,0,5,1 132,0,4
+"org.jabref.logic.util.strings.QuotedStringTokenizer",0,0,0,1,1 122,0,1
+"org.jabref.logic.util.strings.RtfCharMap",0,0,0,1,1 124,0,1
+"org.jabref.logic.util.strings.StringLengthComparator",0,0,0,3,1 127,0,3
+"org.jabref.logic.util.strings.StringManipulator",0,6,16,3,1 124,3,2
+"org.jabref.logic.util.strings.StringManipulator.Direction",0,0,0,2,1 125,0,1
+"org.jabref.logic.util.strings.StringManipulator.LetterCase",0,0,0,1,1 125,0,1
+"org.jabref.logic.util.strings.StringSimilarity",0,0,0,4,1 123,0,3
+"org.jabref.logic.util.strings.UnicodeLigaturesMap",0,0,0,1,1 124,0,1
+"org.jabref.logic.util.strings.XmlCharsMap",0,0,0,1,1 128,0,1
+"org.jabref.logic.xmp.DocumentInformationExtractor",784,6,1 333,1,1 121,3,1
+"org.jabref.logic.xmp.DublinCoreExtractor",784,13,1 333,3,1 121,7,1
+"org.jabref.logic.xmp.EncryptedPdfsNotSupportedException",0,0,0,5,1 122,0,2
+"org.jabref.logic.xmp.XmpPreferences",0,1,5,34,1 122,1,10
+"org.jabref.logic.xmp.XmpUtilReader",784,6,1 333,7,1 121,2,2
+"org.jabref.logic.xmp.XmpUtilShared",784,4,1 333,4,1 121,2,2
+"org.jabref.logic.xmp.XmpUtilWriter",784,9,1 333,5,1 121,5,4
+"org.jabref.migrations.ConvertLegacyExplicitGroups",784,9,1 333,2,1 121,7,2
+"org.jabref.migrations.ConvertMarkingToGroups",784,12,1 333,2,1 121,10,2
+"org.jabref.migrations.CustomEntryTypePreferenceMigration",0,8,1 334,1,5,6,1
+"org.jabref.migrations.MergeReviewIntoCommentMigration",784,5,1 333,2,1 121,5,2
+"org.jabref.migrations.PreferencesMigrations",0,13,1 335,2,4,7,2
+"org.jabref.migrations.SpecialFieldsToSeparateFields",784,8,1 333,2,1 121,5,2
+"org.jabref.model.ChainNode",0,0,0,3,1 165,0,2
+"org.jabref.model.FieldChange",784,2,1 333,51,1 121,2,21
+"org.jabref.model.TreeNode",0,0,0,25,1 128,0,12
+"org.jabref.model.database.BibDatabase",784,13,1 333,227,1 121,6,60
+"org.jabref.model.database.BibDatabaseContext",784,10,1 333,256,1 121,8,67
+"org.jabref.model.database.BibDatabaseMode",0,0,0,72,1 140,0,32
+"org.jabref.model.database.BibDatabaseModeDetection",784,5,1 333,5,1 121,3,5
+"org.jabref.model.database.BibDatabases",784,1,1 333,3,1 121,1,2
+"org.jabref.model.database.KeyChangeListener",784,9,1 333,1,1 121,5,1
+"org.jabref.model.database.KeyCollisionException",0,0,0,6,1 122,0,4
+"org.jabref.model.database.event.AutosaveEvent",0,0,0,3,1 123,0,3
+"org.jabref.model.database.event.BibDatabaseContextChangedEvent",0,0,0,8,1 122,0,7
+"org.jabref.model.database.event.ChangePropagation",0,0,0,2,1 122,0,2
+"org.jabref.model.database.event.EntriesAddedEvent",784,3,1 333,8,1 121,2,6
+"org.jabref.model.database.event.EntriesRemovedEvent",784,3,1 333,8,1 121,2,5
+"org.jabref.model.entry.Author",0,2,4,29,1 181,1,14
+"org.jabref.model.entry.AuthorList",1,2,7,56,1 177,2,17
+"org.jabref.model.entry.BibEntry",784,30,1 333,591,1 121,11,86
+"org.jabref.model.entry.BibEntryType",0,7,21,39,1 137,3,19
+"org.jabref.model.entry.BibEntryTypeBuilder",0,7,23,7,1 133,3,3
+"org.jabref.model.entry.BibEntryTypesManager",0,12,34,59,1 123,4,22
+"org.jabref.model.entry.BibEntryTypesManager.InternalEntryTypes",0,2,22,1,1 124,2,1
+"org.jabref.model.entry.BibtexString",0,2,2,25,1 126,1,11
+"org.jabref.model.entry.BibtexString.Type",0,0,0,3,1 127,0,2
+"org.jabref.model.entry.CanonicalBibEntry",784,5,1 333,2,1 121,3,1
+"org.jabref.model.entry.Date",0,1,4,13,1 127,1,8
+"org.jabref.model.entry.EntryConverter",0,2,6,4,1 138,1,2
+"org.jabref.model.entry.EntryLinkList",784,2,1 333,3,1 121,2,2
+"org.jabref.model.entry.IdGenerator",0,0,0,4,1 128,0,1
+"org.jabref.model.entry.Keyword",0,3,3,14,1 164,2,9
+"org.jabref.model.entry.KeywordList",0,2,6,13,1 156,2,8
+"org.jabref.model.entry.LinkedFile",784,3,1 333,74,1 121,3,30
+"org.jabref.model.entry.Month",0,1,3,32,1 135,1,14
+"org.jabref.model.entry.ParsedEntryLink",784,2,1 333,5,1 121,2,2
+"org.jabref.model.entry.SharedBibEntryData",0,0,0,9,1 122,0,3
+"org.jabref.model.entry.event.EntriesEvent",784,3,1 333,11,1 121,3,7
+"org.jabref.model.entry.event.EntriesEventSource",0,0,0,17,1 122,0,8
+"org.jabref.model.entry.event.EntryChangedEvent",784,3,1 333,8,1 121,2,6
+"org.jabref.model.entry.event.FieldAddedOrRemovedEvent",784,3,1 333,1,1 121,2,1
+"org.jabref.model.entry.event.FieldChangedEvent",784,5,1 333,7,1 121,4,6
+"org.jabref.model.entry.field.BibField",0,2,6,14,1 139,1,9
+"org.jabref.model.entry.field.FieldFactory",1,10,16,54,1 149,3,38
+"org.jabref.model.entry.field.FieldPriority",0,0,0,10,1 141,0,5
+"org.jabref.model.entry.field.FieldProperty",0,0,0,19,1 207,0,10
+"org.jabref.model.entry.field.IEEEField",0,2,5,3,1 150,1,3
+"org.jabref.model.entry.field.InternalField",0,2,5,51,1 154,1,26
+"org.jabref.model.entry.field.OrFields",1,2,16,23,1 149,1,13
+"org.jabref.model.entry.field.SpecialField",0,4,10,20,1 152,2,12
+"org.jabref.model.entry.field.SpecialFieldValue",0,1,4,8,1 158,1,5
+"org.jabref.model.entry.field.StandardField",0,2,5,322,1 184,1,60
+"org.jabref.model.entry.field.UnknownField",0,2,5,69,1 154,1,23
+"org.jabref.model.entry.identifier.ArXivIdentifier",0,4,7,9,1 124,3,7
+"org.jabref.model.entry.identifier.DOI",0,3,7,34,1 130,2,16
+"org.jabref.model.entry.identifier.ISBN",0,3,7,7,1 126,2,7
+"org.jabref.model.entry.identifier.ISSN",0,0,0,3,1 125,0,3
+"org.jabref.model.entry.identifier.IacrEprint",0,3,7,2,1 123,2,2
+"org.jabref.model.entry.identifier.MathSciNetId",0,4,7,3,1 124,3,3
+"org.jabref.model.entry.types.BiblatexEntryTypeDefinitions",0,6,25,5,1 128,3,4
+"org.jabref.model.entry.types.BiblatexSoftwareEntryTypeDefinitions",0,5,24,3,1 124,3,2
+"org.jabref.model.entry.types.BibtexEntryTypeDefinitions",0,5,24,6,1 128,3,5
+"org.jabref.model.entry.types.EntryTypeFactory",0,8,29,21,1 127,2,14
+"org.jabref.model.entry.types.IEEETranEntryType",0,1,1,13,1 131,1,7
+"org.jabref.model.entry.types.IEEETranEntryTypeDefinitions",0,6,25,4,1 124,3,3
+"org.jabref.model.entry.types.StandardEntryType",0,1,1,134,1 136,1,36
+"org.jabref.model.entry.types.SystematicLiteratureReviewStudyEntryType",0,1,1,2,1 129,1,1
+"org.jabref.model.entry.types.SystematicLiteratureReviewStudyEntryTypeDefinitions",0,5,25,0,0,3,0
+"org.jabref.model.entry.types.UnknownEntryType",0,2,4,10,1 128,2,10
+"org.jabref.model.groups.AbstractGroup",784,4,1 333,31,1 121,4,8
+"org.jabref.model.groups.AllEntriesGroup",784,3,1 333,13,1 121,2,8
+"org.jabref.model.groups.AutomaticGroup",784,5,1 333,7,1 121,3,4
+"org.jabref.model.groups.AutomaticKeywordGroup",784,11,1 333,7,1 121,5,4
+"org.jabref.model.groups.AutomaticPersonsGroup",784,7,1 333,6,1 121,3,4
+"org.jabref.model.groups.ExplicitGroup",784,4,1 333,21,1 121,2,8
+"org.jabref.model.groups.GroupHierarchyType",0,1,1,38,1 122,0,9
+"org.jabref.model.groups.GroupTreeNode",784,11,1 333,38,1 121,6,13
+"org.jabref.model.groups.KeywordGroup",784,3,1 333,13,1 121,2,5
+"org.jabref.model.groups.LastNameGroup",784,8,1 333,2,1 121,4,1
+"org.jabref.model.groups.RegexKeywordGroup",784,5,1 333,5,1 121,3,4
+"org.jabref.model.groups.SearchGroup",784,5,1 333,9,1 121,4,4
+"org.jabref.model.groups.TexGroup",784,9,1 333,8,1 121,5,5
+"org.jabref.model.groups.WordKeywordGroup",784,13,1 333,17,1 121,4,7
+"org.jabref.model.groups.WordKeywordGroup.KeywordListSearchStrategy",784,6,1 333,1,1 121,3,1
+"org.jabref.model.groups.WordKeywordGroup.StringSearchStrategy",784,5,1 333,1,1 121,3,1
+"org.jabref.model.groups.WordKeywordGroup.TypeSearchStrategy",784,8,1 333,1,1 121,3,1
+"org.jabref.model.groups.event.GroupUpdatedEvent",784,2,1 333,1,1 121,2,1
+"org.jabref.model.metadata.ContentSelector",0,1,5,8,1 123,1,5
+"org.jabref.model.metadata.ContentSelectors",0,2,6,4,1 122,2,4
+"org.jabref.model.metadata.MetaData",784,15,1 333,65,1 121,11,33
+"org.jabref.model.metadata.SaveOrderConfig",1,4,19,15,1 124,2,8
+"org.jabref.model.metadata.SaveOrderConfig.OrderType",1,1,19,6,1 124,1,6
+"org.jabref.model.metadata.SaveOrderConfig.SortCriterion",0,1,5,8,1 128,1,6
+"org.jabref.model.metadata.event.MetaDataChangedEvent",784,2,1 333,2,1 121,2,2
+"org.jabref.model.openoffice.CitationEntry",0,0,0,6,1 124,0,5
+"org.jabref.model.openoffice.ootext.OOFormat",0,2,4,2,1 122,2,1
+"org.jabref.model.openoffice.ootext.OOText",0,0,0,28,1 129,0,6
+"org.jabref.model.openoffice.ootext.OOTextIntoOO",1,8,9,3,10,4,2
+"org.jabref.model.openoffice.ootext.OOTextIntoOO.MyPropertyStack",1,3,9,1,10,3,1
+"org.jabref.model.openoffice.rangesort.FunctionalTextViewCursor",0,3,12,3,10,2,3
+"org.jabref.model.openoffice.rangesort.RangeOverlap",0,1,1,3,11,1,2
+"org.jabref.model.openoffice.rangesort.RangeOverlapBetween",0,6,6,1,9,3,1
+"org.jabref.model.openoffice.rangesort.RangeOverlapKind",0,0,0,4,12,0,2
+"org.jabref.model.openoffice.rangesort.RangeOverlapWithin",0,7,8,1,9,2,1
+"org.jabref.model.openoffice.rangesort.RangeSort",0,3,5,2,10,1,2
+"org.jabref.model.openoffice.rangesort.RangeSort.HolderComparatorWithinPartition",0,3,3,1,11,2,1
+"org.jabref.model.openoffice.rangesort.RangeSort.RangePartitions",0,1,1,3,11,1,2
+"org.jabref.model.openoffice.rangesort.RangeSortEntry",0,1,2,1,9,1,1
+"org.jabref.model.openoffice.rangesort.RangeSortVisual",0,4,17,1,9,2,1
+"org.jabref.model.openoffice.rangesort.RangeSortVisual.ComparableMark",0,0,0,1,10,0,1
+"org.jabref.model.openoffice.style.Citation",0,9,1 337,11,23,5,4
+"org.jabref.model.openoffice.style.CitationGroup",0,8,1 343,12,20,4,5
+"org.jabref.model.openoffice.style.CitationGroupId",0,0,0,7,22,0,4
+"org.jabref.model.openoffice.style.CitationGroups",2,10,1 347,13,17,4,5
+"org.jabref.model.openoffice.style.CitationLookupResult",784,2,1 333,8,1 121,2,3
+"org.jabref.model.openoffice.style.CitationPath",0,1,1,3,18,1,2
+"org.jabref.model.openoffice.style.CitationType",0,0,0,9,23,0,5
+"org.jabref.model.openoffice.style.CitedKey",2,10,1 347,5,17,4,3
+"org.jabref.model.openoffice.style.CitedKeys",2,5,1 347,5,17,3,4
+"org.jabref.model.openoffice.style.CompareCitation",0,4,1 337,1,21,2,1
+"org.jabref.model.openoffice.style.CompareCitedKey",0,2,1 335,2,22,2,1
+"org.jabref.model.openoffice.style.NonUniqueCitationMarker",0,0,0,6,1 122,0,2
+"org.jabref.model.openoffice.style.OODataModel",0,2,2,4,21,2,4
+"org.jabref.model.openoffice.style.PageInfo",0,1,1,8,1 124,1,3
+"org.jabref.model.openoffice.uno.CreationException",0,0,0,20,1 139,0,7
+"org.jabref.model.openoffice.uno.NoDocumentException",0,0,0,19,1 135,0,6
+"org.jabref.model.openoffice.uno.UnoBookmark",0,5,5,1,9,1,1
+"org.jabref.model.openoffice.uno.UnoCast",0,0,0,19,35,0,3
+"org.jabref.model.openoffice.uno.UnoCrossRef",0,2,2,1,11,1,1
+"org.jabref.model.openoffice.uno.UnoCursor",0,2,8,3,14,1,3
+"org.jabref.model.openoffice.uno.UnoNameAccess",0,1,1,3,21,1,1
+"org.jabref.model.openoffice.uno.UnoNamed",0,2,2,3,21,1,1
+"org.jabref.model.openoffice.uno.UnoProperties",0,1,1,2,18,1,1
+"org.jabref.model.openoffice.uno.UnoRedlines",0,1,1,0,0,1,0
+"org.jabref.model.openoffice.uno.UnoReferenceMark",0,5,5,3,18,1,2
+"org.jabref.model.openoffice.uno.UnoScreenRefresh",0,0,0,5,10,0,2
+"org.jabref.model.openoffice.uno.UnoSelection",0,2,8,1,11,1,1
+"org.jabref.model.openoffice.uno.UnoStyle",0,1,1,0,0,1,0
+"org.jabref.model.openoffice.uno.UnoTextDocument",0,4,7,3,17,1,1
+"org.jabref.model.openoffice.uno.UnoTextRange",0,1,1,5,13,1,3
+"org.jabref.model.openoffice.uno.UnoTextSection",0,5,5,1,9,1,1
+"org.jabref.model.openoffice.uno.UnoUndo",0,1,1,0,0,1,0
+"org.jabref.model.openoffice.uno.UnoUserDefinedProperty",0,2,8,1,10,1,1
+"org.jabref.model.openoffice.util.OOListUtil",0,0,0,10,1 122,0,5
+"org.jabref.model.openoffice.util.OOPair",0,0,0,4,26,0,2
+"org.jabref.model.openoffice.util.OOResult",0,1,1,1,11,1,1
+"org.jabref.model.openoffice.util.OOTuple3",0,0,0,1,10,0,1
+"org.jabref.model.openoffice.util.OOVoidResult",0,0,0,2,12,0,2
+"org.jabref.model.paging.Page",0,0,0,9,1 123,0,4
+"org.jabref.model.pdf.FileAnnotation",0,1,1,10,1 128,1,3
+"org.jabref.model.pdf.FileAnnotationType",0,0,0,6,1 129,0,3
+"org.jabref.model.pdf.search.EnglishStemAnalyzer",0,0,0,3,1 122,0,3
+"org.jabref.model.pdf.search.PdfSearchResults",784,1,1 333,7,1 121,1,3
+"org.jabref.model.pdf.search.SearchFieldConstants",0,0,0,5,1 122,0,4
+"org.jabref.model.pdf.search.SearchResult",784,4,1 333,6,1 121,2,4
+"org.jabref.model.push.PushToApplicationConstants",0,0,0,6,1 122,0,2
+"org.jabref.model.search.GroupSearchQuery",784,5,1 333,1,1 121,3,1
+"org.jabref.model.search.matchers.AndMatcher",784,3,1 333,2,1 121,3,2
+"org.jabref.model.search.matchers.MatcherSet",784,1,1 333,7,1 121,1,3
+"org.jabref.model.search.matchers.MatcherSets",784,4,1 333,3,1 121,1,3
+"org.jabref.model.search.matchers.MatcherSets.MatcherType",0,0,0,4,1 122,0,3
+"org.jabref.model.search.matchers.NotMatcher",0,2,1 334,1,1,2,1
+"org.jabref.model.search.matchers.OrMatcher",784,4,1 333,2,1 121,4,2
+"org.jabref.model.search.rules.ContainBasedSearchRule",784,13,1 333,4,1 121,7,3
+"org.jabref.model.search.rules.GrammarBasedSearchRule",784,12,1 333,7,1 121,6,4
+"org.jabref.model.search.rules.GrammarBasedSearchRule.BibtexSearchVisitor",784,6,1 333,1,1 121,2,1
+"org.jabref.model.search.rules.GrammarBasedSearchRule.Comparator",784,9,1 333,1,1 121,4,1
+"org.jabref.model.search.rules.GrammarBasedSearchRule.ComparisonOperator",0,0,0,3,1 122,0,2
+"org.jabref.model.search.rules.GrammarBasedSearchRule.ThrowingErrorListener",0,0,0,1,1 122,0,1
+"org.jabref.model.search.rules.RegexBasedSearchRule",784,12,1 333,3,1 121,7,2
+"org.jabref.model.search.rules.SearchRules",784,5,1 333,27,1 121,1,11
+"org.jabref.model.search.rules.SearchRules.SearchFlags",0,0,0,31,1 123,0,12
+"org.jabref.model.search.rules.SentenceAnalyzer",0,0,0,4,1 123,0,3
+"org.jabref.model.strings.LatexToUnicodeAdapter",0,0,0,7,1 186,0,6
+"org.jabref.model.strings.StringUtil",0,2,2,139,1 357,1,54
+"org.jabref.model.strings.UnicodeToReadableCharMap",0,0,0,1,1 358,0,1
+"org.jabref.model.study.FetchResult",784,1,1 333,4,1 121,1,2
+"org.jabref.model.study.QueryResult",784,1,1 333,4,1 121,1,1
+"org.jabref.model.study.Study",0,2,2,8,1 124,1,2
+"org.jabref.model.study.StudyDatabase",0,0,0,5,1 125,0,3
+"org.jabref.model.study.StudyQuery",0,0,0,4,1 125,0,3
+"org.jabref.model.texparser.Citation",0,0,0,8,1 125,0,4
+"org.jabref.model.texparser.LatexBibEntriesResolverResult",784,3,1 333,6,1 121,2,2
+"org.jabref.model.texparser.LatexParserResult",784,2,1 333,8,1 121,2,3
+"org.jabref.model.util.DummyFileUpdateMonitor",0,2,2,52,1 122,1,18
+"org.jabref.model.util.FileHelper",784,2,1 333,18,1 121,2,16
+"org.jabref.model.util.ListUtil",0,0,0,2,1 122,0,2
+"org.jabref.model.util.MultiKeyMap",0,0,0,1,1 122,0,1
+"org.jabref.model.util.OptionalUtil",0,0,0,20,1 167,0,13
+"org.jabref.model.util.ResultingStringState",0,0,0,4,1 125,0,2
+"org.jabref.model.util.TreeCollector",0,1,1,1,1 122,1,1
+"org.jabref.preferences.AppearancePreferences",784,1,1 333,6,1 121,1,4
+"org.jabref.preferences.ExportComparator",0,0,0,0,0,0,0
+"org.jabref.preferences.ExternalApplicationsPreferences",0,0,0,9,1 122,0,7
+"org.jabref.preferences.FilePreferences",0,1,3,51,1 123,1,23
+"org.jabref.preferences.GeneralPreferences",0,1,1,47,1 122,1,27
+"org.jabref.preferences.GuiPreferences",0,0,0,4,1 122,0,2
+"org.jabref.preferences.ImportExportPreferences",0,0,0,9,1 122,0,5
+"org.jabref.preferences.JabRefPreferences",784,101,1 333,25,1 121,46,17
+"org.jabref.preferences.MrDlibPreferences",0,0,0,5,1 122,0,3
+"org.jabref.preferences.PreferencesFilter",784,2,1 333,2,1 121,1,1
+"org.jabref.preferences.PreferencesFilter.PreferenceOption",0,1,1,2,1 122,1,2
+"org.jabref.preferences.PreferencesFilter.PreferenceType",0,0,0,2,1 123,0,2
+"org.jabref.preferences.PreviewPreferences",784,6,1 333,11,1 121,4,7
+"org.jabref.preferences.PreviewPreferences.Builder",784,2,1 333,3,1 121,2,3
+"org.jabref.preferences.PushToApplicationPreferences",0,0,0,12,1 122,0,3
+"org.jabref.preferences.SearchPreferences",0,2,8,6,1 122,2,4
+"org.jabref.preferences.SidePanePreferences",0,1,1,8,1 122,1,5
+"org.jabref.preferences.TelemetryPreferences",0,0,0,5,1 122,0,3
+"org.jabref.preferences.VersionPreferences",0,1,3,5,1 122,1,3
+"org.jabref.styletester.StyleTesterMain",0,6,1 335,0,0,5,0
+"org.jabref.styletester.StyleTesterView",0,0,0,1,1,0,1
+
+Interface,Cyclic,Dcy,Dcy*,Dpt,Dpt*,PDcy,PDpt
+"org.jabref.gui.Dialog",0,0,0,1,1 122,0,1
+"org.jabref.gui.DialogService",784,5,1 333,210,1 121,3,65
+"org.jabref.gui.actions.Action",0,2,10,12,1 128,2,8
+"org.jabref.gui.autocompleter.AutoCompletionStrategy",0,1,1,5,1 126,1,2
+"org.jabref.gui.collab.DatabaseChangeListener",784,1,1 333,1,1 121,1,1
+"org.jabref.gui.desktop.os.NativeDesktop",0,0,0,8,1 123,0,5
+"org.jabref.gui.externalfiletype.ExternalFileType",0,3,18,24,1 124,2,11
+"org.jabref.gui.fieldeditors.ContextMenuAddable",0,0,0,4,1 122,0,1
+"org.jabref.gui.fieldeditors.EditorTextArea.PasteActionHandler",0,0,0,2,1 122,0,1
+"org.jabref.gui.fieldeditors.FieldEditorFX",784,2,1 333,14,1 121,2,2
+"org.jabref.gui.icon.JabRefIcon",0,0,0,46,1 149,0,18
+"org.jabref.gui.importer.actions.GUIPostOpenAction",784,2,1 333,3,1 121,2,1
+"org.jabref.gui.preferences.PreferenceTabViewModel",0,0,0,21,1 122,0,21
+"org.jabref.gui.preferences.PreferencesTab",0,0,0,24,1 123,0,21
+"org.jabref.gui.preferences.keybindings.presets.KeyBindingPreset",0,1,9,4,1 124,1,2
+"org.jabref.gui.push.PushToApplication",784,5,1 333,15,1 121,5,2
+"org.jabref.gui.search.RebuildFulltextSearchIndexAction.GetCurrentLibraryTab",784,1,1 333,1,1 121,1,1
+"org.jabref.gui.search.rules.describer.SearchDescriber",0,0,0,4,1 122,0,2
+"org.jabref.gui.util.TaskExecutor",784,2,1 333,72,1 121,2,25
+"org.jabref.logic.auxparser.AuxParser",784,1,1 333,5,1 121,1,4
+"org.jabref.logic.bst.VM.BstFunction",0,1,1 335,8,11,1,1
+"org.jabref.logic.bst.Warn",0,0,0,6,1 131,0,1
+"org.jabref.logic.cleanup.CleanupJob",784,2,1 333,15,1 121,2,1
+"org.jabref.logic.importer.EntryBasedFetcher",784,3,1 333,9,1 121,2,5
+"org.jabref.logic.importer.EntryBasedParserFetcher",784,5,1 333,8,1 121,2,2
+"org.jabref.logic.importer.FulltextFetcher",784,3,1 333,15,1 121,3,2
+"org.jabref.logic.importer.IdBasedFetcher",784,3,1 333,12,1 121,2,4
+"org.jabref.logic.importer.IdBasedParserFetcher",784,8,1 333,27,1 121,4,2
+"org.jabref.logic.importer.IdFetcher",784,4,1 333,9,1 121,3,5
+"org.jabref.logic.importer.IdParserFetcher",784,6,1 333,4,1 121,3,3
+"org.jabref.logic.importer.ImportFormatReader.CheckedFunction",0,0,0,1,1 122,0,1
+"org.jabref.logic.importer.OutputPrinter",0,0,0,2,1 123,0,1
+"org.jabref.logic.importer.PagedSearchBasedFetcher",784,4,1 333,14,1 121,3,3
+"org.jabref.logic.importer.PagedSearchBasedParserFetcher",784,9,1 333,4,1 121,4,2
+"org.jabref.logic.importer.Parser",784,2,1 333,37,1 121,2,5
+"org.jabref.logic.importer.SearchBasedFetcher",784,4,1 333,34,1 121,3,6
+"org.jabref.logic.importer.SearchBasedParserFetcher",784,7,1 333,13,1 121,3,2
+"org.jabref.logic.importer.WebFetcher",784,2,1 333,24,1 121,2,8
+"org.jabref.logic.integrity.DatabaseChecker",784,2,1 333,1,1 121,2,1
+"org.jabref.logic.integrity.EntryChecker",784,2,1 333,14,1 121,2,1
+"org.jabref.logic.integrity.ValueChecker",0,0,0,21,1 140,0,2
+"org.jabref.logic.layout.LayoutFormatter",0,0,0,105,1 254,0,4
+"org.jabref.logic.layout.ParamLayoutFormatter",0,1,1,14,1 136,1,2
+"org.jabref.logic.pdf.AnnotationImporter",0,1,2,3,1 124,1,1
+"org.jabref.logic.preview.PreviewLayout",784,2,1 333,15,1 121,2,9
+"org.jabref.logic.remote.server.MessageHandler",784,1,1 333,6,1 121,1,3
+"org.jabref.logic.shared.DatabaseConnection",0,1,2,7,1 126,1,1
+"org.jabref.logic.shared.DatabaseConnectionProperties",0,1,1,6,1 131,1,2
+"org.jabref.logic.shared.DatabaseSynchronizer",784,4,1 333,9,1 121,2,5
+"org.jabref.logic.texparser.LatexParser",784,1,1 333,1,1 121,1,1
+"org.jabref.logic.util.FileType",0,0,0,14,1 126,0,8
+"org.jabref.logic.util.io.FileFinder",784,1,1 333,5,1 121,1,2
+"org.jabref.migrations.PostOpenMigration",784,1,1 333,5,1 121,1,2
+"org.jabref.model.entry.field.Field",0,2,4,219,1 205,2,54
+"org.jabref.model.entry.identifier.Identifier",0,1,5,11,1 141,1,5
+"org.jabref.model.entry.types.EntryType",0,0,0,86,1 150,0,35
+"org.jabref.model.groups.GroupEntryChanger",784,2,1 333,9,1 121,2,4
+"org.jabref.model.groups.WordKeywordGroup.SearchStrategy",784,1,1 333,4,1 121,1,1
+"org.jabref.model.openoffice.backend.NamedRange",0,2,2,4,13,1,2
+"org.jabref.model.openoffice.backend.NamedRangeManager",0,3,3,2,11,2,1
+"org.jabref.model.openoffice.rangesort.RangeHolder",0,0,0,7,18,0,2
+"org.jabref.model.openoffice.rangesort.RangeSortable",0,1,1,3,11,1,2
+"org.jabref.model.openoffice.style.CitationMarkerEntry",784,2,1 333,8,1 121,2,3
+"org.jabref.model.openoffice.style.CitationMarkerNormEntry",784,1,1 333,5,1 121,1,2
+"org.jabref.model.openoffice.style.CitationMarkerNumericBibEntry",0,0,0,6,1 123,0,2
+"org.jabref.model.openoffice.style.CitationMarkerNumericEntry",0,1,1,7,1 123,1,2
+"org.jabref.model.openoffice.style.ComparableCitation",0,2,1 335,2,25,2,1
+"org.jabref.model.openoffice.style.ComparableCitedKey",0,1,1 334,3,27,1,1
+"org.jabref.model.search.SearchMatcher",784,1,1 333,11,1 121,1,6
+"org.jabref.model.search.rules.SearchRule",784,2,1 333,8,1 121,2,4
+"org.jabref.model.util.FileUpdateListener",0,0,0,7,1 125,0,5
+"org.jabref.model.util.FileUpdateMonitor",0,1,1,43,1 124,1,22
+"org.jabref.preferences.PreferencesService",784,56,1 333,217,1 121,30,67
+
+Package,Cyclic,PDcy,PDpt,PDpt*
+"",0,0,0,1
+"META-INF.services",0,0,0,n/a
+"bst",0,0,0,n/a
+"csl-locales",0,0,0,n/a
+"csl-styles",0,0,0,n/a
+"icons",0,0,0,n/a
+"images",0,0,0,n/a
+"l10n",0,0,0,n/a
+"org.jabref.architecture",0,0,0,1
+"org.jabref.cli",153,30,2,162
+"org.jabref.gui",153,86,88,162
+"org.jabref.gui.actions",153,12,51,162
+"org.jabref.gui.autocompleter",153,7,6,162
+"org.jabref.gui.auximport",153,8,2,162
+"org.jabref.gui.bibtexextractor",153,15,1,162
+"org.jabref.gui.citationkeypattern",153,14,3,162
+"org.jabref.gui.cleanup",153,13,1,162
+"org.jabref.gui.collab",153,19,1,162
+"org.jabref.gui.commonfxcontrols",153,12,4,162
+"org.jabref.gui.contentselector",153,7,1,162
+"org.jabref.gui.copyfiles",153,11,2,162
+"org.jabref.gui.customentrytypes",153,10,1,162
+"org.jabref.gui.desktop",153,12,14,162
+"org.jabref.gui.desktop.os",153,3,4,162
+"org.jabref.gui.dialogs",153,6,3,162
+"org.jabref.gui.documentviewer",153,7,2,162
+"org.jabref.gui.duplicationFinder",153,11,2,162
+"org.jabref.gui.edit",153,17,3,162
+"org.jabref.gui.entryeditor",153,42,8,162
+"org.jabref.gui.entryeditor.fileannotationtab",153,19,1,162
+"org.jabref.gui.errorconsole",153,8,1,162
+"org.jabref.gui.exporter",153,25,5,162
+"org.jabref.gui.externalfiles",153,25,8,162
+"org.jabref.gui.externalfiletype",153,13,18,162
+"org.jabref.gui.fieldeditors",153,43,8,162
+"org.jabref.gui.fieldeditors.contextmenu",153,13,2,162
+"org.jabref.gui.groups",153,23,6,162
+"org.jabref.gui.help",153,9,17,162
+"org.jabref.gui.icon",153,1,38,162
+"org.jabref.gui.importer",153,20,8,162
+"org.jabref.gui.importer.actions",153,16,3,162
+"org.jabref.gui.importer.fetcher",153,18,2,162
+"org.jabref.gui.integrity",153,10,1,162
+"org.jabref.gui.journals",153,9,1,162
+"org.jabref.gui.keyboard",153,8,16,162
+"org.jabref.gui.libraryproperties",153,11,1,162
+"org.jabref.gui.linkedfile",153,13,2,162
+"org.jabref.gui.logging",0,3,0,1
+"org.jabref.gui.maintable",153,37,8,162
+"org.jabref.gui.maintable.columns",153,14,2,162
+"org.jabref.gui.menus",153,11,5,162
+"org.jabref.gui.mergeentries",153,16,8,162
+"org.jabref.gui.metadata",153,11,1,162
+"org.jabref.gui.openoffice",153,30,1,162
+"org.jabref.gui.preferences",153,34,21,162
+"org.jabref.gui.preferences.appearance",153,7,1,162
+"org.jabref.gui.preferences.citationkeypattern",153,11,1,162
+"org.jabref.gui.preferences.customexporter",153,7,1,162
+"org.jabref.gui.preferences.customimporter",153,10,1,162
+"org.jabref.gui.preferences.entryeditor",153,6,1,162
+"org.jabref.gui.preferences.entryeditortabs",153,10,1,162
+"org.jabref.gui.preferences.external",153,8,1,162
+"org.jabref.gui.preferences.file",153,7,1,162
+"org.jabref.gui.preferences.general",153,10,1,162
+"org.jabref.gui.preferences.groups",153,5,1,162
+"org.jabref.gui.preferences.importexport",153,8,1,162
+"org.jabref.gui.preferences.journals",153,8,1,162
+"org.jabref.gui.preferences.keybindings",153,8,2,162
+"org.jabref.gui.preferences.keybindings.presets",153,2,1,162
+"org.jabref.gui.preferences.linkedfiles",153,9,1,162
+"org.jabref.gui.preferences.nameformatter",153,11,1,162
+"org.jabref.gui.preferences.network",153,14,1,162
+"org.jabref.gui.preferences.preview",153,13,1,162
+"org.jabref.gui.preferences.protectedterms",153,13,1,162
+"org.jabref.gui.preferences.table",153,13,1,162
+"org.jabref.gui.preferences.xmp",153,8,1,162
+"org.jabref.gui.preview",153,17,7,162
+"org.jabref.gui.push",153,12,3,162
+"org.jabref.gui.remote",153,5,2,162
+"org.jabref.gui.search",153,20,5,162
+"org.jabref.gui.search.rules.describer",153,5,1,162
+"org.jabref.gui.shared",153,20,2,162
+"org.jabref.gui.sidepane",153,9,5,162
+"org.jabref.gui.slr",153,16,1,162
+"org.jabref.gui.specialfields",153,11,7,162
+"org.jabref.gui.texparser",153,16,2,162
+"org.jabref.gui.undo",153,11,22,162
+"org.jabref.gui.util",153,19,67,162
+"org.jabref.gui.util.comparator",153,3,1,162
+"org.jabref.gui.util.component",153,6,2,162
+"org.jabref.gui.util.uithreadaware",0,0,2,163
+"org.jabref.logic",153,4,12,162
+"org.jabref.logic.autosaveandbackup",153,9,4,162
+"org.jabref.logic.auxparser",153,6,6,162
+"org.jabref.logic.bibtex",153,11,18,162
+"org.jabref.logic.bibtex.comparator",153,10,7,162
+"org.jabref.logic.bst",153,13,1,162
+"org.jabref.logic.citationkeypattern",153,14,19,162
+"org.jabref.logic.citationstyle",153,11,5,162
+"org.jabref.logic.cleanup",153,24,21,162
+"org.jabref.logic.crawler",153,19,1,162
+"org.jabref.logic.database",153,12,5,162
+"org.jabref.logic.exporter",153,28,18,162
+"org.jabref.logic.externalfiles",153,7,3,162
+"org.jabref.logic.formatter",153,7,4,162
+"org.jabref.logic.formatter.bibtexfields",153,8,11,162
+"org.jabref.logic.formatter.casechanger",153,5,10,162
+"org.jabref.logic.formatter.minifier",153,2,1,162
+"org.jabref.logic.git",153,1,2,162
+"org.jabref.logic.groups",153,2,4,162
+"org.jabref.logic.help",153,1,18,162
+"org.jabref.logic.importer",153,24,38,162
+"org.jabref.logic.importer.fetcher",153,26,8,162
+"org.jabref.logic.importer.fetcher.transformers",0,1,3,163
+"org.jabref.logic.importer.fileformat",153,26,18,162
+"org.jabref.logic.importer.fileformat.mods",0,0,0,1
+"org.jabref.logic.importer.util",153,21,11,162
+"org.jabref.logic.integrity",153,14,2,162
+"org.jabref.logic.journals",0,0,12,163
+"org.jabref.logic.l10n",0,0,102,163
+"org.jabref.logic.layout",153,12,16,162
+"org.jabref.logic.layout.format",153,15,12,162
+"org.jabref.logic.logging",0,0,3,163
+"org.jabref.logic.msbib",153,5,2,162
+"org.jabref.logic.net",153,3,11,162
+"org.jabref.logic.openoffice",153,7,3,162
+"org.jabref.logic.openoffice.action",0,13,0,1
+"org.jabref.logic.openoffice.backend",0,6,2,3
+"org.jabref.logic.openoffice.frontend",0,10,1,2
+"org.jabref.logic.openoffice.style",153,13,6,162
+"org.jabref.logic.pdf",153,5,2,162
+"org.jabref.logic.pdf.search.indexing",153,10,3,162
+"org.jabref.logic.pdf.search.retrieval",153,9,1,162
+"org.jabref.logic.preferences",153,1,12,162
+"org.jabref.logic.preview",153,2,9,162
+"org.jabref.logic.protectedterms",153,2,7,162
+"org.jabref.logic.remote",153,4,5,162
+"org.jabref.logic.remote.client",153,3,2,162
+"org.jabref.logic.remote.server",153,4,4,162
+"org.jabref.logic.remote.shared",0,0,2,163
+"org.jabref.logic.search",153,7,9,162
+"org.jabref.logic.shared",153,22,8,162
+"org.jabref.logic.shared.event",153,2,2,162
+"org.jabref.logic.shared.exception",153,1,2,162
+"org.jabref.logic.shared.listener",153,1,1,162
+"org.jabref.logic.shared.prefs",153,2,5,162
+"org.jabref.logic.shared.security",0,0,3,163
+"org.jabref.logic.texparser",153,8,2,162
+"org.jabref.logic.undo",0,0,2,163
+"org.jabref.logic.util",153,11,51,162
+"org.jabref.logic.util.io",153,11,28,162
+"org.jabref.logic.util.strings",153,2,9,162
+"org.jabref.logic.xmp",153,9,9,162
+"org.jabref.migrations",153,14,3,162
+"org.jabref.model",153,2,28,162
+"org.jabref.model.database",153,13,89,162
+"org.jabref.model.database.event",153,2,15,162
+"org.jabref.model.entry",153,12,97,162
+"org.jabref.model.entry.event",153,4,10,162
+"org.jabref.model.entry.field",153,3,78,162
+"org.jabref.model.entry.identifier",153,2,17,162
+"org.jabref.model.entry.types",153,3,49,162
+"org.jabref.model.groups",153,12,14,162
+"org.jabref.model.groups.event",153,2,1,162
+"org.jabref.model.metadata",153,10,36,162
+"org.jabref.model.metadata.event",153,2,2,162
+"org.jabref.model.openoffice",0,0,4,163
+"org.jabref.model.openoffice.backend",0,1,1,4
+"org.jabref.model.openoffice.ootext",0,3,5,163
+"org.jabref.model.openoffice.rangesort",0,2,2,3
+"org.jabref.model.openoffice.style",153,4,4,162
+"org.jabref.model.openoffice.uno",0,0,7,166
+"org.jabref.model.openoffice.util",0,0,7,165
+"org.jabref.model.paging",0,0,3,163
+"org.jabref.model.pdf",0,0,2,163
+"org.jabref.model.pdf.search",153,1,5,162
+"org.jabref.model.push",0,0,2,163
+"org.jabref.model.search",153,2,5,162
+"org.jabref.model.search.matchers",153,4,2,162
+"org.jabref.model.search.rules",153,8,12,162
+"org.jabref.model.strings",0,0,55,166
+"org.jabref.model.study",153,1,2,162
+"org.jabref.model.texparser",153,1,3,162
+"org.jabref.model.util",153,3,46,162
+"org.jabref.preferences",153,45,89,162
+"org.jabref.styletester",0,4,0,1
+"protectedterms",0,0,0,n/a
+"resource.layout",0,0,0,n/a
+"resource.layout.din1505",0,0,0,n/a
+"resource.layout.endnote",0,0,0,n/a
+"resource.layout.harvard",0,0,0,n/a
+"resource.layout.iso690rtf",0,0,0,n/a
+"resource.layout.iso690txt",0,0,0,n/a
+"resource.layout.listrefs",0,0,0,n/a
+"resource.layout.misq",0,0,0,n/a
+"resource.layout.openoffice",0,0,0,n/a
+"resource.layout.ris",0,0,0,n/a
+"resource.layout.tablerefs",0,0,0,n/a
+"resource.layout.tablerefsabsbib",0,0,0,n/a
+"resource.ods",0,0,0,n/a
+"resource.openoffice",0,0,0,n/a
+"xjc.bibtexml",0,0,0,n/a
+"xjc.endnote",0,0,0,n/a
+"xjc.medline",0,0,0,n/a
+"xjc.mods",0,0,0,n/a
+
