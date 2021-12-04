@@ -6,3 +6,5 @@ do snippet, pode existir instancias de JabRefPreferences que diferem, já que, a
 Joao Oliveira 02/12/2021 11h
 2. Apos discussão, percebi que de facto era um pattern singleton, está aprovado :)
 
+Joao Oliveira 04/12/2021 15h55
+3. Está aprovado
