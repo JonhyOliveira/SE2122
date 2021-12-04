@@ -8,3 +8,11 @@ Joao Oliveira 02/12/2021 11h
 
 Joao Oliveira 04/12/2021 15h55
 3. Está aprovado
+
+Bruno Cabrita 04/12/2021 17h13
+1. Looks ok.
+2. Looks ok.
+3. So it's a facade that instead of having multiple classes implemented by same interface, it's the same classes with different attributes, depending on the values the listener obtains.
+
+Overall suggestion: use a diagram for each pattern (maybe like Refactoring Guru's?) and say which class represents what in the diagram, for easier understanding.
+If it's possible to do in the last two days, of course. Don't bother if it's not possible.

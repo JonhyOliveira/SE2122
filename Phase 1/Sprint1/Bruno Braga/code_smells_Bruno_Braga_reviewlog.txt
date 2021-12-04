@@ -11,3 +11,8 @@ Rafael Patronilo 04/12/2021 17:19
 1- Concordo que visto não afetar várias classes corresponde mais ao code smell Duplicated Code do que Shotgun Surgery
 2- Parece me bem
 3- Parece me bem
+
+Bruno Cabrita 04/12/2021 16h54
+1. Looks fine.
+2. Looks ok. Instead of having a class do things with other class' methods, we make that class to tell the other to do stuff.
+3. Looks fine.

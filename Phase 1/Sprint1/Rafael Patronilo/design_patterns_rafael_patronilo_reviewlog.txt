@@ -4,3 +4,10 @@ Contudo bom trabalho.
 
 João Oliveira 16h50
 Parece-me bem, nada a adicionar
+
+Bruno Cabrita 04/12/2021 17h31
+1. Agreed.
+2. Agreed.
+3. Agreed.
+
+Same suggestion as did to Padrao's, show a diagram of the design pattern for better visibility and understanding of why it's a design pattern.
