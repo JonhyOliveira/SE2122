@@ -6,3 +6,8 @@ João Padrão 30/11/2021 12h20
 João Oliveira 30/11/2021 16h40
 1. Parece-me uma boa identificação desse code smell
 2. Acho que essa solução não resolveria o problema e apenas o passaria para outro sitio.
+
+Rafael Patronilo 04/12/2021 17:19
+1- Concordo que visto não afetar várias classes corresponde mais ao code smell Duplicated Code do que Shotgun Surgery
+2- Parece me bem
+3- Parece me bem
