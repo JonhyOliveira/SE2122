@@ -1,2 +1,7 @@
 João Oliveira 16h50
 1. Parece-me uma boa solução
+
+Bruno Cabrita 04/12/2021 17h21
+1. Agreed.
+2. Agreed.
+3. It's ok. It's just standard procedure whenever you're overriding Object's equals method.

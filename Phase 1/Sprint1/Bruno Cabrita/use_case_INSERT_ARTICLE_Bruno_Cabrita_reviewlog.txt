@@ -1,0 +1,2 @@
+João Oliveira 16h30 04/12/2021
+Para o use case estar completo parece-me faltar só definir os use cases que dependem 

@@ -1,0 +1,2 @@
+João Oliveira 16h45 04/12/2021
+Está facilmente compreensivel, o main flow podia referir as caixas de dialogo que sao abertas
