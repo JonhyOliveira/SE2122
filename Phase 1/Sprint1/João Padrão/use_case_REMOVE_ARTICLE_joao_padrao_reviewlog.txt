@@ -1,0 +1,2 @@
+João Oliveira 05/12/2021 20h05
+O flow está incompleto, não diz quando o use case termina, de resto parece-me bem. Provavelmente deveria existir um flow alternativo para quando o utilizador confirma a remoção, em que o artigo é removido e depois termina e outro para quando o utilizador recusa a remoção e o use case termina logo
