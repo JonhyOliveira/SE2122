@@ -1,2 +1,6 @@
 Rafael Patronilo, 4-12-2021 17:12
 Parece-me bem mas tens um erro ortográfico na primeira linha a seguir a trouble spots: wan't em vez de want
+
+João Padrão 06/12/2021 19h00
+
+Parece-me bem, mas não encontras nenhum code smell para completar o report? (cuidado com alguns typos)

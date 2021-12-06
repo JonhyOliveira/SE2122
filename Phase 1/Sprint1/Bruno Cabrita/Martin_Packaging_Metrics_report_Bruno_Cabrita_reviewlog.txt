@@ -1,3 +1,7 @@
 João Oliveira 05/12/2021 20h25
 
 Parece-me um boa analise
+
+João Padrão 06/12/2021 19h20
+
+Parece-me bem, mas não encontras nenhum code smell para completar o report?
