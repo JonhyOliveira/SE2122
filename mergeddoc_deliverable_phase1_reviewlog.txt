@@ -1,0 +1,2 @@
+Bruno Braga 23h04 06/12/2021
+Apos de observar o burndown chart, a causa do pico deste ultimo dia foi o facto de marcar um grande numero de tasks em review para o estado done.
