@@ -13,6 +13,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.util.converter.NumberStringConverter;
 import org.controlsfx.control.GridCell;
 import org.controlsfx.control.GridView;
 import org.controlsfx.control.PopOver;
@@ -74,8 +75,8 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
     @FXML private TextField autoGroupPersonsField;
     @FXML private TextField numberFromRefined;
     @FXML private TextField numberToRefined;
-    @FXML private TextField dateFromRefined;
-    @FXML private TextField dateToRefined;
+    @FXML private DatePicker dateFromRefined;
+    @FXML private DatePicker dateToRefined;
 
     @FXML private TextField texGroupFilePath;
 
@@ -179,8 +180,10 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
         texGroupFilePath.textProperty().bindBidirectional(viewModel.texGroupFilePathProperty());
         numberFromRefined.textProperty().bindBidirectional(viewModel.numberFromRefinedProperty());
         numberToRefined.textProperty().bindBidirectional(viewModel.numberToRefinedProperty());
-        dateFromRefined.textProperty().bindBidirectional(viewModel.dateFromRefinedProperty());
-        dateToRefined.textProperty().bindBidirectional(viewModel.dateToRefinedProperty());
+        numberToRefined.textProperty().bindBidirectional(viewModel.intToRefinedProperty(), new NumberStringConverter());
+        numberFromRefined.textProperty().bindBidirectional(viewModel.intFromRefinedProperty(), new NumberStringConverter());
+        dateFromRefined.chronologyProperty().bindBidirectional(viewModel.dateFromRefinedProperty());
+        dateToRefined.chronologyProperty().bindBidirectional(viewModel.dateToRefinedProperty());
 
         validationVisualizer.setDecoration(new IconValidationDecorator());
         Platform.runLater(() -> {

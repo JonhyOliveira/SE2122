@@ -30,6 +30,7 @@ import org.jabref.preferences.PreferencesService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.chrono.Chronology;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
@@ -70,9 +71,11 @@ public class GroupDialogViewModel {
     private final BooleanProperty autoGroupPersonsOptionProperty = new SimpleBooleanProperty();
     private final StringProperty autoGroupPersonsFieldProperty = new SimpleStringProperty("");
     private final StringProperty numberFromRefinedProperty = new SimpleStringProperty("");
+    private final IntegerProperty intFromRefinedProperty = new SimpleIntegerProperty();
+    private final IntegerProperty intToRefinedProperty = new SimpleIntegerProperty();
     private final StringProperty numberToRefinedProperty = new SimpleStringProperty("");
-    private final StringProperty dateFromRefinedProperty = new SimpleStringProperty("");
-    private final StringProperty dateToRefinedProperty = new SimpleStringProperty("");
+    private final ObjectProperty<Chronology> dateFromRefinedProperty = new SimpleObjectProperty<Chronology>();
+    private final ObjectProperty<Chronology> dateToRefinedProperty = new SimpleObjectProperty<Chronology>();
 
     private final StringProperty texGroupFilePathProperty = new SimpleStringProperty("");
 
@@ -87,7 +90,6 @@ public class GroupDialogViewModel {
     private Validator texGroupFilePathValidator;
     private Validator refinedNumberValidator;
     private Validator refinedOrderValidator;
-    private Validator refinedDateValidator;
     private final CompositeValidator validator = new CompositeValidator();
 
     private final DialogService dialogService;
@@ -222,11 +224,12 @@ public class GroupDialogViewModel {
                         ValidationMessage.error("Field must be a number")
                 )
         );
-        
 
         refinedOrderValidator = new CompositeValidator(
                 new FunctionBasedValidator<>(
-
+                        intToRefinedProperty.greaterThan(intFromRefinedProperty),
+                        input -> input.booleanValue(),
+                        ValidationMessage.error("To must be greater than from")
                 )
         );
 
@@ -275,9 +278,9 @@ public class GroupDialogViewModel {
 
         typeRefinedProperty.addListener((obs, oldValue, isSelected) ->{
             if (isSelected) {
-                validator.addValidators(refinedNumberValidator);
+                validator.addValidators(refinedNumberValidator, refinedOrderValidator);
             } else {
-                validator.removeValidators(refinedNumberValidator);
+                validator.removeValidators(refinedNumberValidator, refinedOrderValidator);
             }
         });
     }
@@ -615,11 +618,19 @@ public class GroupDialogViewModel {
         return numberToRefinedProperty;
     }
 
-    public StringProperty dateFromRefinedProperty() {
+    public IntegerProperty intFromRefinedProperty() {
+        return intFromRefinedProperty;
+    }
+
+    public IntegerProperty intToRefinedProperty() {
+        return intToRefinedProperty;
+    }
+
+    public ObjectProperty<Chronology> dateFromRefinedProperty() {
         return dateFromRefinedProperty;
     }
 
-    public StringProperty dateToRefinedProperty() {
+    public ObjectProperty<Chronology> dateToRefinedProperty() {
         return dateToRefinedProperty;
     }
 
