@@ -1,28 +1,11 @@
 package org.jabref.gui.groups;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
-
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import de.saxsys.mvvmfx.utils.validation.*;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.scene.control.ButtonType;
 import javafx.scene.paint.Color;
-
 import org.jabref.gui.DialogService;
 import org.jabref.gui.Globals;
 import org.jabref.gui.help.HelpAction;
@@ -37,28 +20,22 @@ import org.jabref.model.database.BibDatabase;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.Keyword;
 import org.jabref.model.entry.field.FieldFactory;
-import org.jabref.model.groups.AbstractGroup;
-import org.jabref.model.groups.AutomaticGroup;
-import org.jabref.model.groups.AutomaticKeywordGroup;
-import org.jabref.model.groups.AutomaticPersonsGroup;
-import org.jabref.model.groups.ExplicitGroup;
-import org.jabref.model.groups.GroupHierarchyType;
-import org.jabref.model.groups.GroupTreeNode;
-import org.jabref.model.groups.RegexKeywordGroup;
-import org.jabref.model.groups.SearchGroup;
-import org.jabref.model.groups.TexGroup;
-import org.jabref.model.groups.WordKeywordGroup;
+import org.jabref.model.groups.*;
 import org.jabref.model.metadata.MetaData;
 import org.jabref.model.search.rules.SearchRules;
 import org.jabref.model.search.rules.SearchRules.SearchFlags;
 import org.jabref.model.strings.StringUtil;
 import org.jabref.preferences.PreferencesService;
 
-import de.saxsys.mvvmfx.utils.validation.CompositeValidator;
-import de.saxsys.mvvmfx.utils.validation.FunctionBasedValidator;
-import de.saxsys.mvvmfx.utils.validation.ValidationMessage;
-import de.saxsys.mvvmfx.utils.validation.ValidationStatus;
-import de.saxsys.mvvmfx.utils.validation.Validator;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 public class GroupDialogViewModel {
     // Basic Settings
@@ -75,6 +52,7 @@ public class GroupDialogViewModel {
     private final BooleanProperty typeSearchProperty = new SimpleBooleanProperty();
     private final BooleanProperty typeAutoProperty = new SimpleBooleanProperty();
     private final BooleanProperty typeTexProperty = new SimpleBooleanProperty();
+    private final BooleanProperty typeRefinedProperty = new SimpleBooleanProperty();
 
     // Option Groups
     private final StringProperty keywordGroupSearchTermProperty = new SimpleStringProperty("");
@@ -91,6 +69,10 @@ public class GroupDialogViewModel {
     private final StringProperty autoGroupKeywordsHierarchicalDelimiterProperty = new SimpleStringProperty("");
     private final BooleanProperty autoGroupPersonsOptionProperty = new SimpleBooleanProperty();
     private final StringProperty autoGroupPersonsFieldProperty = new SimpleStringProperty("");
+    private final StringProperty numberFromRefinedProperty = new SimpleStringProperty("");
+    private final StringProperty numberToRefinedProperty = new SimpleStringProperty("");
+    private final StringProperty dateFromRefinedProperty = new SimpleStringProperty("");
+    private final StringProperty dateToRefinedProperty = new SimpleStringProperty("");
 
     private final StringProperty texGroupFilePathProperty = new SimpleStringProperty("");
 
@@ -103,6 +85,9 @@ public class GroupDialogViewModel {
     private Validator searchRegexValidator;
     private Validator searchSearchTermEmptyValidator;
     private Validator texGroupFilePathValidator;
+    private Validator refinedNumberValidator;
+    private Validator refinedOrderValidator;
+    private Validator refinedDateValidator;
     private final CompositeValidator validator = new CompositeValidator();
 
     private final DialogService dialogService;
@@ -225,6 +210,26 @@ public class GroupDialogViewModel {
                         Localization.lang("Free search expression"),
                         Localization.lang("Search term is empty."))));
 
+        refinedNumberValidator = new CompositeValidator(
+                new FunctionBasedValidator<>(
+                        numberFromRefinedProperty,
+                        input -> StringUtil.isNullOrEmpty(input) || Integer.getInteger(input) != null,
+                        ValidationMessage.error("Field must be a number")
+                ),
+                new FunctionBasedValidator<>(
+                        numberToRefinedProperty,
+                        input -> StringUtil.isNullOrEmpty(input) || Integer.getInteger(input) != null,
+                        ValidationMessage.error("Field must be a number")
+                )
+        );
+        
+
+        refinedOrderValidator = new CompositeValidator(
+                new FunctionBasedValidator<>(
+
+                )
+        );
+
         texGroupFilePathValidator = new FunctionBasedValidator<>(
                 texGroupFilePathProperty,
                 input -> {
@@ -241,6 +246,8 @@ public class GroupDialogViewModel {
                     }
                 },
                 ValidationMessage.error(Localization.lang("Please provide a valid aux file.")));
+
+
 
         typeSearchProperty.addListener((obs, _oldValue, isSelected) -> {
             if (isSelected) {
@@ -263,6 +270,14 @@ public class GroupDialogViewModel {
                 validator.addValidators(texGroupFilePathValidator);
             } else {
                 validator.removeValidators(texGroupFilePathValidator);
+            }
+        });
+
+        typeRefinedProperty.addListener((obs, oldValue, isSelected) ->{
+            if (isSelected) {
+                validator.addValidators(refinedNumberValidator);
+            } else {
+                validator.removeValidators(refinedNumberValidator);
             }
         });
     }
@@ -540,6 +555,10 @@ public class GroupDialogViewModel {
         return typeTexProperty;
     }
 
+    public BooleanProperty typeRefinedProperty() {
+        return typeRefinedProperty;
+    }
+
     public StringProperty keywordGroupSearchTermProperty() {
         return keywordGroupSearchTermProperty;
     }
@@ -586,6 +605,22 @@ public class GroupDialogViewModel {
 
     public StringProperty autoGroupPersonsFieldProperty() {
         return autoGroupPersonsFieldProperty;
+    }
+
+    public StringProperty numberFromRefinedProperty() {
+        return numberFromRefinedProperty;
+    }
+
+    public StringProperty numberToRefinedProperty() {
+        return numberToRefinedProperty;
+    }
+
+    public StringProperty dateFromRefinedProperty() {
+        return dateFromRefinedProperty;
+    }
+
+    public StringProperty dateToRefinedProperty() {
+        return dateToRefinedProperty;
     }
 
     public StringProperty texGroupFilePathProperty() {

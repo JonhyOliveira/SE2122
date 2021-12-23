@@ -1,9 +1,7 @@
 package org.jabref.gui.groups;
 
-import java.util.EnumMap;
-import java.util.EnumSet;
-import java.util.ServiceLoader;
-
+import com.airhacks.afterburner.views.ViewLoader;
+import de.saxsys.mvvmfx.utils.validation.visualization.ControlsFxVisualizer;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,20 +10,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.BorderStrokeStyle;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-
+import org.controlsfx.control.GridCell;
+import org.controlsfx.control.GridView;
+import org.controlsfx.control.PopOver;
+import org.controlsfx.control.textfield.CustomTextField;
 import org.jabref.gui.DialogService;
 import org.jabref.gui.icon.IconTheme;
 import org.jabref.gui.icon.JabrefIconProvider;
@@ -39,16 +30,13 @@ import org.jabref.model.groups.GroupHierarchyType;
 import org.jabref.model.search.rules.SearchRules;
 import org.jabref.model.search.rules.SearchRules.SearchFlags;
 import org.jabref.preferences.PreferencesService;
-
-import com.airhacks.afterburner.views.ViewLoader;
-import de.saxsys.mvvmfx.utils.validation.visualization.ControlsFxVisualizer;
-import org.controlsfx.control.GridCell;
-import org.controlsfx.control.GridView;
-import org.controlsfx.control.PopOver;
-import org.controlsfx.control.textfield.CustomTextField;
 import org.kordamp.ikonli.Ikon;
 import org.kordamp.ikonli.IkonProvider;
 import org.kordamp.ikonli.javafx.FontIcon;
+
+import java.util.EnumMap;
+import java.util.EnumSet;
+import java.util.ServiceLoader;
 
 public class GroupDialogView extends BaseDialog<AbstractGroup> {
 
@@ -66,6 +54,7 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
     @FXML private RadioButton searchRadioButton;
     @FXML private RadioButton autoRadioButton;
     @FXML private RadioButton texRadioButton;
+    @FXML private RadioButton refinedRadioButton;
 
     // Option Groups
     @FXML private TextField keywordGroupSearchTerm;
@@ -83,8 +72,14 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
     @FXML private TextField autoGroupKeywordsHierarchicalDeliminator;
     @FXML private RadioButton autoGroupPersonsOption;
     @FXML private TextField autoGroupPersonsField;
+    @FXML private TextField numberFromRefined;
+    @FXML private TextField numberToRefined;
+    @FXML private TextField dateFromRefined;
+    @FXML private TextField dateToRefined;
 
     @FXML private TextField texGroupFilePath;
+
+    @FXML private TextField refinedGroupSearchField;
 
     private final EnumMap<GroupHierarchyType, String> hierarchyText = new EnumMap<>(GroupHierarchyType.class);
     private final EnumMap<GroupHierarchyType, String> hierarchyToolTip = new EnumMap<>(GroupHierarchyType.class);
@@ -147,6 +142,7 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
         searchRadioButton.selectedProperty().bindBidirectional(viewModel.typeSearchProperty());
         autoRadioButton.selectedProperty().bindBidirectional(viewModel.typeAutoProperty());
         texRadioButton.selectedProperty().bindBidirectional(viewModel.typeTexProperty());
+        refinedRadioButton.selectedProperty().bindBidirectional(viewModel.typeRefinedProperty());
 
         keywordGroupSearchTerm.textProperty().bindBidirectional(viewModel.keywordGroupSearchTermProperty());
         keywordGroupSearchField.textProperty().bindBidirectional(viewModel.keywordGroupSearchFieldProperty());
@@ -181,6 +177,10 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
         autoGroupPersonsField.textProperty().bindBidirectional(viewModel.autoGroupPersonsFieldProperty());
 
         texGroupFilePath.textProperty().bindBidirectional(viewModel.texGroupFilePathProperty());
+        numberFromRefined.textProperty().bindBidirectional(viewModel.numberFromRefinedProperty());
+        numberToRefined.textProperty().bindBidirectional(viewModel.numberToRefinedProperty());
+        dateFromRefined.textProperty().bindBidirectional(viewModel.dateFromRefinedProperty());
+        dateToRefined.textProperty().bindBidirectional(viewModel.dateToRefinedProperty());
 
         validationVisualizer.setDecoration(new IconValidationDecorator());
         Platform.runLater(() -> {
