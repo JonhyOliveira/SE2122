@@ -73,8 +73,11 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
     @FXML private TextField autoGroupKeywordsHierarchicalDeliminator;
     @FXML private RadioButton autoGroupPersonsOption;
     @FXML private TextField autoGroupPersonsField;
+
+    @FXML public RadioButton numberRadioButton;
     @FXML private TextField numberFromRefined;
     @FXML private TextField numberToRefined;
+    @FXML public RadioButton dateRadioButton;
     @FXML private DatePicker dateFromRefined;
     @FXML private DatePicker dateToRefined;
 
@@ -178,10 +181,11 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
         autoGroupPersonsField.textProperty().bindBidirectional(viewModel.autoGroupPersonsFieldProperty());
 
         texGroupFilePath.textProperty().bindBidirectional(viewModel.texGroupFilePathProperty());
-        numberFromRefined.textProperty().bindBidirectional(viewModel.numberFromRefinedProperty());
-        numberToRefined.textProperty().bindBidirectional(viewModel.numberToRefinedProperty());
+
+        numberRadioButton.selectedProperty().bindBidirectional(viewModel.refinedNumberProperty());
         numberToRefined.textProperty().bindBidirectional(viewModel.intToRefinedProperty(), new NumberStringConverter());
         numberFromRefined.textProperty().bindBidirectional(viewModel.intFromRefinedProperty(), new NumberStringConverter());
+        dateRadioButton.selectedProperty().bindBidirectional(viewModel.refinedDateProperty());
         dateFromRefined.chronologyProperty().bindBidirectional(viewModel.dateFromRefinedProperty());
         dateToRefined.chronologyProperty().bindBidirectional(viewModel.dateToRefinedProperty());
 

@@ -31,10 +31,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.chrono.Chronology;
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
@@ -70,10 +67,10 @@ public class GroupDialogViewModel {
     private final StringProperty autoGroupKeywordsHierarchicalDelimiterProperty = new SimpleStringProperty("");
     private final BooleanProperty autoGroupPersonsOptionProperty = new SimpleBooleanProperty();
     private final StringProperty autoGroupPersonsFieldProperty = new SimpleStringProperty("");
-    private final StringProperty numberFromRefinedProperty = new SimpleStringProperty("");
+    private final BooleanProperty refinedNumberProperty = new SimpleBooleanProperty();
     private final IntegerProperty intFromRefinedProperty = new SimpleIntegerProperty();
     private final IntegerProperty intToRefinedProperty = new SimpleIntegerProperty();
-    private final StringProperty numberToRefinedProperty = new SimpleStringProperty("");
+    private final BooleanProperty refinedDateProperty = new SimpleBooleanProperty();
     private final ObjectProperty<Chronology> dateFromRefinedProperty = new SimpleObjectProperty<Chronology>();
     private final ObjectProperty<Chronology> dateToRefinedProperty = new SimpleObjectProperty<Chronology>();
 
@@ -89,7 +86,7 @@ public class GroupDialogViewModel {
     private Validator searchSearchTermEmptyValidator;
     private Validator texGroupFilePathValidator;
     private Validator fromRefinedNumberValidator, toRefinedNumberValidator;
-    private Validator refinedOrderValidator;
+    private Validator refinedNumberOrderValidator;
     private final CompositeValidator validator = new CompositeValidator();
 
     private final DialogService dialogService;
@@ -213,18 +210,18 @@ public class GroupDialogViewModel {
                         Localization.lang("Search term is empty."))));
 
         fromRefinedNumberValidator = new FunctionBasedValidator<>(
-                numberFromRefinedProperty,
-                input -> !StringUtil.isNullOrEmpty(input),
+                intFromRefinedProperty,
+                Objects::nonNull,
                 ValidationMessage.error("Field must be a number")
         );
 
         toRefinedNumberValidator = new FunctionBasedValidator<>(
-                numberToRefinedProperty,
-                input -> !StringUtil.isNullOrEmpty(input),
+                intToRefinedProperty,
+                Objects::nonNull,
                 ValidationMessage.error("Field must be a number")
         );
 
-        refinedOrderValidator = new FunctionBasedValidator<>(
+        refinedNumberOrderValidator = new FunctionBasedValidator<>(
                 intToRefinedProperty.greaterThanOrEqualTo(intFromRefinedProperty),
                 input -> input,
                 ValidationMessage.error("To must be greater than from")
@@ -273,13 +270,14 @@ public class GroupDialogViewModel {
             }
         });
 
-        typeRefinedProperty.addListener((obs, oldValue, isSelected) ->{
+        refinedNumberProperty.addListener((obs, oldValue, isSelected) -> {
             if (isSelected) {
-                validator.addValidators(fromRefinedNumberValidator, toRefinedNumberValidator, refinedOrderValidator);
+                validator.addValidators(fromRefinedNumberValidator, toRefinedNumberValidator, refinedNumberOrderValidator);
             } else {
-                validator.removeValidators(fromRefinedNumberValidator, toRefinedNumberValidator, refinedOrderValidator);
+                validator.removeValidators(fromRefinedNumberValidator, toRefinedNumberValidator, refinedNumberOrderValidator);
             }
         });
+
     }
 
     /**
@@ -607,12 +605,12 @@ public class GroupDialogViewModel {
         return autoGroupPersonsFieldProperty;
     }
 
-    public StringProperty numberFromRefinedProperty() {
-        return numberFromRefinedProperty;
+    public BooleanProperty refinedNumberProperty() {
+        return refinedNumberProperty;
     }
 
-    public StringProperty numberToRefinedProperty() {
-        return numberToRefinedProperty;
+    public BooleanProperty refinedDateProperty() {
+        return refinedDateProperty;
     }
 
     public IntegerProperty intFromRefinedProperty() {
