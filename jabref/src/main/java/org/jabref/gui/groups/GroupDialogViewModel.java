@@ -244,8 +244,6 @@ public class GroupDialogViewModel {
                 },
                 ValidationMessage.error(Localization.lang("Please provide a valid aux file.")));
 
-
-
         typeSearchProperty.addListener((obs, _oldValue, isSelected) -> {
             if (isSelected) {
                 validator.addValidators(searchRegexValidator, searchSearchTermEmptyValidator);
@@ -277,6 +275,15 @@ public class GroupDialogViewModel {
                 validator.removeValidators(fromRefinedNumberValidator, toRefinedNumberValidator, refinedNumberOrderValidator);
             }
         });
+
+        /* TODO validators para o date
+        refinedDateProperty.addListener((observable, oldValue, newValue) -> {
+            if (isSelected) {
+                validator.addValidators(...);
+            } else {
+                validator.removeValidators(...);
+            }
+        });*/
 
     }
 
