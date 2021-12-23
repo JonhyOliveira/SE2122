@@ -88,7 +88,7 @@ public class GroupDialogViewModel {
     private Validator searchRegexValidator;
     private Validator searchSearchTermEmptyValidator;
     private Validator texGroupFilePathValidator;
-    private Validator refinedNumberValidator;
+    private Validator fromRefinedNumberValidator, toRefinedNumberValidator;
     private Validator refinedOrderValidator;
     private final CompositeValidator validator = new CompositeValidator();
 
@@ -212,25 +212,22 @@ public class GroupDialogViewModel {
                         Localization.lang("Free search expression"),
                         Localization.lang("Search term is empty."))));
 
-        refinedNumberValidator = new CompositeValidator(
-                new FunctionBasedValidator<>(
-                        numberFromRefinedProperty,
-                        input -> StringUtil.isNullOrEmpty(input) || Integer.getInteger(input) != null,
-                        ValidationMessage.error("Field must be a number")
-                ),
-                new FunctionBasedValidator<>(
-                        numberToRefinedProperty,
-                        input -> StringUtil.isNullOrEmpty(input) || Integer.getInteger(input) != null,
-                        ValidationMessage.error("Field must be a number")
-                )
+        fromRefinedNumberValidator = new FunctionBasedValidator<>(
+                numberFromRefinedProperty,
+                input -> !StringUtil.isNullOrEmpty(input),
+                ValidationMessage.error("Field must be a number")
         );
 
-        refinedOrderValidator = new CompositeValidator(
-                new FunctionBasedValidator<>(
-                        intToRefinedProperty.greaterThan(intFromRefinedProperty),
-                        input -> input.booleanValue(),
-                        ValidationMessage.error("To must be greater than from")
-                )
+        toRefinedNumberValidator = new FunctionBasedValidator<>(
+                numberToRefinedProperty,
+                input -> !StringUtil.isNullOrEmpty(input),
+                ValidationMessage.error("Field must be a number")
+        );
+
+        refinedOrderValidator = new FunctionBasedValidator<>(
+                intToRefinedProperty.greaterThanOrEqualTo(intFromRefinedProperty),
+                input -> input,
+                ValidationMessage.error("To must be greater than from")
         );
 
         texGroupFilePathValidator = new FunctionBasedValidator<>(
@@ -278,9 +275,9 @@ public class GroupDialogViewModel {
 
         typeRefinedProperty.addListener((obs, oldValue, isSelected) ->{
             if (isSelected) {
-                validator.addValidators(refinedNumberValidator, refinedOrderValidator);
+                validator.addValidators(fromRefinedNumberValidator, toRefinedNumberValidator, refinedOrderValidator);
             } else {
-                validator.removeValidators(refinedNumberValidator, refinedOrderValidator);
+                validator.removeValidators(fromRefinedNumberValidator, toRefinedNumberValidator, refinedOrderValidator);
             }
         });
     }
