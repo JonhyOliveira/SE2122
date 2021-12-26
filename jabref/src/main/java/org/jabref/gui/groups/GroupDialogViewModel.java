@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.scene.control.ButtonType;
 import javafx.scene.paint.Color;
+import org.h2.util.StringUtils;
 import org.jabref.gui.DialogService;
 import org.jabref.gui.Globals;
 import org.jabref.gui.help.HelpAction;
@@ -30,7 +31,7 @@ import org.jabref.preferences.PreferencesService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.time.chrono.Chronology;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
@@ -68,11 +69,14 @@ public class GroupDialogViewModel {
     private final BooleanProperty autoGroupPersonsOptionProperty = new SimpleBooleanProperty();
     private final StringProperty autoGroupPersonsFieldProperty = new SimpleStringProperty("");
     private final BooleanProperty refinedNumberProperty = new SimpleBooleanProperty();
+    private final StringProperty refinedFieldNameProperty = new SimpleStringProperty();
+    private final StringProperty numberFromRefinedProperty = new SimpleStringProperty();
+    private final StringProperty numberToRefinedProperty = new SimpleStringProperty();
     private final IntegerProperty intFromRefinedProperty = new SimpleIntegerProperty();
     private final IntegerProperty intToRefinedProperty = new SimpleIntegerProperty();
     private final BooleanProperty refinedDateProperty = new SimpleBooleanProperty();
-    private final ObjectProperty<Chronology> dateFromRefinedProperty = new SimpleObjectProperty<Chronology>();
-    private final ObjectProperty<Chronology> dateToRefinedProperty = new SimpleObjectProperty<Chronology>();
+    private final ObjectProperty<LocalDate> dateFromRefinedProperty = new SimpleObjectProperty<LocalDate>();
+    private final ObjectProperty<LocalDate> dateToRefinedProperty = new SimpleObjectProperty<LocalDate>();
 
     private final StringProperty texGroupFilePathProperty = new SimpleStringProperty("");
 
@@ -214,14 +218,14 @@ public class GroupDialogViewModel {
         refinedFieldNameValidator = new CompositeValidator(); // TODO
 
         refinedFromNumberValidator = new FunctionBasedValidator<>(
-                intFromRefinedProperty,
-                Objects::nonNull,
+                numberFromRefinedProperty,
+                s -> StringUtils.isNumber(Objects.requireNonNullElse(s, "")),
                 ValidationMessage.error("Field must be a number")
         );
 
         refinedToNumberValidator = new FunctionBasedValidator<>(
-                intToRefinedProperty,
-                Objects::nonNull,
+                numberToRefinedProperty,
+                s -> StringUtils.isNumber(Objects.requireNonNullElse(s, "")),
                 ValidationMessage.error("Field must be a number")
         );
 
@@ -229,6 +233,19 @@ public class GroupDialogViewModel {
                 intToRefinedProperty.greaterThanOrEqualTo(intFromRefinedProperty),
                 input -> input,
                 ValidationMessage.error("To must be greater than from")
+        );
+
+        refinedOrderDateValidator = new CompositeValidator(
+                new FunctionBasedValidator<>(
+                        dateFromRefinedProperty,
+                        localDate -> localDate ==null || dateToRefinedProperty.getValue() == null  || localDate.isBefore(dateToRefinedProperty.getValue()),
+                        ValidationMessage.error("To must be greater than from")
+                ),
+                new FunctionBasedValidator<>(
+                        dateToRefinedProperty,
+                        localDate -> localDate == null || dateFromRefinedProperty.getValue() == null  || localDate.isAfter(dateFromRefinedProperty.getValue()),
+                        ValidationMessage.error("To must be greater than from")
+                )
         );
 
         texGroupFilePathValidator = new FunctionBasedValidator<>(
@@ -273,7 +290,7 @@ public class GroupDialogViewModel {
         });
 
         Validator numberValidators = new CompositeValidator(refinedFromNumberValidator, refinedToNumberValidator, refinedOrderNumberValidator);
-        Validator dateValidators = new CompositeValidator(); // TODO
+        Validator dateValidators = new CompositeValidator(refinedOrderDateValidator); // TODO
 
         typeRefinedProperty.addListener((observable, oldValue, isSelected) -> {
             if (isSelected) {
@@ -395,6 +412,20 @@ public class GroupDialogViewModel {
                         new DefaultAuxParser(new BibDatabase()),
                         Globals.getFileUpdateMonitor(),
                         currentDatabase.getMetaData());
+            } else if (typeRefinedProperty.getValue()){
+                Object from = refinedNumberProperty.getValue() ?
+                        Integer.getInteger(numberFromRefinedProperty.getValue()) :
+                        dateFromRefinedProperty.getValue();
+                Object to = refinedNumberProperty.getValue() ?
+                        Integer.getInteger(numberToRefinedProperty.getValue()) :
+                        dateToRefinedProperty.getValue();
+                resultingGroup = new RefinedGroup(
+                        groupName,
+                        groupHierarchySelectedProperty.getValue(),
+                        from,
+                        to,
+                        FieldFactory.parseField(refinedFieldNameProperty.getValue().trim())
+                );
             }
 
             if (resultingGroup != null) {
@@ -418,6 +449,7 @@ public class GroupDialogViewModel {
             // creating new group -> defaults!
             colorProperty.setValue(IconTheme.getDefaultGroupColor());
             typeExplicitProperty.setValue(true);
+            refinedDateProperty.setValue(true);
             groupHierarchySelectedProperty.setValue(GroupHierarchyType.INDEPENDENT);
         } else {
             nameProperty.setValue(editedGroup.getName());
@@ -467,6 +499,20 @@ public class GroupDialogViewModel {
 
                 TexGroup group = (TexGroup) editedGroup;
                 texGroupFilePathProperty.setValue(group.getFilePath().toString());
+            } else if (editedGroup.getClass() == RefinedGroup.class){
+                typeRefinedProperty.setValue(true);
+
+                RefinedGroup group = (RefinedGroup) editedGroup;
+                refinedFieldNameProperty.setValue(group.getSearchField().getName());
+                if(group.isNumberFilter()){
+                    refinedNumberProperty.setValue(true);
+                    numberFromRefinedProperty.setValue(Objects.requireNonNullElse(group.getFromNumber(), "").toString());
+                    numberToRefinedProperty.setValue(Objects.requireNonNullElse(group.getToNumber(), "").toString());
+                } else{
+                    refinedDateProperty.setValue(true);
+                    dateFromRefinedProperty.setValue(group.getFromDate());
+                    dateToRefinedProperty.setValue(group.getToDate());
+                }
             }
         }
     }
@@ -632,12 +678,24 @@ public class GroupDialogViewModel {
         return autoGroupPersonsFieldProperty;
     }
 
+    public StringProperty refinedFieldNameProperty() {
+        return refinedFieldNameProperty;
+    }
+
     public BooleanProperty refinedNumberProperty() {
         return refinedNumberProperty;
     }
 
     public BooleanProperty refinedDateProperty() {
         return refinedDateProperty;
+    }
+
+    public StringProperty numberFromRefinedProperty() {
+        return numberFromRefinedProperty;
+    }
+
+    public StringProperty numberToRefinedProperty() {
+        return numberToRefinedProperty;
     }
 
     public IntegerProperty intFromRefinedProperty() {
@@ -648,11 +706,11 @@ public class GroupDialogViewModel {
         return intToRefinedProperty;
     }
 
-    public ObjectProperty<Chronology> dateFromRefinedProperty() {
+    public ObjectProperty<LocalDate> dateFromRefinedProperty() {
         return dateFromRefinedProperty;
     }
 
-    public ObjectProperty<Chronology> dateToRefinedProperty() {
+    public ObjectProperty<LocalDate> dateToRefinedProperty() {
         return dateToRefinedProperty;
     }
 

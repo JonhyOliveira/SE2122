@@ -185,9 +185,14 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
         numberRadioButton.selectedProperty().bindBidirectional(viewModel.refinedNumberProperty());
         numberToRefined.textProperty().bindBidirectional(viewModel.intToRefinedProperty(), new NumberStringConverter());
         numberFromRefined.textProperty().bindBidirectional(viewModel.intFromRefinedProperty(), new NumberStringConverter());
+        numberToRefined.textProperty().bindBidirectional(viewModel.numberToRefinedProperty());
+        numberFromRefined.textProperty().bindBidirectional(viewModel.numberFromRefinedProperty());
+
         dateRadioButton.selectedProperty().bindBidirectional(viewModel.refinedDateProperty());
-        dateFromRefined.chronologyProperty().bindBidirectional(viewModel.dateFromRefinedProperty());
-        dateToRefined.chronologyProperty().bindBidirectional(viewModel.dateToRefinedProperty());
+        dateFromRefined.valueProperty().bindBidirectional(viewModel.dateFromRefinedProperty());
+        dateToRefined.valueProperty().bindBidirectional(viewModel.dateToRefinedProperty());
+
+        refinedGroupSearchField.textProperty().bindBidirectional(viewModel.refinedFieldNameProperty());
 
         validationVisualizer.setDecoration(new IconValidationDecorator());
         Platform.runLater(() -> {
