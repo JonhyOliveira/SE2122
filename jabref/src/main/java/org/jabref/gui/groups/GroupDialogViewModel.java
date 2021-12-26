@@ -85,8 +85,10 @@ public class GroupDialogViewModel {
     private Validator searchRegexValidator;
     private Validator searchSearchTermEmptyValidator;
     private Validator texGroupFilePathValidator;
-    private Validator fromRefinedNumberValidator, toRefinedNumberValidator;
-    private Validator refinedNumberOrderValidator;
+
+    private Validator refinedFieldNameValidator;
+    private Validator refinedFromDateValidator, refinedToDateValidator, refinedOrderDateValidator;
+    private Validator refinedFromNumberValidator, refinedToNumberValidator, refinedOrderNumberValidator;
     private final CompositeValidator validator = new CompositeValidator();
 
     private final DialogService dialogService;
@@ -209,19 +211,21 @@ public class GroupDialogViewModel {
                         Localization.lang("Free search expression"),
                         Localization.lang("Search term is empty."))));
 
-        fromRefinedNumberValidator = new FunctionBasedValidator<>(
+        refinedFieldNameValidator = new CompositeValidator(); // TODO
+
+        refinedFromNumberValidator = new FunctionBasedValidator<>(
                 intFromRefinedProperty,
                 Objects::nonNull,
                 ValidationMessage.error("Field must be a number")
         );
 
-        toRefinedNumberValidator = new FunctionBasedValidator<>(
+        refinedToNumberValidator = new FunctionBasedValidator<>(
                 intToRefinedProperty,
                 Objects::nonNull,
                 ValidationMessage.error("Field must be a number")
         );
 
-        refinedNumberOrderValidator = new FunctionBasedValidator<>(
+        refinedOrderNumberValidator = new FunctionBasedValidator<>(
                 intToRefinedProperty.greaterThanOrEqualTo(intFromRefinedProperty),
                 input -> input,
                 ValidationMessage.error("To must be greater than from")
@@ -268,22 +272,38 @@ public class GroupDialogViewModel {
             }
         });
 
-        refinedNumberProperty.addListener((obs, oldValue, isSelected) -> {
+        Validator numberValidators = new CompositeValidator(refinedFromNumberValidator, refinedToNumberValidator, refinedOrderNumberValidator);
+        Validator dateValidators = new CompositeValidator(); // TODO
+
+        typeRefinedProperty.addListener((observable, oldValue, isSelected) -> {
             if (isSelected) {
-                validator.addValidators(fromRefinedNumberValidator, toRefinedNumberValidator, refinedNumberOrderValidator);
+                validator.addValidators(refinedFieldNameValidator);
+                if (refinedNumberProperty.getValue())
+                    validator.addValidators(numberValidators);
+                if (refinedDateProperty.getValue())
+                    validator.addValidators(dateValidators);
+
             } else {
-                validator.removeValidators(fromRefinedNumberValidator, toRefinedNumberValidator, refinedNumberOrderValidator);
+                validator.removeValidators(numberValidators, dateValidators, refinedFieldNameValidator);
+            }
+
+        });
+
+        refinedNumberProperty.addListener((obs, oldValue, isSelected) -> {
+            if (isSelected && typeRefinedProperty.getValue()) {
+                validator.addValidators(numberValidators);
+            } else {
+                validator.removeValidators(numberValidators);
             }
         });
 
-        /* TODO validators para o date
-        refinedDateProperty.addListener((observable, oldValue, newValue) -> {
-            if (isSelected) {
-                validator.addValidators(...);
+        refinedDateProperty.addListener((observable, oldValue, isSelected) -> {
+            if (isSelected && typeRefinedProperty.getValue()) {
+                validator.addValidators(dateValidators);
             } else {
-                validator.removeValidators(...);
+                validator.removeValidators(dateValidators);
             }
-        });*/
+        });
 
     }
 
