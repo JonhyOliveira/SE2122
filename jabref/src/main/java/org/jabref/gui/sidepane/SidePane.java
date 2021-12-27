@@ -17,6 +17,7 @@ import org.jabref.gui.DialogService;
 import org.jabref.gui.StateManager;
 import org.jabref.gui.groups.GroupSidePane;
 import org.jabref.gui.importer.fetcher.WebSearchPane;
+import org.jabref.gui.menus.SearchHistoryMenu;
 import org.jabref.gui.openoffice.OpenOfficeSidePanel;
 import org.jabref.gui.util.TaskExecutor;
 import org.jabref.preferences.PreferencesService;
@@ -34,17 +35,20 @@ public class SidePane extends VBox {
     private final DialogService dialogService;
     private final StateManager stateManager;
     private final UndoManager undoManager;
+    private final SearchHistoryMenu searchHistoryMenu;
 
     public SidePane(PreferencesService preferencesService,
                     TaskExecutor taskExecutor,
                     DialogService dialogService,
                     StateManager stateManager,
-                    UndoManager undoManager) {
+                    UndoManager undoManager,
+                    SearchHistoryMenu searchHistoryMenu) {
         this.preferencesService = preferencesService;
         this.taskExecutor = taskExecutor;
         this.dialogService = dialogService;
         this.stateManager = stateManager;
         this.undoManager = undoManager;
+        this.searchHistoryMenu = searchHistoryMenu;
 
         setId("sidePane");
 
@@ -62,7 +66,7 @@ public class SidePane extends VBox {
         if (component == null) {
             component = switch (type) {
                 case OPEN_OFFICE -> new OpenOfficeSidePanel(this, taskExecutor, preferencesService, dialogService, stateManager, undoManager);
-                case WEB_SEARCH -> new WebSearchPane(this, preferencesService, dialogService, stateManager);
+                case WEB_SEARCH -> new WebSearchPane(this, preferencesService, dialogService, stateManager, searchHistoryMenu);
                 case GROUPS -> new GroupSidePane(this, taskExecutor, stateManager, preferencesService, dialogService);
             };
             components.put(component.getType(), component);

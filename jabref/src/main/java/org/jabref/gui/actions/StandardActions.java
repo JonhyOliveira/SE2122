@@ -177,7 +177,9 @@ public enum StandardActions implements Action {
     EDIT_LIST(Localization.lang("Edit"), IconTheme.JabRefIcons.EDIT),
     VIEW_LIST(Localization.lang("View"), IconTheme.JabRefIcons.FILE),
     REMOVE_LIST(Localization.lang("Remove"), IconTheme.JabRefIcons.REMOVE),
-    RELOAD_LIST(Localization.lang("Reload"), IconTheme.JabRefIcons.REFRESH);
+    RELOAD_LIST(Localization.lang("Reload"), IconTheme.JabRefIcons.REFRESH),
+    TEST(Localization.lang("Testing GUI Options"), "A simple description for a simple test :)", IconTheme.JabRefIcons.WWW),
+    SEARCH_HISTORY(Localization.lang("Search History"));
 
     private final String text;
     private final String description;
