@@ -2,6 +2,7 @@ package org.jabref.gui.groups;
 
 import de.saxsys.mvvmfx.utils.validation.*;
 import javafx.beans.property.*;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.scene.control.ButtonType;
@@ -35,7 +36,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.*;
-import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
@@ -94,6 +94,7 @@ public class GroupDialogViewModel {
     private Validator texGroupFilePathValidator;
 
     private Validator refinedFieldNameValidator;
+    private BooleanProperty refinedFieldNameIsValid = new SimpleBooleanProperty(false);
     private Validator refinedFromDateValidator, refinedToDateValidator, refinedOrderDateValidator;
     private Validator refinedFromNumberValidator, refinedToNumberValidator, refinedOrderNumberValidator;
     private final CompositeValidator validator = new CompositeValidator();
@@ -218,30 +219,25 @@ public class GroupDialogViewModel {
                         Localization.lang("Free search expression"),
                         Localization.lang("Search term is empty."))));
 
-        Predicate<String> refinedFieldCheck = s -> {
-            if (StringUtils.isNullOrEmpty(s))
-                return false;
+        ChangeListener<Object> refinedFieldCheck = (observable, oldValue, newValue) -> {
+            String s = refinedFieldNameProperty.getValue();
+            if (StringUtils.isNullOrEmpty(s)) {
+                refinedFieldNameIsValid.setValue(false);
+                return;
+            }
             Field field = FieldFactory.parseField(s);
-            return (field.isNumeric() && refinedNumberProperty.getValue())
-                    || (field.getProperties().contains(FieldProperty.DATE) && refinedDateProperty.getValue());
+            refinedFieldNameIsValid.setValue((field.isNumeric() && refinedNumberProperty.getValue())
+                    || (field.getProperties().contains(FieldProperty.DATE) && refinedDateProperty.getValue()));
         };
 
         refinedFieldNameValidator = new FunctionBasedValidator<>(
-                refinedFieldNameProperty,
-                refinedFieldCheck,
+                refinedFieldNameIsValid,
+                b -> b,
                 ValidationMessage.error("Field must be a standard field.")
         );
-
-        refinedNumberProperty.addListener((observable, oldValue, newValue) -> {
-            String temp = refinedFieldNameProperty.getValue();
-            refinedFieldNameProperty.setValue("");
-            refinedFieldNameProperty.setValue(temp);
-        });
-        refinedDateProperty.addListener((observable, oldValue, newValue) -> {
-            String temp = refinedFieldNameProperty.getValue();
-            refinedFieldNameProperty.setValue("");
-            refinedFieldNameProperty.setValue(temp);
-        });
+        refinedNumberProperty.addListener(refinedFieldCheck);
+        refinedDateProperty.addListener(refinedFieldCheck);
+        refinedFieldNameProperty.addListener(refinedFieldCheck);
 
         refinedFromNumberValidator = new FunctionBasedValidator<>(
                 numberFromRefinedProperty,
