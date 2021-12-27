@@ -20,7 +20,9 @@ import org.jabref.logic.util.io.FileUtil;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.Keyword;
+import org.jabref.model.entry.field.Field;
 import org.jabref.model.entry.field.FieldFactory;
+import org.jabref.model.entry.field.FieldProperty;
 import org.jabref.model.groups.*;
 import org.jabref.model.metadata.MetaData;
 import org.jabref.model.search.rules.SearchRules;
@@ -33,6 +35,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
@@ -144,8 +147,8 @@ public class GroupDialogViewModel {
                     return true;
                 },
                 ValidationMessage.warning(
-                    Localization.lang("There exists already a group with the same name.") + "\n" +
-                    Localization.lang("If you use it, it will inherit all entries from this other group.")
+                        Localization.lang("There exists already a group with the same name.") + "\n" +
+                                Localization.lang("If you use it, it will inherit all entries from this other group.")
                 )
         );
 
@@ -215,17 +218,40 @@ public class GroupDialogViewModel {
                         Localization.lang("Free search expression"),
                         Localization.lang("Search term is empty."))));
 
-        refinedFieldNameValidator = new CompositeValidator(); // TODO
+        Predicate<String> refinedFieldCheck = s -> {
+            if (StringUtils.isNullOrEmpty(s))
+                return false;
+            Field field = FieldFactory.parseField(s);
+            return (field.isNumeric() && refinedNumberProperty.getValue())
+                    || (field.getProperties().contains(FieldProperty.DATE) && refinedDateProperty.getValue());
+        };
+
+        refinedFieldNameValidator = new FunctionBasedValidator<>(
+                refinedFieldNameProperty,
+                refinedFieldCheck,
+                ValidationMessage.error("Field must be a standard field.")
+        );
+
+        refinedNumberProperty.addListener((observable, oldValue, newValue) -> {
+            String temp = refinedFieldNameProperty.getValue();
+            refinedFieldNameProperty.setValue("");
+            refinedFieldNameProperty.setValue(temp);
+        });
+        refinedDateProperty.addListener((observable, oldValue, newValue) -> {
+            String temp = refinedFieldNameProperty.getValue();
+            refinedFieldNameProperty.setValue("");
+            refinedFieldNameProperty.setValue(temp);
+        });
 
         refinedFromNumberValidator = new FunctionBasedValidator<>(
                 numberFromRefinedProperty,
-                s -> StringUtils.isNumber(Objects.requireNonNullElse(s, "")),
+                s -> StringUtils.isNullOrEmpty(s) || StringUtils.isNumber(s),
                 ValidationMessage.error("Field must be a number")
         );
 
         refinedToNumberValidator = new FunctionBasedValidator<>(
                 numberToRefinedProperty,
-                s -> StringUtils.isNumber(Objects.requireNonNullElse(s, "")),
+                s -> StringUtils.isNullOrEmpty(s) || StringUtils.isNumber(s),
                 ValidationMessage.error("Field must be a number")
         );
 
@@ -238,12 +264,12 @@ public class GroupDialogViewModel {
         refinedOrderDateValidator = new CompositeValidator(
                 new FunctionBasedValidator<>(
                         dateFromRefinedProperty,
-                        localDate -> localDate ==null || dateToRefinedProperty.getValue() == null  || localDate.isBefore(dateToRefinedProperty.getValue()),
+                        localDate -> localDate == null || dateToRefinedProperty.getValue() == null || localDate.isBefore(dateToRefinedProperty.getValue()),
                         ValidationMessage.error("To must be greater than from")
                 ),
                 new FunctionBasedValidator<>(
                         dateToRefinedProperty,
-                        localDate -> localDate == null || dateFromRefinedProperty.getValue() == null  || localDate.isAfter(dateFromRefinedProperty.getValue()),
+                        localDate -> localDate == null || dateFromRefinedProperty.getValue() == null || localDate.isAfter(dateFromRefinedProperty.getValue()),
                         ValidationMessage.error("To must be greater than from")
                 )
         );
@@ -326,6 +352,7 @@ public class GroupDialogViewModel {
 
     /**
      * Gets the absolute path relative to the LatexFileDirectory, if given a relative path
+     *
      * @param input the user input path
      * @return an absolute path if LatexFileDirectory exists; otherwise, returns input
      */
@@ -412,7 +439,7 @@ public class GroupDialogViewModel {
                         new DefaultAuxParser(new BibDatabase()),
                         Globals.getFileUpdateMonitor(),
                         currentDatabase.getMetaData());
-            } else if (typeRefinedProperty.getValue()){
+            } else if (typeRefinedProperty.getValue()) {
                 Object from = refinedNumberProperty.getValue() ?
                         Integer.getInteger(numberFromRefinedProperty.getValue()) :
                         dateFromRefinedProperty.getValue();
@@ -499,16 +526,16 @@ public class GroupDialogViewModel {
 
                 TexGroup group = (TexGroup) editedGroup;
                 texGroupFilePathProperty.setValue(group.getFilePath().toString());
-            } else if (editedGroup.getClass() == RefinedGroup.class){
+            } else if (editedGroup.getClass() == RefinedGroup.class) {
                 typeRefinedProperty.setValue(true);
 
                 RefinedGroup group = (RefinedGroup) editedGroup;
                 refinedFieldNameProperty.setValue(group.getSearchField().getName());
-                if(group.isNumberFilter()){
+                if (group.isNumberFilter()) {
                     refinedNumberProperty.setValue(true);
                     numberFromRefinedProperty.setValue(Objects.requireNonNullElse(group.getFromNumber(), "").toString());
                     numberToRefinedProperty.setValue(Objects.requireNonNullElse(group.getToNumber(), "").toString());
-                } else{
+                } else {
                     refinedDateProperty.setValue(true);
                     dateFromRefinedProperty.setValue(group.getFromDate());
                     dateToRefinedProperty.setValue(group.getToDate());
@@ -522,12 +549,12 @@ public class GroupDialogViewModel {
                 .addExtensionFilter(StandardFileType.AUX)
                 .withDefaultExtension(StandardFileType.AUX)
                 .withInitialDirectory(currentDatabase.getMetaData()
-                                                     .getLatexFileDirectory(preferencesService.getUser())
-                                                     .orElse(FileUtil.getInitialDirectory(currentDatabase, preferencesService))).build();
+                        .getLatexFileDirectory(preferencesService.getUser())
+                        .orElse(FileUtil.getInitialDirectory(currentDatabase, preferencesService))).build();
         dialogService.showFileOpenDialog(fileDialogConfiguration)
-                     .ifPresent(file -> texGroupFilePathProperty.setValue(
-                             FileUtil.relativize(file.toAbsolutePath(), getFileDirectoriesAsPaths()).toString()
-                     ));
+                .ifPresent(file -> texGroupFilePathProperty.setValue(
+                        FileUtil.relativize(file.toAbsolutePath(), getFileDirectoriesAsPaths()).toString()
+                ));
     }
 
     public void openHelpPage() {
