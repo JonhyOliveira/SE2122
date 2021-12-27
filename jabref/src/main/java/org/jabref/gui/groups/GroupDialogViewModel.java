@@ -96,6 +96,7 @@ public class GroupDialogViewModel {
     private Validator refinedFieldNameValidator;
     private BooleanProperty refinedFieldNameIsValid = new SimpleBooleanProperty(false);
     private Validator refinedFromDateValidator, refinedToDateValidator, refinedOrderDateValidator;
+    private BooleanProperty refinedOrderDateIsValid = new SimpleBooleanProperty(false);
     private Validator refinedFromNumberValidator, refinedToNumberValidator, refinedOrderNumberValidator;
     private final CompositeValidator validator = new CompositeValidator();
 
@@ -251,24 +252,39 @@ public class GroupDialogViewModel {
                 ValidationMessage.error("Field must be a number")
         );
 
-        refinedOrderNumberValidator = new FunctionBasedValidator<>(
-                intToRefinedProperty.greaterThanOrEqualTo(intFromRefinedProperty),
-                input -> input,
-                ValidationMessage.error("To must be greater than from")
-        );
-
-        refinedOrderDateValidator = new CompositeValidator(
+        refinedOrderNumberValidator = new CompositeValidator(
                 new FunctionBasedValidator<>(
-                        dateFromRefinedProperty,
-                        localDate -> localDate == null || dateToRefinedProperty.getValue() == null || localDate.isBefore(dateToRefinedProperty.getValue()),
+                        intToRefinedProperty.greaterThanOrEqualTo(intFromRefinedProperty),
+                        input -> input,
                         ValidationMessage.error("To must be greater than from")
                 ),
                 new FunctionBasedValidator<>(
-                        dateToRefinedProperty,
-                        localDate -> localDate == null || dateFromRefinedProperty.getValue() == null || localDate.isAfter(dateFromRefinedProperty.getValue()),
+                        numberFromRefinedProperty.isEmpty().or(numberFromRefinedProperty.isNull())
+                                .and(numberToRefinedProperty.isEmpty().or(numberToRefinedProperty.isNull())),
+                        input -> input,
                         ValidationMessage.error("To must be greater than from")
                 )
         );
+
+        ChangeListener<LocalDate> refinedOrderDateListener = (observable, oldValue, newValue) -> {
+            LocalDate from  = dateFromRefinedProperty.getValue();
+            LocalDate to = dateToRefinedProperty.getValue();
+            if(from == null && to == null){
+                refinedOrderDateIsValid.setValue(false);
+            }
+            else {
+                refinedOrderDateIsValid.setValue(from == null || to == null ||
+                        from.isBefore(to));
+            }
+        };
+
+        refinedOrderDateValidator = new FunctionBasedValidator<>(
+                refinedOrderDateIsValid,
+                b -> b,
+                ValidationMessage.error("To must be greater than from")
+        );
+        dateFromRefinedProperty.addListener(refinedOrderDateListener);
+        dateToRefinedProperty.addListener(refinedOrderDateListener);
 
         texGroupFilePathValidator = new FunctionBasedValidator<>(
                 texGroupFilePathProperty,
