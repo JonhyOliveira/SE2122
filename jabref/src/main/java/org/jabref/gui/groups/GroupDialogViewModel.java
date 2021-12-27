@@ -242,25 +242,19 @@ public class GroupDialogViewModel {
 
         refinedFromNumberValidator = new FunctionBasedValidator<>(
                 numberFromRefinedProperty,
-                s -> StringUtils.isNullOrEmpty(s) || StringUtils.isNumber(s),
+                s -> !StringUtils.isNullOrEmpty(s) && StringUtils.isNumber(s),
                 ValidationMessage.error("Field must be a number")
         );
 
         refinedToNumberValidator = new FunctionBasedValidator<>(
                 numberToRefinedProperty,
-                s -> StringUtils.isNullOrEmpty(s) || StringUtils.isNumber(s),
+                s -> !StringUtils.isNullOrEmpty(s) && StringUtils.isNumber(s),
                 ValidationMessage.error("Field must be a number")
         );
 
         refinedOrderNumberValidator = new CompositeValidator(
                 new FunctionBasedValidator<>(
                         intToRefinedProperty.greaterThanOrEqualTo(intFromRefinedProperty),
-                        input -> input,
-                        ValidationMessage.error("To must be greater than from")
-                ),
-                new FunctionBasedValidator<>(
-                        numberFromRefinedProperty.isEmpty().or(numberFromRefinedProperty.isNull())
-                                .and(numberToRefinedProperty.isEmpty().or(numberToRefinedProperty.isNull())),
                         input -> input,
                         ValidationMessage.error("To must be greater than from")
                 )
