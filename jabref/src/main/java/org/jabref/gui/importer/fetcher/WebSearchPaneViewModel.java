@@ -117,7 +117,6 @@ public class WebSearchPaneViewModel {
     }
 
     public void search() {
-        //TODO Add to search history, check recent file button
         String query = getQuery().trim();
         if (StringUtil.isBlank(query)) {
             dialogService.notify(Localization.lang("Please enter a search string"));
