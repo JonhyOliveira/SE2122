@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SearchHistory {
 
-    private static final int HISTORY_SIZE = 10;
+    static final int HISTORY_SIZE = 10;
 
     private final LinkedList<String> history;
 
