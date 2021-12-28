@@ -103,6 +103,8 @@ public class WebSearchPane extends SidePaneComponent {
                     }
                 });
 
+        searchHistoryMenu.setSearchBar(query.textProperty(), viewModel);
+
         // Allows to trigger search on pressing enter
 
         query.setOnKeyPressed(event -> {

@@ -1,51 +1,42 @@
 package org.jabref.gui.menus;
 
+import javafx.beans.property.StringProperty;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
-import org.jabref.gui.DialogService;
-import org.jabref.gui.importer.actions.OpenDatabaseAction;
+import org.jabref.gui.importer.fetcher.WebSearchPaneViewModel;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.logic.util.io.SearchHistory;
 
 public class SearchHistoryMenu extends Menu {
 
     private final SearchHistory history;
-    private final DialogService dialogService;
-    private final OpenDatabaseAction openDatabaseAction;
+    private WebSearchPaneViewModel viewModel;
+    private StringProperty query;
 
-    public SearchHistoryMenu(DialogService dialogService, OpenDatabaseAction openDatabaseAction) {
+    public SearchHistoryMenu() {
         setText(Localization.lang("Recent web search"));
+        viewModel = null;
+        query = null;
 
-        this.dialogService = dialogService;
-        this.openDatabaseAction = openDatabaseAction;
         history = new SearchHistory();
         setDisable(true);
     }
-
-    /**
-     * This method is to use typed letters to access recent libraries in menu.
-     * @param keyEvent a KeyEvent.
-     * @return false if typed char is invalid or not a number.
-     */
-    /*public boolean openFileByKey(KeyEvent keyEvent) {
-        if (keyEvent.getCharacter() == null) {
-            return false;
-        }
-        char key = keyEvent.getCharacter().charAt(0);
-        int num = Character.getNumericValue(key);
-        if (num <= 0 || num > history.getHistory().size()) {
-            return false;
-        }
-        this.openFile(history.getFileAt(Integer.parseInt(keyEvent.getCharacter()) - 1));
-        return true;
-    }*/
 
     /**
      * Adds the filename to the top of the menu. If it already is in
      * the menu, it is merely moved to the top.
      */
     public void insertSearch(String query) {
-        history.newSearch(query);
+        //Verify if the query exists in the search history
+        if (query.equals("")) return;
+
+        if (!history.contains(query)){
+            history.newSearch(query);
+        } else {
+            history.removeSearch(query);
+            history.newSearch(query);
+        }
+
         setItems();
         setDisable(false);
     }
@@ -67,30 +58,31 @@ public class SearchHistoryMenu extends Menu {
      */
     private void addItem(String query, int num) {
         String number = Integer.toString(num);
-        MenuItem item = new MenuItem(" " + query);
-        // By default mnemonic parsing is set to true for anything that is Labeled, if an underscore character
-        // is present, it would create a key combination ALT+the succeeding character (at least for Windows OS)
-        // and the underscore character will be parsed (deleted).
-        // i.e if the file name was called "bib_test.bib", a key combination "ALT+t" will be created
-        // so to avoid this, mnemonic parsing should be set to false to print normally the underscore character.
+        MenuItem item = new MenuItem("[" + number + "] " + query);
+
         item.setMnemonicParsing(false);
-        //item.setOnAction(event -> openFile(query));
+        item.setOnAction(event -> this.openSearch(query));
         getItems().add(item);
     }
 
-    /*public void storeHistory() {
-        preferences.storeFileHistory(history);
-    }*/
+    /**
+     *
+     * @param query
+     */
+    private void openSearch(String query) {
+        this.query.setValue(query);
+        this.viewModel.search();
+        this.insertSearch(query);
+    }
 
-    /*public void openFile(Path file) {
-        if (!Files.exists(file)) {
-            this.dialogService.showErrorDialogAndWait(
-                    Localization.lang("File not found"),
-                    Localization.lang("File not found") + ": " + file);
-            history.removeItem(file);
-            setItems();
-            return;
-        }
-        openDatabaseAction.openFile(file, true);
-    }*/
+    /**
+     *
+     * @param query
+     * @param viewModel
+     */
+    public void setSearchBar(StringProperty query, WebSearchPaneViewModel viewModel) {
+        this.query = query;
+        this.viewModel = viewModel;
+    }
+
 }

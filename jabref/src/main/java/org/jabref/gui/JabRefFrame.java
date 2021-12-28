@@ -167,7 +167,6 @@ public class JabRefFrame extends BorderPane {
     private final GlobalSearchBar globalSearchBar;
 
     private final FileHistoryMenu fileHistory;
-    //TODO Copy paste do file history
     private final SearchHistoryMenu searchHistory;
 
     @SuppressWarnings({"FieldCanBeLocal"}) private EasyObservableList<BibDatabaseContext> openDatabaseList;
@@ -192,7 +191,7 @@ public class JabRefFrame extends BorderPane {
         this.undoManager = Globals.undoManager;
         this.globalSearchBar = new GlobalSearchBar(this, stateManager, prefs, undoManager);
         this.fileHistory = new FileHistoryMenu(prefs, dialogService, getOpenDatabaseAction());
-        this.searchHistory = new SearchHistoryMenu(dialogService, getOpenDatabaseAction());
+        this.searchHistory = new SearchHistoryMenu();
         this.taskExecutor = Globals.TASK_EXECUTOR;
         this.setOnKeyTyped(key -> {
             if (this.fileHistory.isShowing()) {
@@ -589,7 +588,6 @@ public class JabRefFrame extends BorderPane {
     }
 
     public void init() {
-        //TODO Add reference of search menu
         sidePane = new SidePane(prefs, taskExecutor, dialogService, stateManager, undoManager, searchHistory);
 
         tabbedPane = new TabPane();
@@ -861,7 +859,6 @@ public class JabRefFrame extends BorderPane {
         SidePaneComponent openOffice = sidePane.getComponent(SidePaneType.OPEN_OFFICE);
 
         history.getItems().addAll(
-                //TODO Menu class of Search History
                 searchHistory
         );
 

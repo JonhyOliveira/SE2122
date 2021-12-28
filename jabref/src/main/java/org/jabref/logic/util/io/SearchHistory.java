@@ -51,6 +51,29 @@ public class SearchHistory {
      * @param query
      */
     public void newSearch(String query) {
-        history.push(query);
+        if (this.size() < HISTORY_SIZE){
+            history.push(query);
+        } else {
+            history.removeLast();
+            history.push(query);
+        }
+    }
+
+    /**
+     * Checks if the history contains the query
+     * @param query
+     * @return
+     */
+    public boolean contains(String query) {
+        return history.contains(query);
+    }
+
+    /**
+     * Removes the given query from the history
+     * @param query
+     * @return
+     */
+    public boolean removeSearch(String query) {
+        return history.remove(query);
     }
 }
