@@ -1,28 +1,13 @@
 package org.jabref.gui.groups;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
-
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import de.saxsys.mvvmfx.utils.validation.*;
+import javafx.beans.property.*;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.event.Event;
 import javafx.scene.control.ButtonType;
 import javafx.scene.paint.Color;
-
+import org.h2.util.StringUtils;
 import org.jabref.gui.DialogService;
 import org.jabref.gui.Globals;
 import org.jabref.gui.help.HelpAction;
@@ -36,29 +21,23 @@ import org.jabref.logic.util.io.FileUtil;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.Keyword;
+import org.jabref.model.entry.field.Field;
 import org.jabref.model.entry.field.FieldFactory;
-import org.jabref.model.groups.AbstractGroup;
-import org.jabref.model.groups.AutomaticGroup;
-import org.jabref.model.groups.AutomaticKeywordGroup;
-import org.jabref.model.groups.AutomaticPersonsGroup;
-import org.jabref.model.groups.ExplicitGroup;
-import org.jabref.model.groups.GroupHierarchyType;
-import org.jabref.model.groups.GroupTreeNode;
-import org.jabref.model.groups.RegexKeywordGroup;
-import org.jabref.model.groups.SearchGroup;
-import org.jabref.model.groups.TexGroup;
-import org.jabref.model.groups.WordKeywordGroup;
+import org.jabref.model.entry.field.FieldProperty;
+import org.jabref.model.groups.*;
 import org.jabref.model.metadata.MetaData;
 import org.jabref.model.search.rules.SearchRules;
 import org.jabref.model.search.rules.SearchRules.SearchFlags;
 import org.jabref.model.strings.StringUtil;
 import org.jabref.preferences.PreferencesService;
 
-import de.saxsys.mvvmfx.utils.validation.CompositeValidator;
-import de.saxsys.mvvmfx.utils.validation.FunctionBasedValidator;
-import de.saxsys.mvvmfx.utils.validation.ValidationMessage;
-import de.saxsys.mvvmfx.utils.validation.ValidationStatus;
-import de.saxsys.mvvmfx.utils.validation.Validator;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.LocalDate;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 public class GroupDialogViewModel {
     // Basic Settings
@@ -75,6 +54,7 @@ public class GroupDialogViewModel {
     private final BooleanProperty typeSearchProperty = new SimpleBooleanProperty();
     private final BooleanProperty typeAutoProperty = new SimpleBooleanProperty();
     private final BooleanProperty typeTexProperty = new SimpleBooleanProperty();
+    private final BooleanProperty typeRefinedProperty = new SimpleBooleanProperty();
 
     // Option Groups
     private final StringProperty keywordGroupSearchTermProperty = new SimpleStringProperty("");
@@ -91,6 +71,15 @@ public class GroupDialogViewModel {
     private final StringProperty autoGroupKeywordsHierarchicalDelimiterProperty = new SimpleStringProperty("");
     private final BooleanProperty autoGroupPersonsOptionProperty = new SimpleBooleanProperty();
     private final StringProperty autoGroupPersonsFieldProperty = new SimpleStringProperty("");
+    private final BooleanProperty refinedNumberProperty = new SimpleBooleanProperty();
+    private final StringProperty refinedFieldNameProperty = new SimpleStringProperty();
+    private final StringProperty numberFromRefinedProperty = new SimpleStringProperty();
+    private final StringProperty numberToRefinedProperty = new SimpleStringProperty();
+    private final IntegerProperty intFromRefinedProperty = new SimpleIntegerProperty();
+    private final IntegerProperty intToRefinedProperty = new SimpleIntegerProperty();
+    private final BooleanProperty refinedDateProperty = new SimpleBooleanProperty();
+    private final ObjectProperty<LocalDate> dateFromRefinedProperty = new SimpleObjectProperty<LocalDate>();
+    private final ObjectProperty<LocalDate> dateToRefinedProperty = new SimpleObjectProperty<LocalDate>();
 
     private final StringProperty texGroupFilePathProperty = new SimpleStringProperty("");
 
@@ -103,6 +92,12 @@ public class GroupDialogViewModel {
     private Validator searchRegexValidator;
     private Validator searchSearchTermEmptyValidator;
     private Validator texGroupFilePathValidator;
+
+    private Validator refinedFieldNameValidator;
+    private BooleanProperty refinedFieldNameIsValid = new SimpleBooleanProperty(false);
+    private Validator refinedFromDateValidator, refinedToDateValidator, refinedOrderDateValidator;
+    private BooleanProperty refinedOrderDateIsValid = new SimpleBooleanProperty(false);
+    private Validator refinedFromNumberValidator, refinedToNumberValidator, refinedOrderNumberValidator;
     private final CompositeValidator validator = new CompositeValidator();
 
     private final DialogService dialogService;
@@ -154,8 +149,8 @@ public class GroupDialogViewModel {
                     return true;
                 },
                 ValidationMessage.warning(
-                    Localization.lang("There exists already a group with the same name.") + "\n" +
-                    Localization.lang("If you use it, it will inherit all entries from this other group.")
+                        Localization.lang("There exists already a group with the same name.") + "\n" +
+                                Localization.lang("If you use it, it will inherit all entries from this other group.")
                 )
         );
 
@@ -225,6 +220,66 @@ public class GroupDialogViewModel {
                         Localization.lang("Free search expression"),
                         Localization.lang("Search term is empty."))));
 
+        ChangeListener<Object> refinedFieldCheck = (observable, oldValue, newValue) -> {
+            String s = refinedFieldNameProperty.getValue();
+            if (StringUtils.isNullOrEmpty(s)) {
+                refinedFieldNameIsValid.setValue(false);
+                return;
+            }
+            Field field = FieldFactory.parseField(s);
+            refinedFieldNameIsValid.setValue((field.isNumeric() && refinedNumberProperty.getValue())
+                    || (field.getProperties().contains(FieldProperty.DATE) && refinedDateProperty.getValue()));
+        };
+
+        refinedFieldNameValidator = new FunctionBasedValidator<>(
+                refinedFieldNameIsValid,
+                b -> b,
+                ValidationMessage.error("Field must be a standard field.")
+        );
+        refinedNumberProperty.addListener(refinedFieldCheck);
+        refinedDateProperty.addListener(refinedFieldCheck);
+        refinedFieldNameProperty.addListener(refinedFieldCheck);
+
+        refinedFromNumberValidator = new FunctionBasedValidator<>(
+                numberFromRefinedProperty,
+                s -> !StringUtils.isNullOrEmpty(s) && StringUtils.isNumber(s),
+                ValidationMessage.error("Field must be a number")
+        );
+
+        refinedToNumberValidator = new FunctionBasedValidator<>(
+                numberToRefinedProperty,
+                s -> !StringUtils.isNullOrEmpty(s) && StringUtils.isNumber(s),
+                ValidationMessage.error("Field must be a number")
+        );
+
+        refinedOrderNumberValidator = new CompositeValidator(
+                new FunctionBasedValidator<>(
+                        intToRefinedProperty.greaterThanOrEqualTo(intFromRefinedProperty),
+                        input -> input,
+                        ValidationMessage.error("To must be greater than from")
+                )
+        );
+
+        ChangeListener<LocalDate> refinedOrderDateListener = (observable, oldValue, newValue) -> {
+            LocalDate from  = dateFromRefinedProperty.getValue();
+            LocalDate to = dateToRefinedProperty.getValue();
+            if(from == null && to == null){
+                refinedOrderDateIsValid.setValue(false);
+            }
+            else {
+                refinedOrderDateIsValid.setValue(from == null || to == null ||
+                        from.isBefore(to));
+            }
+        };
+
+        refinedOrderDateValidator = new FunctionBasedValidator<>(
+                refinedOrderDateIsValid,
+                b -> b,
+                ValidationMessage.error("To must be greater than from")
+        );
+        dateFromRefinedProperty.addListener(refinedOrderDateListener);
+        dateToRefinedProperty.addListener(refinedOrderDateListener);
+
         texGroupFilePathValidator = new FunctionBasedValidator<>(
                 texGroupFilePathProperty,
                 input -> {
@@ -265,10 +320,45 @@ public class GroupDialogViewModel {
                 validator.removeValidators(texGroupFilePathValidator);
             }
         });
+
+        Validator numberValidators = new CompositeValidator(refinedFromNumberValidator, refinedToNumberValidator, refinedOrderNumberValidator);
+        Validator dateValidators = new CompositeValidator(refinedOrderDateValidator); // TODO
+
+        typeRefinedProperty.addListener((observable, oldValue, isSelected) -> {
+            if (isSelected) {
+                validator.addValidators(refinedFieldNameValidator);
+                if (refinedNumberProperty.getValue())
+                    validator.addValidators(numberValidators);
+                if (refinedDateProperty.getValue())
+                    validator.addValidators(dateValidators);
+
+            } else {
+                validator.removeValidators(numberValidators, dateValidators, refinedFieldNameValidator);
+            }
+
+        });
+
+        refinedNumberProperty.addListener((obs, oldValue, isSelected) -> {
+            if (isSelected && typeRefinedProperty.getValue()) {
+                validator.addValidators(numberValidators);
+            } else {
+                validator.removeValidators(numberValidators);
+            }
+        });
+
+        refinedDateProperty.addListener((observable, oldValue, isSelected) -> {
+            if (isSelected && typeRefinedProperty.getValue()) {
+                validator.addValidators(dateValidators);
+            } else {
+                validator.removeValidators(dateValidators);
+            }
+        });
+
     }
 
     /**
      * Gets the absolute path relative to the LatexFileDirectory, if given a relative path
+     *
      * @param input the user input path
      * @return an absolute path if LatexFileDirectory exists; otherwise, returns input
      */
@@ -355,6 +445,20 @@ public class GroupDialogViewModel {
                         new DefaultAuxParser(new BibDatabase()),
                         Globals.getFileUpdateMonitor(),
                         currentDatabase.getMetaData());
+            } else if (typeRefinedProperty.getValue()) {
+                Object from = refinedNumberProperty.getValue() ?
+                        Integer.getInteger(numberFromRefinedProperty.getValue()) :
+                        dateFromRefinedProperty.getValue();
+                Object to = refinedNumberProperty.getValue() ?
+                        Integer.getInteger(numberToRefinedProperty.getValue()) :
+                        dateToRefinedProperty.getValue();
+                resultingGroup = new RefinedGroup(
+                        groupName,
+                        groupHierarchySelectedProperty.getValue(),
+                        from,
+                        to,
+                        FieldFactory.parseField(refinedFieldNameProperty.getValue().trim())
+                );
             }
 
             if (resultingGroup != null) {
@@ -378,6 +482,7 @@ public class GroupDialogViewModel {
             // creating new group -> defaults!
             colorProperty.setValue(IconTheme.getDefaultGroupColor());
             typeExplicitProperty.setValue(true);
+            refinedDateProperty.setValue(true);
             groupHierarchySelectedProperty.setValue(GroupHierarchyType.INDEPENDENT);
         } else {
             nameProperty.setValue(editedGroup.getName());
@@ -427,6 +532,20 @@ public class GroupDialogViewModel {
 
                 TexGroup group = (TexGroup) editedGroup;
                 texGroupFilePathProperty.setValue(group.getFilePath().toString());
+            } else if (editedGroup.getClass() == RefinedGroup.class) {
+                typeRefinedProperty.setValue(true);
+
+                RefinedGroup group = (RefinedGroup) editedGroup;
+                refinedFieldNameProperty.setValue(group.getSearchField().getName());
+                if (group.isNumberFilter()) {
+                    refinedNumberProperty.setValue(true);
+                    numberFromRefinedProperty.setValue(Objects.requireNonNullElse(group.getFromNumber(), "").toString());
+                    numberToRefinedProperty.setValue(Objects.requireNonNullElse(group.getToNumber(), "").toString());
+                } else {
+                    refinedDateProperty.setValue(true);
+                    dateFromRefinedProperty.setValue(group.getFromDate());
+                    dateToRefinedProperty.setValue(group.getToDate());
+                }
             }
         }
     }
@@ -436,12 +555,12 @@ public class GroupDialogViewModel {
                 .addExtensionFilter(StandardFileType.AUX)
                 .withDefaultExtension(StandardFileType.AUX)
                 .withInitialDirectory(currentDatabase.getMetaData()
-                                                     .getLatexFileDirectory(preferencesService.getUser())
-                                                     .orElse(FileUtil.getInitialDirectory(currentDatabase, preferencesService))).build();
+                        .getLatexFileDirectory(preferencesService.getUser())
+                        .orElse(FileUtil.getInitialDirectory(currentDatabase, preferencesService))).build();
         dialogService.showFileOpenDialog(fileDialogConfiguration)
-                     .ifPresent(file -> texGroupFilePathProperty.setValue(
-                             FileUtil.relativize(file.toAbsolutePath(), getFileDirectoriesAsPaths()).toString()
-                     ));
+                .ifPresent(file -> texGroupFilePathProperty.setValue(
+                        FileUtil.relativize(file.toAbsolutePath(), getFileDirectoriesAsPaths()).toString()
+                ));
     }
 
     public void openHelpPage() {
@@ -540,6 +659,10 @@ public class GroupDialogViewModel {
         return typeTexProperty;
     }
 
+    public BooleanProperty typeRefinedProperty() {
+        return typeRefinedProperty;
+    }
+
     public StringProperty keywordGroupSearchTermProperty() {
         return keywordGroupSearchTermProperty;
     }
@@ -586,6 +709,42 @@ public class GroupDialogViewModel {
 
     public StringProperty autoGroupPersonsFieldProperty() {
         return autoGroupPersonsFieldProperty;
+    }
+
+    public StringProperty refinedFieldNameProperty() {
+        return refinedFieldNameProperty;
+    }
+
+    public BooleanProperty refinedNumberProperty() {
+        return refinedNumberProperty;
+    }
+
+    public BooleanProperty refinedDateProperty() {
+        return refinedDateProperty;
+    }
+
+    public StringProperty numberFromRefinedProperty() {
+        return numberFromRefinedProperty;
+    }
+
+    public StringProperty numberToRefinedProperty() {
+        return numberToRefinedProperty;
+    }
+
+    public IntegerProperty intFromRefinedProperty() {
+        return intFromRefinedProperty;
+    }
+
+    public IntegerProperty intToRefinedProperty() {
+        return intToRefinedProperty;
+    }
+
+    public ObjectProperty<LocalDate> dateFromRefinedProperty() {
+        return dateFromRefinedProperty;
+    }
+
+    public ObjectProperty<LocalDate> dateToRefinedProperty() {
+        return dateToRefinedProperty;
     }
 
     public StringProperty texGroupFilePathProperty() {
