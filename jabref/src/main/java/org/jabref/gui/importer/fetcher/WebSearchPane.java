@@ -20,6 +20,7 @@ import org.jabref.gui.actions.ActionFactory;
 import org.jabref.gui.actions.StandardActions;
 import org.jabref.gui.help.HelpAction;
 import org.jabref.gui.icon.IconTheme;
+import org.jabref.gui.menus.SearchHistoryMenu;
 import org.jabref.gui.search.SearchTextField;
 import org.jabref.gui.sidepane.SidePane;
 import org.jabref.gui.sidepane.SidePaneComponent;
@@ -37,11 +38,23 @@ public class WebSearchPane extends SidePaneComponent {
 
     private final PreferencesService preferences;
     private final WebSearchPaneViewModel viewModel;
+    private final SearchHistoryMenu searchHistoryMenu;
+
 
     public WebSearchPane(SidePane sidePane, PreferencesService preferences, DialogService dialogService, StateManager stateManager) {
         super(sidePane, IconTheme.JabRefIcons.WWW, Localization.lang("Web search"));
         this.preferences = preferences;
         this.viewModel = new WebSearchPaneViewModel(preferences, dialogService, stateManager);
+        //TODO
+        this.searchHistoryMenu = null;
+    }
+
+    //TODO Adds reference of search history
+    public WebSearchPane(SidePane sidePane, PreferencesService preferences, DialogService dialogService, StateManager stateManager, SearchHistoryMenu searchHistoryMenu) {
+        super(sidePane, IconTheme.JabRefIcons.WWW, Localization.lang("Web search"));
+        this.preferences = preferences;
+        this.viewModel = new WebSearchPaneViewModel(preferences, dialogService, stateManager);
+        this.searchHistoryMenu = searchHistoryMenu;
     }
 
     @Override
@@ -90,9 +103,13 @@ public class WebSearchPane extends SidePaneComponent {
                     }
                 });
 
+        searchHistoryMenu.setSearchBar(query.textProperty(), viewModel);
+
         // Allows to trigger search on pressing enter
+
         query.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
+                searchHistoryMenu.insertSearch(query.getText());
                 viewModel.search();
             }
         });
@@ -100,7 +117,10 @@ public class WebSearchPane extends SidePaneComponent {
         // Create button that triggers search
         Button search = new Button(Localization.lang("Search"));
         search.setDefaultButton(false);
-        search.setOnAction(event -> viewModel.search());
+        search.setOnAction(event -> {
+            searchHistoryMenu.insertSearch(query.getText());
+            viewModel.search();
+        });
 
         // Put everything together
         VBox container = new VBox();

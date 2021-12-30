@@ -100,6 +100,7 @@ import org.jabref.gui.keyboard.KeyBinding;
 import org.jabref.gui.keyboard.KeyBindingRepository;
 import org.jabref.gui.libraryproperties.LibraryPropertiesAction;
 import org.jabref.gui.menus.FileHistoryMenu;
+import org.jabref.gui.menus.SearchHistoryMenu;
 import org.jabref.gui.mergeentries.MergeEntriesAction;
 import org.jabref.gui.metadata.BibtexStringEditorAction;
 import org.jabref.gui.metadata.PreambleEditor;
@@ -166,6 +167,7 @@ public class JabRefFrame extends BorderPane {
     private final GlobalSearchBar globalSearchBar;
 
     private final FileHistoryMenu fileHistory;
+    private final SearchHistoryMenu searchHistory;
 
     @SuppressWarnings({"FieldCanBeLocal"}) private EasyObservableList<BibDatabaseContext> openDatabaseList;
 
@@ -189,6 +191,7 @@ public class JabRefFrame extends BorderPane {
         this.undoManager = Globals.undoManager;
         this.globalSearchBar = new GlobalSearchBar(this, stateManager, prefs, undoManager);
         this.fileHistory = new FileHistoryMenu(prefs, dialogService, getOpenDatabaseAction());
+        this.searchHistory = new SearchHistoryMenu();
         this.taskExecutor = Globals.TASK_EXECUTOR;
         this.setOnKeyTyped(key -> {
             if (this.fileHistory.isShowing()) {
@@ -537,6 +540,12 @@ public class JabRefFrame extends BorderPane {
                 new Separator(Orientation.VERTICAL),
 
                 new HBox(
+                        factory.createIconButton(StandardActions.TEST, new OpenBrowserAction("https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Fhackerman&psig=AOvVaw1s7LMAxarnyKFZTvvfnLR5&ust=1639840909821000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPissdOR6_QCFQAAAAAdAAAAABAD"))
+                ),
+
+                new Separator(Orientation.VERTICAL),
+
+                new HBox(
                         createTaskIndicator()
                 )
         );
@@ -579,7 +588,7 @@ public class JabRefFrame extends BorderPane {
     }
 
     public void init() {
-        sidePane = new SidePane(prefs, taskExecutor, dialogService, stateManager, undoManager);
+        sidePane = new SidePane(prefs, taskExecutor, dialogService, stateManager, undoManager, searchHistory);
 
         tabbedPane = new TabPane();
         tabbedPane.setTabDragPolicy(TabPane.TabDragPolicy.REORDER);
@@ -687,6 +696,7 @@ public class JabRefFrame extends BorderPane {
         Menu quality = new Menu(Localization.lang("Quality"));
         Menu lookup = new Menu(Localization.lang("Lookup"));
         Menu view = new Menu(Localization.lang("View"));
+        Menu history = new Menu(Localization.lang("History"));
         Menu tools = new Menu(Localization.lang("Tools"));
         Menu options = new Menu(Localization.lang("Options"));
         Menu help = new Menu(Localization.lang("Help"));
@@ -848,6 +858,10 @@ public class JabRefFrame extends BorderPane {
         SidePaneComponent groups = sidePane.getComponent(SidePaneType.GROUPS);
         SidePaneComponent openOffice = sidePane.getComponent(SidePaneType.OPEN_OFFICE);
 
+        history.getItems().addAll(
+                searchHistory
+        );
+
         view.getItems().addAll(
                 factory.createCheckMenuItem(webSearch.getToggleAction(), webSearch.getToggleCommand(), sidePane.isComponentVisible(SidePaneType.WEB_SEARCH)),
                 factory.createCheckMenuItem(groups.getToggleAction(), groups.getToggleCommand(), sidePane.isComponentVisible(SidePaneType.GROUPS)),
@@ -911,6 +925,7 @@ public class JabRefFrame extends BorderPane {
                 quality,
                 lookup,
                 tools,
+                history,
                 view,
                 options,
                 help);
