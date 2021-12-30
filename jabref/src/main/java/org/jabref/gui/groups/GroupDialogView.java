@@ -23,6 +23,7 @@ import org.jabref.gui.icon.IconTheme;
 import org.jabref.gui.icon.JabrefIconProvider;
 import org.jabref.gui.util.BaseDialog;
 import org.jabref.gui.util.IconValidationDecorator;
+import org.jabref.gui.util.OnlyIntegerFormatter;
 import org.jabref.gui.util.ViewModelListCellFactory;
 import org.jabref.logic.l10n.Localization;
 import org.jabref.model.database.BibDatabaseContext;
@@ -183,10 +184,11 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
         texGroupFilePath.textProperty().bindBidirectional(viewModel.texGroupFilePathProperty());
 
         numberRadioButton.selectedProperty().bindBidirectional(viewModel.refinedNumberProperty());
-        numberToRefined.textProperty().bindBidirectional(viewModel.intToRefinedProperty(), new NumberStringConverter());
-        numberFromRefined.textProperty().bindBidirectional(viewModel.intFromRefinedProperty(), new NumberStringConverter());
-        numberToRefined.textProperty().bindBidirectional(viewModel.numberToRefinedProperty());
-        numberFromRefined.textProperty().bindBidirectional(viewModel.numberFromRefinedProperty());
+        numberToRefined.setTextFormatter(new OnlyIntegerFormatter());
+        numberFromRefined.setTextFormatter(new OnlyIntegerFormatter());
+        numberToRefined.textProperty().bindBidirectional(viewModel.intToRefinedProperty(), new NumberStringConverter("###.##"));
+        numberFromRefined.textProperty().bindBidirectional(viewModel.intFromRefinedProperty(), new NumberStringConverter("###.##"));
+
 
         dateRadioButton.selectedProperty().bindBidirectional(viewModel.refinedDateProperty());
         dateFromRefined.valueProperty().bindBidirectional(viewModel.dateFromRefinedProperty());

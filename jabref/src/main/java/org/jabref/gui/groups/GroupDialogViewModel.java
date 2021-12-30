@@ -73,8 +73,6 @@ public class GroupDialogViewModel {
     private final StringProperty autoGroupPersonsFieldProperty = new SimpleStringProperty("");
     private final BooleanProperty refinedNumberProperty = new SimpleBooleanProperty();
     private final StringProperty refinedFieldNameProperty = new SimpleStringProperty();
-    private final StringProperty numberFromRefinedProperty = new SimpleStringProperty();
-    private final StringProperty numberToRefinedProperty = new SimpleStringProperty();
     private final IntegerProperty intFromRefinedProperty = new SimpleIntegerProperty();
     private final IntegerProperty intToRefinedProperty = new SimpleIntegerProperty();
     private final BooleanProperty refinedDateProperty = new SimpleBooleanProperty();
@@ -95,8 +93,9 @@ public class GroupDialogViewModel {
 
     private Validator refinedFieldNameValidator;
     private BooleanProperty refinedFieldNameIsValid = new SimpleBooleanProperty(false);
-    private Validator refinedFromDateValidator, refinedToDateValidator, refinedOrderDateValidator;
+    private Validator refinedOrderDateValidator;
     private BooleanProperty refinedOrderDateIsValid = new SimpleBooleanProperty(false);
+    private BooleanProperty refinedOrderNumberIsValid = new SimpleBooleanProperty(false);
     private Validator refinedFromNumberValidator, refinedToNumberValidator, refinedOrderNumberValidator;
     private final CompositeValidator validator = new CompositeValidator();
 
@@ -240,25 +239,23 @@ public class GroupDialogViewModel {
         refinedDateProperty.addListener(refinedFieldCheck);
         refinedFieldNameProperty.addListener(refinedFieldCheck);
 
-        refinedFromNumberValidator = new FunctionBasedValidator<>(
-                numberFromRefinedProperty,
-                s -> !StringUtils.isNullOrEmpty(s) && StringUtils.isNumber(s),
-                ValidationMessage.error("Field must be a number")
-        );
+        ChangeListener<Number> refinedOrderNumberListener = (observable, oldValue, newValue) -> {
+            Integer from = intFromRefinedProperty.getValue();
+            Integer to = intToRefinedProperty.getValue();
+            if (from == null || to == null)
+                refinedOrderNumberIsValid.setValue(false);
+            else {
+                refinedOrderNumberIsValid.set(from <= to);
+            }
+        };
 
-        refinedToNumberValidator = new FunctionBasedValidator<>(
-                numberToRefinedProperty,
-                s -> !StringUtils.isNullOrEmpty(s) && StringUtils.isNumber(s),
-                ValidationMessage.error("Field must be a number")
-        );
-
-        refinedOrderNumberValidator = new CompositeValidator(
-                new FunctionBasedValidator<>(
-                        intToRefinedProperty.greaterThanOrEqualTo(intFromRefinedProperty),
+        refinedOrderNumberValidator = new FunctionBasedValidator<>(
+                        refinedOrderNumberIsValid,
                         input -> input,
                         ValidationMessage.error("To must be greater than from")
-                )
         );
+        intFromRefinedProperty.addListener(refinedOrderNumberListener);
+        intToRefinedProperty.addListener(refinedOrderNumberListener);
 
         ChangeListener<LocalDate> refinedOrderDateListener = (observable, oldValue, newValue) -> {
             LocalDate from  = dateFromRefinedProperty.getValue();
@@ -321,8 +318,8 @@ public class GroupDialogViewModel {
             }
         });
 
-        Validator numberValidators = new CompositeValidator(refinedFromNumberValidator, refinedToNumberValidator, refinedOrderNumberValidator);
-        Validator dateValidators = new CompositeValidator(refinedOrderDateValidator); // TODO
+        Validator numberValidators = new CompositeValidator(refinedOrderNumberValidator);
+        Validator dateValidators = new CompositeValidator(refinedOrderDateValidator);
 
         typeRefinedProperty.addListener((observable, oldValue, isSelected) -> {
             if (isSelected) {
@@ -447,10 +444,10 @@ public class GroupDialogViewModel {
                         currentDatabase.getMetaData());
             } else if (typeRefinedProperty.getValue()) {
                 Object from = refinedNumberProperty.getValue() ?
-                        Integer.getInteger(numberFromRefinedProperty.getValue()) :
+                        intFromRefinedProperty.getValue() :
                         dateFromRefinedProperty.getValue();
                 Object to = refinedNumberProperty.getValue() ?
-                        Integer.getInteger(numberToRefinedProperty.getValue()) :
+                        intToRefinedProperty.getValue() :
                         dateToRefinedProperty.getValue();
                 resultingGroup = new RefinedGroup(
                         groupName,
@@ -539,13 +536,16 @@ public class GroupDialogViewModel {
                 refinedFieldNameProperty.setValue(group.getSearchField().getName());
                 if (group.isNumberFilter()) {
                     refinedNumberProperty.setValue(true);
-                    numberFromRefinedProperty.setValue(Objects.requireNonNullElse(group.getFromNumber(), "").toString());
-                    numberToRefinedProperty.setValue(Objects.requireNonNullElse(group.getToNumber(), "").toString());
+
+                    intToRefinedProperty.set(Objects.requireNonNullElse(group.getToNumber(), 0));
+                    intFromRefinedProperty.set(Objects.requireNonNullElse(group.getFromNumber(), 0));
+
                 } else {
                     refinedDateProperty.setValue(true);
                     dateFromRefinedProperty.setValue(group.getFromDate());
                     dateToRefinedProperty.setValue(group.getToDate());
                 }
+                //intFromRefinedProperty.setValue(100);
             }
         }
     }
@@ -721,14 +721,6 @@ public class GroupDialogViewModel {
 
     public BooleanProperty refinedDateProperty() {
         return refinedDateProperty;
-    }
-
-    public StringProperty numberFromRefinedProperty() {
-        return numberFromRefinedProperty;
-    }
-
-    public StringProperty numberToRefinedProperty() {
-        return numberToRefinedProperty;
     }
 
     public IntegerProperty intFromRefinedProperty() {
