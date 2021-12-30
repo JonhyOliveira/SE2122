@@ -536,13 +536,16 @@ public class GroupDialogViewModel {
                 refinedFieldNameProperty.setValue(group.getSearchField().getName());
                 if (group.isNumberFilter()) {
                     refinedNumberProperty.setValue(true);
-                    intFromRefinedProperty.setValue(Objects.requireNonNullElse(group.getFromNumber(), -1));
-                    intToRefinedProperty.setValue(Objects.requireNonNullElse(group.getToNumber(), -1));
+
+                    intToRefinedProperty.set(Objects.requireNonNullElse(group.getToNumber(), 0));
+                    intFromRefinedProperty.set(Objects.requireNonNullElse(group.getFromNumber(), 0));
+
                 } else {
                     refinedDateProperty.setValue(true);
                     dateFromRefinedProperty.setValue(group.getFromDate());
                     dateToRefinedProperty.setValue(group.getToDate());
                 }
+                //intFromRefinedProperty.setValue(100);
             }
         }
     }

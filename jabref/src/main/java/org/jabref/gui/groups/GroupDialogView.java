@@ -186,8 +186,8 @@ public class GroupDialogView extends BaseDialog<AbstractGroup> {
         numberRadioButton.selectedProperty().bindBidirectional(viewModel.refinedNumberProperty());
         numberToRefined.setTextFormatter(new OnlyIntegerFormatter());
         numberFromRefined.setTextFormatter(new OnlyIntegerFormatter());
-        numberToRefined.textProperty().bindBidirectional(viewModel.intToRefinedProperty(), new NumberStringConverter());
-        numberFromRefined.textProperty().bindBidirectional(viewModel.intFromRefinedProperty(), new NumberStringConverter());
+        numberToRefined.textProperty().bindBidirectional(viewModel.intToRefinedProperty(), new NumberStringConverter("###.##"));
+        numberFromRefined.textProperty().bindBidirectional(viewModel.intFromRefinedProperty(), new NumberStringConverter("###.##"));
 
 
         dateRadioButton.selectedProperty().bindBidirectional(viewModel.refinedDateProperty());
